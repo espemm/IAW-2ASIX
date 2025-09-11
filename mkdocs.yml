@@ -3,7 +3,7 @@ site_description: 'Documentación del módulo IAW'
 
 nav:
   - Home: index.md
-  - 1- Introducció a la Implantació d'Aplicacions Web: ud1/IAW1-Intro/index.html
+  - 1- Introducció a la Implantació d'Aplicacions Web: ud1/IAW1-Intro
   - 2- Implantació Web en Servidors: IAW2-server.md
   - 3- Sistemes de Gestió de Continguts: IAW3-CMS.md
   - 4- Contenidors Docker: IAW4-docker.md

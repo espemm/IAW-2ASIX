@@ -18,7 +18,7 @@
     
     
       
-        <title>Ejercicio 1: Introducción a git y GitHub - 2ASIX - IAW</title>
+        <title>Exercici 2: Introducció a Markdown - 2ASIX - IAW</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ejercicio-1-introduccion-a-git-y-github" class="md-skip">
+        <a href="#exercici-2-introduccio-a-markdown" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ejercicio 1: Introducción a git y GitHub
+              Exercici 2: Introducció a Markdown
             
           </span>
         </div>
@@ -134,23 +134,6 @@
 <nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="https://espemm.github.io/IAW-2ASIX/" class="md-tabs__link">
-        
-  
-    
-  
-  Home
-
-      </a>
-    </li>
-  
-
       
         
   
@@ -284,26 +267,6 @@
   
   
     <li class="md-nav__item">
-      <a href="https://espemm.github.io/IAW-2ASIX/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Home
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../IAW1-Intro/" class="md-nav__link">
         
   
@@ -412,67 +375,27 @@
                   
 
 
-<h1 id="ejercicio-1-introduccion-a-git-y-github">Ejercicio 1: Introducción a git y GitHub<a class="headerlink" href="#ejercicio-1-introduccion-a-git-y-github" title="Permanent link">&para;</a></h1>
+<h1 id="exercici-2-introduccio-a-markdown">Exercici 2: Introducció a Markdown<a class="headerlink" href="#exercici-2-introduccio-a-markdown" title="Permanent link">&para;</a></h1>
 <div class="admonition success">
 <p class="admonition-title">Objectius</p>
-<p>Recordar l&rsquo;ús de git per a realitzar el control de versions dels projectes. 
-Configurar un compte a GitHub, servei que ens ofereix repositoris remots. 
-Recordar el cicle de vida de la gestió dels nostres repositoris: creació, clonatge, sincronització, … i els nostres fitxers: creació, modificació, esborrat.</p>
+<p>Aprendre la sintaxi bàsica del llenguatge de marques Markdown per estructurar la informació als nostres documents. 
+Comprovar que es pot convertir el Markdown a HTML de manera molt senzilla.</p>
 </div>
-<h2 id="que-has-de-fer">Qué has de fer?<a class="headerlink" href="#que-has-de-fer" title="Permanent link">&para;</a></h2>
+<h2 id="recursos-per-fer-aquest-exercici">Recursos per fer aquest exercici<a class="headerlink" href="#recursos-per-fer-aquest-exercici" title="Permanent link">&para;</a></h2>
+<p>Podeu utilitzar qualsevol manual bàsic de Markdown, per exemple <a href="https://www.markdownguide.org/cheat-sheet/">Markdown cheat-sheet</a>.</p>
+<h2 id="que-has-de-fer">Què has de fer?<a class="headerlink" href="#que-has-de-fer" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Crea un compte a GitHub (<em>Si no el tens!!!</em>). La forma d&rsquo;accedir als repositoris remots de GitHub serà per SSH, per tant has de copiar la teua clau pública RSA a GitHub, per això: <ul>
-<li>Copia el contingut del teu fitxer ~/.ssh/id_rsa.pub, per això: afegeix una nova clau SSH a l&rsquo;apartat “SSH keys” del teu perfil a GitHub i enganxa el contingut de la teua clau pública. </li>
-<li>Si no teniu aquest fitxer, podeu generar una nova clau ssh pública seguint les instruccions de l&rsquo;article <a href="https://www.josedomingo.org/pledin/2023/01/claves-ssh/">Treballant amb claus ssh</a>.</li>
-<li>Un cop finalitzat aquest exercici, hauràs de repetir-ho fent ús de tokens.</li>
+<li>Crea una carpeta en un repositori local (creat en l&rsquo;exercici anterior) que s&rsquo;anomene IAW_markdown, que incloga un fitxer README.md.</li>
+<li>Afegeix contingut al fitxer README.md utilitzant tots els elements de la sintaxi de Markdown que hem recordat. Entre altres inclou: <ul>
+<li>una imatge al document que sigui un enllaç a una URL externa.</li>
+<li>crea un directori anomenat img al repositori i afegeix una imatge. </li>
+<li>incorpora la imatge que has afegit dins del document. </li>
 </ul>
 </li>
-<li>Crea a GitHub un repositori amb el nom prova_el_teu_nom (inicialitza el repositori amb un fitxer README) i la descripció <em>Repositorio de prueba 2ASIX</em>. </li>
-<li>
-<p>Instal·la git en el teu ordinador (si no el tens instalado!!!).</p>
-<div class="highlight"><pre><span></span><code>apt-get<span class="w"> </span>install<span class="w"> </span>git
-</code></pre></div>
-</li>
-<li>
-<p>Configuració de git. El primer que hauries de fer quan instal·les Git és establir el teu nom dusuari i adreça de correu electrònic (Assegura&rsquo;t que les dades són correctes i que has posat el teu nom complet). Això és important perquè les confirmacions de canvis (commits) a Git utilitzen aquesta informació, i és introduïda de manera immutable en els commits que envieu:</p>
-</li>
+<li>Crea un nou document markdown al repositori. </li>
+<li>Crea un enllaç des del fitxer README.md al nou document que acabes de crear </li>
+<li>Generar un document .pdf a partir del fitxer markdown.md</li>
 </ol>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;John Doe&quot;</span>
-git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span>johndoe@example.com
-</code></pre></div>
-<p>De nou, només cal fer-ho una vegada si especifiques l&rsquo;opció &ndash;global, ja que Git sempre utilitzarà aquesta informació per a tot el que facis en aquest sistema.</p>
-<p>Clonar el repositori remot. Copia la url SSH del repositori (no copiïs la URL https) i clonarem el repositori al nostre ordinador.</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:xxxxxxx/xxxxxxx.git
-</code></pre></div>
-<p>Para comprobar que tienes configurado el repositorio usando la url SSH puedes ver el fichero de configuración en .git/config.</p>
-<p>Comprova que dins del repositori que hem creat hi ha el fitxer README.md, en aquest fitxer podem posar la descripció del projecte.</p>
-<p>Crearem un nou fitxer, l&rsquo;afegirem al nostre repositori local i després ho sincronitzarem amb el nostre repositori remot de GitHub. Cada vegada que fem una modificació en un fitxer ho podem assenyalar creant un commit. Els missatges dels commits són fonamentals per explicar l&rsquo;evolució d&rsquo;un projecte. Un commit ha de ser un petit conjunt de canvis dels fitxers del projecte amb una certa coherència.</p>
-<p><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Açò és una prova&quot;</span>
-<span class="w">    </span>git<span class="w"> </span>add<span class="w"> </span>exemple.txt
-<span class="w">    </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;He creat el fitxer exemple.txt&quot;</span>
-<span class="w">    </span>git<span class="w"> </span>push
-</code></pre></div>
-Si modifiqueu un fitxer al vostre repositori local, no l&rsquo;heu de tornar a afegir al vostre repositori (git add). Però has de fer servir l&rsquo;opció -a en fer el commit.</p>
-<p><div class="highlight"><pre><span></span><code><span class="w">    </span>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">&quot;He modificado el fichero ejemplo.txt&quot;</span>
-<span class="w">    </span>git<span class="w"> </span>push
-</code></pre></div>
-Si vols canviar el nom d&rsquo;un fitxer o directori del teu repositori:</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>mv<span class="w"> </span>exemple.txt<span class="w"> </span>exemple2.txt
-git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">&quot;He canviat el nom del fitxer&quot;</span>
-git<span class="w"> </span>push
-</code></pre></div>
-<p>Si vols esborrar un fitxer del teu repositori:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span>git<span class="w"> </span>rm<span class="w"> </span>exemple2.txt
-<span class="w">    </span>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">&quot;He esborrat el fitxer exemple2&quot;</span>
-<span class="w">    </span>git<span class="w"> </span>push
-</code></pre></div>
-<p>Pots clonar el teu repositori de GitHub a diversos ordinadors (per exemple, si vols treballar a casa teua i a l&rsquo;institut), per tant abans de treballar en un repositori local has de sincronitzar els possibles canvis que s&rsquo;hagin produït al repositori remot, per això:</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>pull
-</code></pre></div>
-<p>Per comprovar l&rsquo;estat del meu repositori local:</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>status
-</code></pre></div>
-<p>Busca informació per a crear un nou repositori anomenat prova2_el_teu_nom. En aquesta ocasió, crea primer el repositori local (usant git init) i després cerca informació per sincronitzar-lo i crear el repositori remot a GitHub.</p>
 
 
 
