@@ -1,0 +1,41 @@
+site_name: 2ASIX - IAW
+site_description: 'Documentación del módulo IAW'
+
+nav:
+  - Home: index.md
+  - 1- Introducció a la Implantació d'Aplicacions Web: ud1/IAW1-Intro/index.html
+  - 2- Implantació Web en Servidors: IAW2-server.md
+  - 3- Sistemes de Gestió de Continguts: IAW3-CMS.md
+  - 4- Contenidors Docker: IAW4-docker.md
+  - 5- Implantació en el 'Cloud': IAW5-Cloud
+
+extra_css:
+  - css/elmeuestil.css
+markdown_extensions:
+  - smarty
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - sane_lists
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+plugins:
+  - mkdocs-jupyter
+  - glightbox
+theme: 
+  name: material
+  language: es
+  logo: img/logo.png
+  favicon: img/logo.ico
+  palette:
+    primary: custom
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.path
+    - toc.integrate
+    - content.code.copy
