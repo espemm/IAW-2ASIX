@@ -82,6 +82,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#que-es-markdown" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -371,6 +376,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Markdown
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -381,6 +399,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxi-basica-markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sintaxi bàsica Markdown
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exportar-a-un-fitxer-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exportar a un fitxer PDF
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -421,9 +476,39 @@
                   
 
 
-  <h1>Markdown</h1>
-
-
+<h1 id="que-es-markdown">Què és Markdown?<a class="headerlink" href="#que-es-markdown" title="Permanent link">&para;</a></h1>
+<p>Markdown és un llenguatge de marques lleuger creat per <em>John Gruber</em> i <em>Aaron Swartz</em> que tracta de facilitar la redacció i la lectura de documents en text pla, utilitzant un conjunt d&rsquo;etiquetes molt senzilles per aplicar estil al document.</p>
+<p>Actualment no existeix un estàndard per a Markdown, per aquest motiu existeixen diferents versions o flavors de Markdown.</p>
+<p>Treballarem amb el flavor que s&rsquo;utilitza a GitHub per redactar els fitxers README.md dels repositoris i la documentació tècnica dels projectes.</p>
+<p><a href="https://www.markdownguide.org/cheat-sheet/">Markdown Cheat sheet</a></p>
+<h2 id="sintaxi-basica-markdown">Sintaxi bàsica Markdown<a class="headerlink" href="#sintaxi-basica-markdown" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>Títol<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="c1"># Títol 1 </span>
+Títol<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="c1">## Títol 2 </span>
+Títol<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="c1">### Títol 3 </span>
+Negreta:<span class="w"> </span>**bold<span class="w"> </span>text**<span class="w"> </span>
+Cursiva:<span class="w"> </span>*italicized<span class="w"> </span>text*<span class="w"> </span>
+Cita:<span class="w"> </span>&gt;<span class="w"> </span>blockquote<span class="w"> </span>
+Llista<span class="w"> </span>ordenada:<span class="w"> </span>
+<span class="w">    </span><span class="m">1</span>.<span class="w"> </span>First<span class="w"> </span>item<span class="w"> </span>
+<span class="w">    </span><span class="m">2</span>.<span class="w"> </span>Second<span class="w"> </span>item<span class="w"> </span>
+<span class="w">    </span><span class="m">3</span>.<span class="w"> </span>Third<span class="w"> </span>item<span class="w"> </span>
+Llista<span class="w"> </span>no<span class="w"> </span>ordenada:<span class="w"> </span>
+<span class="w">    </span>*<span class="w"> </span>First<span class="w"> </span>item<span class="w"> </span>
+<span class="w">    </span>*<span class="w"> </span>Second<span class="w"> </span>item<span class="w"> </span>
+<span class="w">    </span>*<span class="w"> </span>Third<span class="w"> </span>item<span class="w"> </span>
+Codi:<span class="w"> </span><span class="s1">&#39;code&#39;</span><span class="w"> </span>
+Enllaç:<span class="w"> </span><span class="o">[</span>title<span class="o">](</span>https://www.example.com<span class="o">)</span><span class="w"> </span>
+Imatge:<span class="w"> </span>!<span class="o">[</span>alt<span class="w"> </span>text<span class="o">](</span>image.jpg<span class="o">)</span>
+</code></pre></div>
+<p><a href="https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">Markdown - Sintaxi d&rsquo;escriptura i format bàsics per a github</a></p>
+<h2 id="exportar-a-un-fitxer-pdf">Exportar a un fitxer PDF<a class="headerlink" href="#exportar-a-un-fitxer-pdf" title="Permanent link">&para;</a></h2>
+<p>Per a poder exportar un fitxer markdown a PDF necessitem una eina que ens permeta convertir el fitxer markdown a PDF. Una de les eines més utilitzades és <em>Pandoc</em>. </p>
+<ul>
+<li><a href="https://pandoc.org/">Pandoc</a></li>
+<li><a href="https://pandoc.org/installing.html">Pandoc - Instal·lació</a></li>
+<li><a href="https://pandoc.org/demos.html">Pandoc - Demos</a></li>
+<li><a href="https://pandoc.org/try/">Conversor de Pandoc online</a></li>
+</ul>
 
 
 
