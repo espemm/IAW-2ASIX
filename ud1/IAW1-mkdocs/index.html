@@ -80,6 +80,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#que-es-mkdocs" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -389,6 +394,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Mkdocs
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -399,6 +417,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#per-que-utilitzar-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per què utilitzar Mkdocs?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#com-installeu-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Com instal·leu Mkdocs?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installacio-dun-tema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació d&rsquo;un tema
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -419,9 +483,65 @@
                   
 
 
-  <h1>Mkdocs</h1>
-
-
+<h1 id="que-es-mkdocs">Què és Mkdocs?<a class="headerlink" href="#que-es-mkdocs" title="Permanent link">&para;</a></h1>
+<p>Mkdocs és un generador de llocs estàtics que ens permet crear documentació de manera senzilla i ràpida. </p>
+<h2 id="per-que-utilitzar-mkdocs">Per què utilitzar Mkdocs?<a class="headerlink" href="#per-que-utilitzar-mkdocs" title="Permanent link">&para;</a></h2>
+<p>Mkdocs és una eina popular per crear documentació de projectes en format de lloc web. Hi ha diverses raons per les quals podries considerar utilitzar Mkdocs: </p>
+<ul>
+<li>
+<p><strong>Facilitat d&rsquo;ús</strong>: Mkdocs utilitza un format de fitxer simple i fàcil d&rsquo;entendre anomenat Markdown per escriure la documentació. Això fa que siga molt accessible per a aquells que no tenen experiència en desenvolupament web. </p>
+</li>
+<li>
+<p><strong>Generació de llocs estàtics</strong>: Mkdocs genera llocs web estàtics, cosa que significa que no es requereix un servidor en temps real per mostrar la documentació. Això fa que siga fàcil de distribuir i allotjar a qualsevol servidor web estàndard. </p>
+</li>
+<li>
+<p><strong>Personalització i temes</strong>: Mkdocs ofereix una àmplia gamma de temes i opcions de personalització perquè pugues adaptar l&rsquo;aparença de la documentació segons les teues necessitats i preferències. </p>
+</li>
+<li>
+<p><strong>Suport per a múltiples idiomes</strong>: Mkdocs permet crear documentació en diversos idiomes, cosa que és especialment útil si tens una audiència internacional. </p>
+</li>
+<li>
+<p><strong>Integració amb control de versions</strong>: Mkdocs es pot integrar fàcilment amb sistemes de control de versions com Git, cosa que facilita la col·laboració i el seguiment de canvis en la documentació. </p>
+</li>
+<li>
+<p><strong>Cerca i navegació intuïtiva</strong>: Mkdocs proporciona una funció de cerca incorporada i una navegació intuïtiva, cosa que facilita als usuaris trobar la informació que necessiten ràpidament.</p>
+</li>
+</ul>
+<p>En resum, Mkdocs és una eina poderosa i fàcil de fer servir per crear documentació de projectes. Proporciona una manera senzilla de generar llocs web estàtics amb una aparença personalitzada i ofereix característiques útils com a cerca i navegació intuïtiva. Si cerques una forma eficient de documentar el teu projecte, Mkdocs pot ser una excel·lent opció.</p>
+<h2 id="com-installeu-mkdocs">Com instal·leu Mkdocs?<a class="headerlink" href="#com-installeu-mkdocs" title="Permanent link">&para;</a></h2>
+<p>Per a instal·lar Mkdocs, necessites tenir <strong>Python</strong> i <strong>pip</strong> (el gestor de paquets de Python) instal·lats al sistema. Quan els tingues, pots instal·lar Mkdocs.</p>
+<p>En <strong>linux</strong> amb la següent ordre:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>mkdocs
+</code></pre></div>
+<p>En <strong>windows</strong> (si no funciona l&rsquo;ordre anterior):</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs
+</code></pre></div>
+<h2 id="installacio-dun-tema">Instal·lació d&rsquo;un tema<a class="headerlink" href="#installacio-dun-tema" title="Permanent link">&para;</a></h2>
+<p>Opcionalment, podeu instal·lar un tema popular com a <strong>mkdocs-material</strong> per millorar l&rsquo;aparença de la vostra documentació. Per fer-ho, fes servir la següent ordre:</p>
+<p><div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material
+</code></pre></div>
+Quan estiga instal·lat, pots iniciar un nou projecte de Mkdocs amb:</p>
+<div class="highlight"><pre><span></span><code>mkdocs<span class="w"> </span>new<span class="w"> </span>nom-projecte
+<span class="nb">cd</span><span class="w"> </span>nom-projecte
+mkdocs<span class="w"> </span>serve
+</code></pre></div>
+<p>Açò iniciarà un servidor local on podràs veure la teua documentació en l&rsquo;adreça local i port per defecte:</p>
+<div class="highlight"><pre><span></span><code>http://127.0.0.1:8000
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Documentació oficial de MkDocs</p>
+<ul>
+<li>
+<p><a href="https://www.mkdocs.org/user-guide/installation/">MkDocs Instal·lació</a></p>
+</li>
+<li>
+<p><a href="https://www.mkdocs.org/user-guide/writing-your-docs/">Escriure documentació amb MkDocs</a></p>
+</li>
+<li>
+<p><a href="https://www.mkdocs.org/user-guide/">Guia d&rsquo;usuari</a></p>
+</li>
+</ul>
+</div>
 
 
 

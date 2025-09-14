@@ -396,28 +396,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#git-github" class="md-nav__link">
-    <span class="md-ellipsis">
-      Git / GitHub
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Git / GitHub">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#git" class="md-nav__link">
     <span class="md-ellipsis">
       GIT
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="GIT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio-de-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació de git
+    </span>
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
-  <a href="#github" class="md-nav__link">
+  <a href="#configuracio-de-git" class="md-nav__link">
     <span class="md-ellipsis">
-      GitHub
+      Configuració de git.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seccions-principals-dun-repositori-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seccions principals d&rsquo;un repositori git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estats-dun-fitxer-en-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estats d&rsquo;un fitxer en git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-basic-de-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ús bàsic de git
     </span>
   </a>
   
@@ -425,6 +452,66 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacio-de-repositoris" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creació de repositoris
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sincronitzant-repositori-local-i-remot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sincronitzant repositori local i remot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#treballem-amb-rames-i-unions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Treballem amb rames i unions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conflictes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conflictes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pull-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pull Request
+    </span>
+  </a>
   
 </li>
       
@@ -498,17 +585,17 @@
 <li><a href="https://git-scm.com/book/en/v2">Pro Git book</a></li>
 <li><a href="https://github.com/josejuansanchez/taller-git-github">Taller d´introducció a git i GitHub</a></li>
 </ul>
-<h2 id="git-github">Git / GitHub<a class="headerlink" href="#git-github" title="Permanent link">&para;</a></h2>
+<p><strong><em>Git / GitHub</em></strong></p>
 <p><strong>Git</strong> és un programari de control de versions dissenyat per Linus Torvalds. Ens ajuda a portar el registre dels canvis dels fitxers d&rsquo;un repositori (directori). </p>
 <p><strong>GitHub</strong> és un servei que ens permet guardar repositoris Git a un servidor remot.</p>
-<h3 id="git">GIT<a class="headerlink" href="#git" title="Permanent link">&para;</a></h3>
-<h4 id="installacio-de-git">Instal·lació de git<a class="headerlink" href="#installacio-de-git" title="Permanent link">&para;</a></h4>
+<h2 id="git">GIT<a class="headerlink" href="#git" title="Permanent link">&para;</a></h2>
+<h3 id="installacio-de-git">Instal·lació de git<a class="headerlink" href="#installacio-de-git" title="Permanent link">&para;</a></h3>
 <p><strong>Linux</strong></p>
 <p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git
 </code></pre></div>
 <strong>Windows</strong>
 Descarregar des de la web oficial: http://git-scm.com/downloads.</p>
-<h4 id="configuracio-de-git">Configuració de git.<a class="headerlink" href="#configuracio-de-git" title="Permanent link">&para;</a></h4>
+<h3 id="configuracio-de-git">Configuració de git.<a class="headerlink" href="#configuracio-de-git" title="Permanent link">&para;</a></h3>
 <p>Configurem el nom i l&rsquo;email que apareixeran als commits que fem sobre els repositoris.</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Nom Cognoms&quot;</span>
 git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span>us@domini
@@ -516,7 +603,7 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 <p>Comprovar si s&rsquo;han aplicat els canvis:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--list
 </code></pre></div>
-<h4 id="seccions-principals-dun-repositori-git">Seccions principals d&rsquo;un repositori git<a class="headerlink" href="#seccions-principals-dun-repositori-git" title="Permanent link">&para;</a></h4>
+<h3 id="seccions-principals-dun-repositori-git">Seccions principals d&rsquo;un repositori git<a class="headerlink" href="#seccions-principals-dun-repositori-git" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Workspace</li>
 <li>Staging area (Index)</li>
@@ -524,7 +611,7 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 <li>Remote repository</li>
 </ul>
 <p><a class="glightbox" href="../img/git.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="author:Oliver Steele" src="../img/git.png" /></a></p>
-<h4 id="estats-dun-fitxer-en-git">Estats d&rsquo;un fitxer en git<a class="headerlink" href="#estats-dun-fitxer-en-git" title="Permanent link">&para;</a></h4>
+<h3 id="estats-dun-fitxer-en-git">Estats d&rsquo;un fitxer en git<a class="headerlink" href="#estats-dun-fitxer-en-git" title="Permanent link">&para;</a></h3>
 <p>Un fitxer pot estar en algun dels estats següents: </p>
 <ul>
 <li>Sense seguiment (untracked) </li>
@@ -534,7 +621,7 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 </ul>
 <p>El diagrama següent mostra a quina secció es pot trobar cada fitxer en funció del seu estat:</p>
 <p><a class="glightbox" href="../img/estat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="estats" src="../img/estat.png" /></a></p>
-<h4 id="us-basic-de-git">Ús bàsic de git<a class="headerlink" href="#us-basic-de-git" title="Permanent link">&para;</a></h4>
+<h3 id="us-basic-de-git">Ús bàsic de git<a class="headerlink" href="#us-basic-de-git" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>Crear un directori</p>
@@ -613,7 +700,7 @@ git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </s
 </ul>
 </li>
 </ul>
-<h3 id="github">GitHub<a class="headerlink" href="#github" title="Permanent link">&para;</a></h3>
+<h2 id="github">GitHub<a class="headerlink" href="#github" title="Permanent link">&para;</a></h2>
 <p><strong><em>GitHub</em></strong> és un servei web que permet tenir repositoris git remots en un servidor.</p>
 <p>Ens permet tenir sincronitzat el nostre repositori local, amb un repositori remot.</p>
 <p>Per connectar-nos al servidor remot de GitHub utilitzarem una connexió SSH o TOKEN.</p>
@@ -624,7 +711,7 @@ git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </s
   - Qué és GitLab
   - Diferències entre Github i Gitlab</p>
 </div>
-<h4 id="creacio-de-repositoris">Creació de repositoris<a class="headerlink" href="#creacio-de-repositoris" title="Permanent link">&para;</a></h4>
+<h3 id="creacio-de-repositoris">Creació de repositoris<a class="headerlink" href="#creacio-de-repositoris" title="Permanent link">&para;</a></h3>
 <p>El més senzill és crear un repositori a GitHub i després clonar-lo en el teu ordinador.</p>
 <p>Utilitzarem la URL ssh per a realitzar la clonació. </p>
 <p>Utilitzarem la URL https per a clonar repositoris que no són nostres. En aquests repositoris no podem fer modificacions.</p>
@@ -634,7 +721,7 @@ git clone git@github.com:xxxxxxx/xxxxxxx.git
 ```
 </code></pre>
 <p>Per a comprovar que tens configurat el repositori usant la url SSH pots vore el fitxer de configuració en <strong>.git/config</strong>.</p>
-<h4 id="sincronitzant-repositori-local-i-remot">Sincronitzant repositori local i remot<a class="headerlink" href="#sincronitzant-repositori-local-i-remot" title="Permanent link">&para;</a></h4>
+<h3 id="sincronitzant-repositori-local-i-remot">Sincronitzant repositori local i remot<a class="headerlink" href="#sincronitzant-repositori-local-i-remot" title="Permanent link">&para;</a></h3>
 <p>Per pujar els canvis des del nostre repositori local al remot fem servir:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>push
 </code></pre></div>
@@ -652,7 +739,7 @@ git clone git@github.com:xxxxxxx/xxxxxxx.git
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:espemm/prova.git
 git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div>
-<h4 id="treballem-amb-rames-i-unions">Treballem amb rames i unions<a class="headerlink" href="#treballem-amb-rames-i-unions" title="Permanent link">&para;</a></h4>
+<h3 id="treballem-amb-rames-i-unions">Treballem amb rames i unions<a class="headerlink" href="#treballem-amb-rames-i-unions" title="Permanent link">&para;</a></h3>
 <p><strong>Rames</strong></p>
 <p>Una branca representa una línia independent de desenvolupament, és com crear una nova àrea de treball que tindrà el seu historial propi de commits. 
 Per llistar les branques locals executa:</p>
@@ -686,7 +773,7 @@ Truc: Pots fer servir una extensió del teu shell (bash, zsh,. . . ) perquè et 
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>main
 git<span class="w"> </span>merge<span class="w"> </span><span class="o">[</span>rama<span class="o">]</span>
 </code></pre></div>
-<h4 id="conflictes">Conflictes<a class="headerlink" href="#conflictes" title="Permanent link">&para;</a></h4>
+<h3 id="conflictes">Conflictes<a class="headerlink" href="#conflictes" title="Permanent link">&para;</a></h3>
 <p>Quan només s&rsquo;han afegit o eliminat fitxers en una branca, és fàcil unir-la a la principal.
 Quan es fan modificacions en fitxers, incloent canvis en els noms dels fitxers, git detecta aquests canvis i els adapta automàticament, però de vegades sorgeixen conflictes.
 Els conflictes apareixen quan la mateixa part del codi s&rsquo;ha modificat en dues branques diferents.</p>
@@ -697,7 +784,7 @@ Hola<span class="w"> </span>com<span class="w"> </span><span class="nv">estàs</
 hola<span class="w"> </span>que<span class="w"> </span>tal
 &gt;&gt;&gt;&gt;&gt;&gt;&gt;<span class="w"> </span>nuevo
 </code></pre></div>
-<h4 id="pull-request">Pull Request<a class="headerlink" href="#pull-request" title="Permanent link">&para;</a></h4>
+<h2 id="pull-request">Pull Request<a class="headerlink" href="#pull-request" title="Permanent link">&para;</a></h2>
 <p><strong>Què és un Pull Request?</strong> </p>
 <ul>
 <li>Un Pull Request és una petició que es fa al propietari d&rsquo;un repositori original perquè aquest darrer incorpori els canvis que se suggereixen. </li>
