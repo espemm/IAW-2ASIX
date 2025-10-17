@@ -1,0 +1,586 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación del módulo IAW">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../img/logo.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+    
+    
+      
+        <title>UD 01. Pràctica - 2ASIX - IAW</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/elmeuestil.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practica-3-mkdocs-github-pages" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="2ASIX - IAW" class="md-header__button md-logo" aria-label="2ASIX - IAW" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            2ASIX - IAW
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UD 01. Pràctica
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://espemm.github.io/IAW-2ASIX/" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../IAW1-Intro/" class="md-tabs__link">
+        
+  
+    
+  
+  Introducció a les Aplicacions Web
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../IAW1-implanta/" class="md-tabs__link">
+        
+  
+    
+  
+  Implantació o Desplegament Web
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../IAW1-git/" class="md-tabs__link">
+        
+  
+    
+  
+  Git-Github
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../IAW1-markdown/" class="md-tabs__link">
+        
+  
+    
+  
+  Markdown
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../IAW1-mkdocs/" class="md-tabs__link">
+        
+  
+    
+  
+  Mkdocs
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="2ASIX - IAW" class="md-nav__button md-logo" aria-label="2ASIX - IAW" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    2ASIX - IAW
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://espemm.github.io/IAW-2ASIX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IAW1-Intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducció a les Aplicacions Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IAW1-implanta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implantació o Desplegament Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IAW1-git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git-Github
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IAW1-markdown/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markdown
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IAW1-mkdocs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mkdocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="practica-3-mkdocs-github-pages">Pràctica 3: Mkdocs - Github Pages<a class="headerlink" href="#practica-3-mkdocs-github-pages" title="Permanent link">&para;</a></h1>
+<p>::: important </p>
+<p>Objectius</p>
+<p>En aquesta pràctica desplegarem una pàgina web estàtica amb MkDocs a GitHub Pages. </p>
+<p>Per això, hauràs de seguir els passos següents: </p>
+<ul>
+<li>Aprendre a utilitzar MarkDown </li>
+<li>Aprendre a utilitzar MkDocs </li>
+<li>Aprendre a utilitzar GitHub Pages </li>
+<li>Desplegar una pàgina web estàtica</li>
+</ul>
+<p>:::</p>
+<h2 id="generadors-de-pagines-estatiques">Generadors de pàgines estàtiques<a class="headerlink" href="#generadors-de-pagines-estatiques" title="Permanent link">&para;</a></h2>
+<p>En els darrers anys s&rsquo;han desenvolupat programes d&rsquo;ordinador que ens permeten de manera senzilla generar llocs web estàtics. </p>
+<p>Estan programats en diferents llenguatges que inclouen un motor de <code>plantilles</code> per facilitar la generació del codi HTML.</p>
+<p>És fàcil trobar diferents <code>temes</code> (fitxers de fulls d&rsquo;estil) per canviar l&rsquo;aspecte de les pàgines generades . L&rsquo;usuari final només s&rsquo;ha de preocupar del contingut.</p>
+<p>Normalment el <code>contingut</code> s&rsquo;escriu en un llenguatge de marques senzill com Markdown.</p>
+<p>Una vegada generat el lloc estàtic només hem de desplegar el lloc al nostre servidor en producció. Tenim molts generadors de pàgines estàtiques: Jekyll, Hugo, Pelican, etc. Pots trobar una llista completa a: <a href="https://jamstack.org/generators/">\textcolor{cerulean}{Site Generators}</a>.</p>
+<p>Nosaltres farem servir <code>MkDocs</code>.</p>
+<h2 id="desplegament-del-nostre-lloc-web">Desplegament del nostre lloc web<a class="headerlink" href="#desplegament-del-nostre-lloc-web" title="Permanent link">&para;</a></h2>
+<p>Una vegada generada la nostra pàgina podem desplegar-la al nostre servidor en producció.</p>
+<p>Podem tenir un servidor web propi (que administrem nosaltres), o utilitzar serveis de <code>hosting</code> per implantar les nostres pàgines. En aquest cas farem servir un hosting extern per desplegar la nostra pàgina.</p>
+<p>Els serveis moderns per allotjar pàgines estàtiques poden proporcionar mètodes de desplegaments automàtics o semiautomàtics, i solen utilitzar repositoris git (<em>l&rsquo;ús de servidors FTP està desapareixent</em>).</p>
+<p>Els hostings que podem fer servir: Netlify, Sorgeix, GitHub Pages, GitLab Pages, render, Firebase, Vercel, Neocities, quantcdn, etc. Nosaltres utilitzarem <strong>GitHub Pages</strong>.</p>
+<p>Alguns d&rsquo;aquests serveis et permeten de manera automàtica generar-hi la pàgina estàtica (<strong>Integració Contínua</strong>). A la nostra pràctica no farem servir aquesta característica. La pàgina es genera al nostre ordinador i posteriorment es desplega al hosting extern.</p>
+<p>Si ens permet diverses maneres de pujar la pàgina al hosting sempre triarem l&rsquo;ús de <code>repositori git</code>.</p>
+<h2 id="mkdocs">MkDocs<a class="headerlink" href="#mkdocs" title="Permanent link">&para;</a></h2>
+<p><strong>MkDocs</strong> és un generador de llocs web estàtics que ens permet crear de manera senzilla un lloc web per documentar un projecte.</p>
+<p>El contingut del lloc web està escrit en text pla en format Markdown i es configura amb un únic fitxer de configuració en <strong>format YAML</strong>.</p>
+<h3 id="themes-fulls-destil-per-a-mkdocs">Themes (fulls d&rsquo;estil) per a MkDocs<a class="headerlink" href="#themes-fulls-destil-per-a-mkdocs" title="Permanent link">&para;</a></h3>
+<p>Els temes que s&rsquo;inclouen per defecte a MkDocs són: </p>
+<ul>
+<li>mkdocs </li>
+<li>readthedocs</li>
+</ul>
+<p>És possible utilitzar altres temes desenvolupats per tercers o desenvolupar el nostre propi tema. A la wiki del projecte MkDocs podeu trobar un llistat de tots els themes que hi ha disponibles actualment.</p>
+<p>En aquesta pràctica farem servir el <strong>theme Material</strong> que ha estat desenvolupat per Martin Donath. A la web oficial de Material for MkDocs trobem una guia de referència sobre com utilitzar i configurar el tema.</p>
+<h3 id="comandaments-mes-importants-de-mkdocs">Comandaments més importants de MkDocs<a class="headerlink" href="#comandaments-mes-importants-de-mkdocs" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Crear un nou projecte (Comanda: new) </p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># crearà la carpeta &#39;nom_projecte&#39;</span>
+
+mkdocs<span class="w"> </span>new<span class="w"> </span>prova
+INFO<span class="w">    </span>-<span class="w">  </span>Creating<span class="w"> </span>project<span class="w"> </span>directory:<span class="w"> </span>prova
+INFO<span class="w">    </span>-<span class="w">  </span>Writing<span class="w"> </span>config<span class="w"> </span>file:<span class="w"> </span>prova<span class="se">\m</span>kdocs.yml
+INFO<span class="w">    </span>-<span class="w">  </span>Writing<span class="w"> </span>initial<span class="w"> </span>docs:<span class="w"> </span>prova<span class="se">\d</span>ocs<span class="se">\i</span>ndex.md
+</code></pre></div>
+<a class="glightbox" href="../../img/mkp.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="contingut de la carpeta" src="../../img/mkp.png" /></a></p>
+</li>
+<li>
+<p>Crear la pàgina web (Comanda: build) </p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># des de la carpeta nom_projecte crearà el lloc web a partir dels arxius .md ubicats en el directori &#39;docs&#39;</span>
+
+mkdocs<span class="w"> </span>build
+INFO<span class="w">    </span>-<span class="w">  </span>Cleaning<span class="w"> </span>site<span class="w"> </span>directory
+INFO<span class="w">    </span>-<span class="w">  </span>Building<span class="w"> </span>documentation<span class="w"> </span>to<span class="w"> </span>directory:<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\e</span>spem<span class="se">\p</span>rova<span class="se">\s</span>ite
+INFO<span class="w">    </span>-<span class="w">  </span>Documentation<span class="w"> </span>built<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.08<span class="w"> </span>seconds
+</code></pre></div>
+  - Llançar un servidor web local per comprovar com quedarà la pàgina web abans de publicar-la (Comanda: serve)</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Per defecte se servirà en &#39;http://127.0.0.1:8000&#39;</span>
+
+mkdocs<span class="w"> </span>serve
+INFO<span class="w">    </span>-<span class="w">  </span>Building<span class="w"> </span>documentation...
+INFO<span class="w">    </span>-<span class="w">  </span>Cleaning<span class="w"> </span>site<span class="w"> </span>directory
+INFO<span class="w">    </span>-<span class="w">  </span>Documentation<span class="w"> </span>built<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.97<span class="w"> </span>seconds
+INFO<span class="w">    </span>-<span class="w">  </span><span class="o">[</span><span class="m">20</span>:01:45<span class="o">]</span><span class="w"> </span>Watching<span class="w"> </span>paths<span class="w"> </span><span class="k">for</span><span class="w"> </span>changes:<span class="w"> </span><span class="s1">&#39;docs&#39;</span>,<span class="w"> </span><span class="s1">&#39;mkdocs.yml&#39;</span>
+INFO<span class="w">    </span>-<span class="w">  </span><span class="o">[</span><span class="m">20</span>:01:45<span class="o">]</span><span class="w"> </span>Serving<span class="w"> </span>on<span class="w"> </span>http://127.0.0.1:8000/
+</code></pre></div>
+</li>
+</ul>
+<p><a class="glightbox" href="../../img/mks.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Visualització en el navegador" src="../../img/mks.png" width="60%" /></a></p>
+<ul>
+<li>
+<p>Publicar la documentació a GitHub Pages (Comanda: gh-deploy)</p>
+<ul>
+<li><strong>Activa Pages</strong> en Github</li>
+</ul>
+<p><a href="https://docs.github.com/es/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site">\textcolor{cerulean}{Publicant el site en Github Pages}</a></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Quan estiga activat &#39;Pages&#39; en Github</span>
+mkdocs<span class="w"> </span>gh-deploy
+</code></pre></div>
+<p>::: warning
+La primera vegada que faces el desplegament caldrà modificar la branca del desplegament en Pages a la que s&rsquo;ha creat com a gh-pages
+:::</p>
+</li>
+<li>
+<p>Mostrar les opcions i comandaments a utilitzar amb MkDocs</p>
+<div class="highlight"><pre><span></span><code>mkdocs<span class="w"> </span>-h
+</code></pre></div>
+</li>
+</ul>
+<h2 id="que-has-de-fer">Què has de fer?<a class="headerlink" href="#que-has-de-fer" title="Permanent link">&para;</a></h2>
+<p>En aquesta pràctica desplegarem una pàgina web estàtica amb <strong>MkDocs</strong> i <strong>GitHub Pages</strong>. </p>
+<p>Per això, segueix els passos següents: </p>
+<ul>
+<li>Crea un nou projecte de MkDocs al teu ordinador. </li>
+<li>Escriu la documentació del vostre projecte en format Markdown. </li>
+<li>Genera la pàgina web amb MkDocs. </li>
+<li>Crea un repositori al GitHub per al teu projecte. </li>
+<li>Puja la pàgina web a GitHub Pages. </li>
+<li>Comprova que la URL de la teua pàgina web a GitHub Pages funciona correctament.</li>
+</ul>
+<h2 id="que-has-de-lliurar">Què has de lliurar?<a class="headerlink" href="#que-has-de-lliurar" title="Permanent link">&para;</a></h2>
+<p>Com has desplegat la teua pàgina web a GitHub Pages?
+La pàgina web es visualitza correctament?</p>
+<p>::: note</p>
+<p>Pràctica 03: Github Pages </p>
+<p>Lliurar la documentació de les passes fetes.
+Incloure la url a la teua pàgina de github.</p>
+<p>:::</p>
+<h2 id="referencies">Referències<a class="headerlink" href="#referencies" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.mkdocs.org/user-guide/deploying-your-docs/">\textcolor{cerulean}{Desplegant des de mkdocs}</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "toc.integrate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

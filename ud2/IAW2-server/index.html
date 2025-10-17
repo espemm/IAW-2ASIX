@@ -1,0 +1,756 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentació del mòdul IAW">
+      
+      
+      
+      
+      
+        <link rel="next" href="../IAW2-http/">
+      
+      
+      <link rel="icon" href="../img/logo.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+    
+    
+      
+        <title>Implantació en Servidors - 2ASIX - IAW</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/elmeuestil.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#implantacio-daplicacions-web" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="2ASIX - IAW" class="md-header__button md-logo" aria-label="2ASIX - IAW" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            2ASIX - IAW
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Implantació en Servidors
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://espemm.github.io/IAW-2ASIX/" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Implantació en Servidors
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW2-http/" class="md-tabs__link">
+        
+  
+    
+  
+  HTTP
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW2-https/" class="md-tabs__link">
+        
+  
+    
+  
+  HTTPS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW2-entorns/" class="md-tabs__link">
+        
+  
+    
+  
+  Entorns
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW2-phpmyadmin.md" class="md-tabs__link">
+        
+  
+    
+  
+  phpmyadmin
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW2-php.md" class="md-tabs__link">
+        
+  
+    
+  
+  PHP
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="2ASIX - IAW" class="md-nav__button md-logo" aria-label="2ASIX - IAW" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    2ASIX - IAW
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://espemm.github.io/IAW-2ASIX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Implantació en Servidors
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Implantació en Servidors
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-infraestructures-dallotjament" class="md-nav__link">
+    <span class="md-ellipsis">
+      1️⃣ Infraestructures d&rsquo;allotjament
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-protocols-de-comunicacio-http-i-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      2️⃣ Protocols de comunicació: HTTP i HTTPS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-entorns-de-servidor-lamp-i-lemp" class="md-nav__link">
+    <span class="md-ellipsis">
+      3️⃣ Entorns de servidor: LAMP i LEMP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-gestio-de-bases-de-dades-amb-phpmyadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      4️⃣ Gestió de bases de dades amb phpMyAdmin
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-balancejament-de-carrega-load-balancing" class="md-nav__link">
+    <span class="md-ellipsis">
+      5️⃣ Balancejament de càrrega (Load Balancing)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-securitzacio-i-bones-practiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      6️⃣ Securització i bones pràctiques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-conclusio" class="md-nav__link">
+    <span class="md-ellipsis">
+      7️⃣ Conclusió
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW2-http/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTTP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW2-https/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTTPS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW2-entorns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entorns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW2-phpmyadmin.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    phpmyadmin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW2-php.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PHP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="implantacio-daplicacions-web">🌐 Implantació d’aplicacions web<a class="headerlink" href="#implantacio-daplicacions-web" title="Permanent link">¶</a></h1>
+<p>La <strong>implantació web</strong> és el procés de preparar, configurar i posar en funcionament una aplicació o servei web en un servidor accessible a
+través d’Internet o d’una xarxa local.</p>
+<p>Combina coneixements de <strong>xarxes, sistemes operatius, seguretat i programació web</strong>, amb l’objectiu de garantir que la web siga <strong>estable,
+escalable i segura</strong>.</p>
+<h2 id="1-infraestructures-dallotjament">1️⃣ Infraestructures d’allotjament<a class="headerlink" href="#1-infraestructures-dallotjament" title="Permanent link">¶</a></h2>
+<p><strong>Hosting compartit</strong></p>
+<p>En un hosting compartit, les aplicacions web comparteixen els recursos del servidor (CPU, RAM, espai de disc, etc.) amb altres llocs web que estan allotjats al mateix servidor físic.</p>
+<p><code>Exemples de proveïdors</code>:</p>
+<ul>
+<li><a href="https://www.hostinger.es/">Hostinger</a></li>
+<li><a href="https://www.ionos.es/">IONOS</a></li>
+</ul>
+<p><strong>VPS (Virtual Private Server)</strong></p>
+<p>En aquest cas, el servidor físic es divideix en diversos servidors virtuals o Virtual Private Server (VPS), on cadascun té assignats els seus propis recursos.</p>
+<p><code>Exemples de proveïdors</code>:</p>
+<ul>
+<li><a href="https://www.ovhcloud.com/">OVH</a></li>
+<li><a href="https://www.digitalocean.com/">DigitalOcean</a></li>
+</ul>
+<p><strong>Servidor dedicat</strong></p>
+<p>Un servidor dedicat consisteix en tindre un servidor físic complet on només s’allotjarà la teua aplicació web.</p>
+<p><code>Exemples de proveïdors</code>:</p>
+<ul>
+<li><a href="https://www.hetzner.com/">Hetzner</a></li>
+<li><a href="https://www.swhosting.com/ca/servidor-dedicado">swhosting</a></li>
+</ul>
+<p><strong>Cloud Computing</strong></p>
+<p>Cloud Computing és el terme que fa referència a la computació al núvol. El concepte de serveis es trasllada a servidors remots que implementen la infraestructua i serveis necessaris per a implementar o allotjar l’aplicació web, entre altres funcions.</p>
+<p><code>Principals proveïdors</code>:</p>
+<ul>
+<li><a href="https://aws.amazon.com/es">AWS</a></li>
+<li><a href="https://azure.microsoft.com/es-es">Azure</a></li>
+</ul>
+<h2 id="2-protocols-de-comunicacio-http-i-https">2️⃣ Protocols de comunicació: HTTP i HTTPS<a class="headerlink" href="#2-protocols-de-comunicacio-http-i-https" title="Permanent link">¶</a></h2>
+<p><strong>HTTP (Hypertext Transfer Protocol)</strong></p>
+<p>Protocol bàsic de la web. Defineix com es realitzen les peticions i respostes entre un <strong>client</strong> (navegador) i un <strong>servidor web</strong>.</p>
+<p>Funciona principalment pel <strong>port 80</strong> i permet transmetre contingut com HTML, CSS, imatges o dades JSON.</p>
+<p><strong>HTTPS (HTTP Secure)</strong></p>
+<p>Versió <strong>segura</strong> d’HTTP, amb xifrat TLS (Transport Layer Security).</p>
+<p>Garanteix:</p>
+<ol>
+<li>🔒 <strong>Confidencialitat:</strong> dades xifrades.</li>
+<li>🧾 <strong>Autenticitat:</strong> identificació del servidor.</li>
+<li>🧩 <strong>Integritat:</strong> dades no modificades.</li>
+</ol>
+<p>HTTPS usa el <strong>port 443</strong> i és essencial en aplicacions amb dades sensibles.</p>
+<h2 id="3-entorns-de-servidor-lamp-i-lemp">3️⃣ Entorns de servidor: LAMP i LEMP<a class="headerlink" href="#3-entorns-de-servidor-lamp-i-lemp" title="Permanent link">¶</a></h2>
+<p><strong>LAMP</strong></p>
+<p>Acrònim de: - </p>
+<ul>
+<li><strong>L</strong>inux — Sistema operatiu</li>
+<li><strong>A</strong>pache — Servidor web</li>
+<li><strong>M</strong>ySQL / MariaDB — Base de dades</li>
+<li><strong>P</strong>HP — Llenguatge de programació</li>
+</ul>
+<p>Popular per aplicacions PHP (WordPress, Moodle, Joomla…).</p>
+<p><strong>LEMP</strong></p>
+<p>Variant amb <strong>Nginx</strong> (Engine-X) en lloc d’Apache: - <strong>L</strong>inux</p>
+<ul>
+<li><strong>E</strong>ngine-X</li>
+<li><strong>M</strong>ySQL / MariaDB</li>
+<li><strong>P</strong>HP (via php-fpm)</li>
+</ul>
+<p>Nginx destaca per la seua <strong>eficiència i gestió de concurrència</strong>.</p>
+<h2 id="4-gestio-de-bases-de-dades-amb-phpmyadmin">4️⃣ Gestió de bases de dades amb phpMyAdmin<a class="headerlink" href="#4-gestio-de-bases-de-dades-amb-phpmyadmin" title="Permanent link">¶</a></h2>
+<p><strong>phpMyAdmin</strong> és una eina web en PHP per administrar <strong>MySQL/MariaDB</strong>
+de manera gràfica.</p>
+<p>Permet: </p>
+<ul>
+<li>Crear i modificar bases de dades i taules.</li>
+<li>Gestionar usuaris i permisos.</li>
+<li>Exportar/importar dades.</li>
+<li>Executar consultes SQL.</li>
+</ul>
+<p>Ideal per a entorns educatius o de desenvolupament (en producció cal protegir-lo adequadament).</p>
+<h2 id="5-balancejament-de-carrega-load-balancing">5️⃣ Balancejament de càrrega (Load Balancing)<a class="headerlink" href="#5-balancejament-de-carrega-load-balancing" title="Permanent link">¶</a></h2>
+<p>Quan una aplicació rep moltes peticions, un únic servidor pot no ser suficient.</p>
+<p>Un <strong>balancejador de càrrega</strong> distribueix el trànsit entre diversos servidors per:</p>
+<ul>
+<li>⚙️ Repartir la càrrega.</li>
+<li>🧩 Millorar disponibilitat i escalabilitat.</li>
+<li>🔄 Garantir continuïtat del servei.</li>
+</ul>
+<p>Tipus principals: </p>
+<ul>
+<li><strong>Capa 4:</strong> connexions TCP/UDP.</li>
+<li><strong>Capa 7:</strong> contingut HTTP/HTTPS.</li>
+</ul>
+<p>Exemples: <strong>HAProxy</strong>, <strong>Nginx</strong>, <strong>AWS ELB</strong>, <strong>Traefik</strong>.</p>
+<h2 id="6-securitzacio-i-bones-practiques">6️⃣ Securització i bones pràctiques<a class="headerlink" href="#6-securitzacio-i-bones-practiques" title="Permanent link">¶</a></h2>
+<p>La <strong>securització (hardening)</strong> del servidor web és essencial per protegir-lo.</p>
+<p>Mesures bàsiques:</p>
+<ul>
+<li>🔐 Usar HTTPS amb certificats vàlids (Let’s Encrypt, CA pròpia…).</li>
+<li>🚫 Desactivar mòduls o serveis innecessaris.</li>
+<li>⚙️ Configurar permisos correctes dels fitxers web.</li>
+<li>🧱 Activar firewalls (UFW, iptables) i sistemes de detecció d’intrusions.</li>
+<li>🧾 Actualitzar regularment el sistema i paquets.</li>
+<li>📊 Monitoritzar logs i recursos amb <code>journalctl</code>, <code>htop</code>, <code>fail2ban</code>…</li>
+</ul>
+<h2 id="7-conclusio">7️⃣ Conclusió<a class="headerlink" href="#7-conclusio" title="Permanent link">¶</a></h2>
+<p>La implantació web combina <strong>configuració de servidors, seguretat i eficiència</strong>.</p>
+<p>Conéixer <strong>HTTP/HTTPS</strong>, entorns <strong>LAMP/LEMP</strong>, gestió amb <strong>phpMyAdmin</strong>, <strong>balanceig</strong> i <strong>securització</strong> és essencial per
+desplegar aplicacions web fiables, escalables i segures.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "toc.integrate", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

@@ -1,0 +1,978 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentació del mòdul IAW">
+      
+      
+      
+      
+        <link rel="prev" href="../IAW2-server/">
+      
+      
+        <link rel="next" href="../IAW2-https/">
+      
+      
+      <link rel="icon" href="../img/logo.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+    
+    
+      
+        <title>HTTP - 2ASIX - IAW</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/elmeuestil.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#el-protocol-http" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="2ASIX - IAW" class="md-header__button md-logo" aria-label="2ASIX - IAW" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            2ASIX - IAW
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              HTTP
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://espemm.github.io/IAW-2ASIX/" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW2-server/" class="md-tabs__link">
+        
+  
+    
+  
+  Implantació en Servidors
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  HTTP
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW2-https/" class="md-tabs__link">
+        
+  
+    
+  
+  HTTPS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW2-entorns/" class="md-tabs__link">
+        
+  
+    
+  
+  Entorns
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW2-phpmyadmin.md" class="md-tabs__link">
+        
+  
+    
+  
+  phpmyadmin
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW2-php.md" class="md-tabs__link">
+        
+  
+    
+  
+  PHP
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="2ASIX - IAW" class="md-nav__button md-logo" aria-label="2ASIX - IAW" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    2ASIX - IAW
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://espemm.github.io/IAW-2ASIX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW2-server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implantació en Servidors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    HTTP
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    HTTP
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-que-es-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      1️⃣ Què és HTTP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-model-client-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      2️⃣ Model client-servidor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ports-utilitzats" class="md-nav__link">
+    <span class="md-ellipsis">
+      3️⃣ Ports utilitzats
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-peticions-i-respostes-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      4️⃣ Peticions i respostes HTTP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4️⃣ Peticions i respostes HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-de-peticio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple de petició
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-de-resposta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple de resposta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercicis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-metodes-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      5️⃣ Mètodes HTTP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-url-i-recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      6️⃣ URL i recursos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-codis-destat-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      7️⃣ Codis d&rsquo;estat HTTP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7️⃣ Codis d’estat HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercici" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercici
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-capcaleres-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      8️⃣ Capçaleres HTTP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-versions-del-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      9️⃣ Versions del protocol
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔟 Referències
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llicencia-i-autoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔖 Llicència i autoria
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW2-https/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTTPS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW2-entorns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entorns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW2-phpmyadmin.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    phpmyadmin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW2-php.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PHP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="el-protocol-http">🔓 El protocol HTTP<a class="headerlink" href="#el-protocol-http" title="Permanent link">¶</a></h1>
+<h2 id="1-que-es-http">1️⃣ Què és HTTP<a class="headerlink" href="#1-que-es-http" title="Permanent link">¶</a></h2>
+<p>HTTP (HyperText Transfer Protocol) és el protocol que permet la comunicació entre un <strong>client</strong> (com el navegador) i un <strong>servidor web</strong>. Defineix com s’envien les peticions i com es reben les respostes
+que contenen pàgines HTML, imatges, arxius o dades d’una API.</p>
+<h2 id="2-model-client-servidor">2️⃣ Model client-servidor<a class="headerlink" href="#2-model-client-servidor" title="Permanent link">¶</a></h2>
+<ul>
+<li>
+<p><strong>Client:</strong> demana un recurs (normalment un navegador o aplicació).</p>
+</li>
+<li>
+<p><strong>Servidor:</strong> Es un programari o equip que guarda i lliura els recursos solicitats pels clients. El servidor rep la petició, processa la informació i envia una resposta.</p>
+</li>
+</ul>
+<blockquote>
+<p>El client inicia sempre la comunicació, i el servidor espera les sol·licituds.</p>
+</blockquote>
+<h2 id="3-ports-utilitzats">3️⃣ Ports utilitzats<a class="headerlink" href="#3-ports-utilitzats" title="Permanent link">¶</a></h2>
+<ul>
+<li><code>HTTP</code> → port <strong>80</strong></li>
+<li><code>HTTPS</code> (amb xifrat TLS) → port <strong>443</strong></li>
+</ul>
+<h2 id="4-peticions-i-respostes-http">4️⃣ Peticions i respostes HTTP<a class="headerlink" href="#4-peticions-i-respostes-http" title="Permanent link">¶</a></h2>
+<p>La comunicació es basa en un intercanvi de missatges:</p>
+<ul>
+<li><strong>Petició (Request)</strong>: El client envia una petició al servidor sol·licitant un recurs específic. La petició inclou informació com el mètode HTTP seleccionat (GET, POST, etc.), l’URL del recurs i les capçaleres HTTP necessàries. </li>
+<li><strong>Resposta (Response)</strong>: El servidor rep la petició i respon amb la informació sol·licitada, juntament amb un codi d’estat HTTP (Exemple: <code>200 OK</code> o <code>404 Not Found</code>) i capçaleres addicionals. La resposta pot incloure dades en HTML, imatges, fitxers JSON, etc.</li>
+</ul>
+<h3 id="exemple-de-peticio">Exemple de petició<a class="headerlink" href="#exemple-de-peticio" title="Permanent link">¶</a></h3>
+<p></p><div class="highlight"><pre><span></span><code><span class="w">  </span>GET<span class="w"> </span>/index.html<span class="w"> </span>HTTP/1.1
+<span class="w">  </span>Host:<span class="w"> </span>https://www.ieseljust.com
+<span class="w">  </span>User-Agent:<span class="w"> </span>ElMeuNavegador/1.0
+<span class="w">  </span>Accept:<span class="w"> </span>text/html
+</code></pre></div>
+En aquest exemple apareixen els elements següents: 
+<ul>
+<li><strong>GET</strong> és el mètode HTTP utilitzat per sol·licitar un recurs. </li>
+<li><strong>/index.html</strong> és la ruta del recurs que s’està sol·licitant al servidor. </li>
+<li><strong>HTTP/1.1</strong> indica la versió del protocol HTTP que s’està fent servir. </li>
+<li><strong>Host: www.ieseljust.com</strong> especifica el nom del host a qui se li fa la petició. </li>
+<li><strong>User-Agent: ElMeuNavegador/1.0</strong> proporciona informació sobre l’agent d’usuari o el navegador que fa la petició. </li>
+<li><strong>Accept: text/html</strong> indica que el client prefereix rebre el recurs en format HTML.</li>
+</ul>
+<h3 id="exemple-de-resposta">Exemple de resposta<a class="headerlink" href="#exemple-de-resposta" title="Permanent link">¶</a></h3>
+<p></p><div class="highlight"><pre><span></span><code><span class="w">  </span>HTTP/1.1<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK
+<span class="w">  </span>Date:<span class="w"> </span>Mon,<span class="w"> </span><span class="m">6</span><span class="w"> </span>Oct<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">12</span>:00:00<span class="w"> </span>GMT
+<span class="w">  </span>Server:<span class="w"> </span>ServidorExemple/1.0
+<span class="w">  </span>Content-Type:<span class="w"> </span>text/html
+<span class="w">  </span>Content-Length:<span class="w"> </span><span class="m">1235</span>
+
+<span class="w">  </span>&lt;!DOCTYPE<span class="w"> </span>html&gt;
+<span class="w">  </span>&lt;html&gt;
+<span class="w">  </span>&lt;head&gt;
+<span class="w">  </span>&lt;title&gt;Pàgina<span class="w"> </span>d<span class="s1">'Exemple&lt;/title&gt;</span>
+<span class="s1">  &lt;/head&gt;</span>
+<span class="s1">  &lt;body&gt;</span>
+<span class="s1">  &lt;p&gt;Aquesta és una pàgina d'</span>exemple.&lt;/p&gt;
+<span class="w">  </span>&lt;/body&gt;
+<span class="w">  </span>&lt;/html&gt;
+</code></pre></div>
+A la resposta d’exemple apareixen els elements següents: 
+<ul>
+<li><strong>HTTP/1.1 200 OK</strong>: indica que el recurs sol·licitat es va trobar i es va lliurar correctament. </li>
+<li><strong>Date: Mon, 6 Oct 2025 12:00:00 GMT</strong>: proporciona la data i l’hora a la que es va generar la resposta. </li>
+<li><strong>Server: ServidorExemple/1.0</strong>: indica el programari del servidor web i la seva versió. </li>
+<li><strong>Content-Type: text/html</strong>: indica que el tipus de contingut de la resposta és HTML. </li>
+<li><strong>Content-Length: 1234</strong>: indica el nombre de bytes del contingut de la resposta. </li>
+<li>La resta del contingut del missatge és el document HTML que ha sol·licitat el client.</li>
+</ul>
+<h3 id="exercicis">Exercicis<a class="headerlink" href="#exercicis" title="Permanent link">¶</a></h3>
+<p><strong>Exercici 1:</strong></p>
+<p>Utilitzaa la comanda <code>curl</code> per fer una petició HTTP a la pàgina web de l’IES Jaume II el Just. ¿Quina informació se mostra de resposta?</p>
+<p></p><div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-v<span class="w"> </span>https://www.ieseljust.com
+</code></pre></div>
+  El paràmetre <code>-v</code>habilita el mode verbose del comandament curl i mostra informació més detallada sobre la petició i la resposta.
+<p>Si volem ometre el contingut de la resposta, podem fer servir el paràmetre <code>-I</code>. Aquest paràmetre farà que només es mostrin les capçaleres.</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-Iv<span class="w"> </span>https://www.ieseljust.com
+</code></pre></div>
+<p><strong>Exercici 2:</strong></p>
+<p>Utilitza les <strong>eines per a desenvolupadors</strong> que s’inclouen als navegadors <strong>Google Chrome</strong> o <strong>Mozilla Firefox</strong> per fer una petició HTTP a la pàgina de l’IES Jaume II i examinar el contingut de les capçaleres (Headers), peticions (Request) i respostes (Response).</p>
+<h2 id="5-metodes-http">5️⃣ Mètodes HTTP<a class="headerlink" href="#5-metodes-http" title="Permanent link">¶</a></h2>
+<p>Al protocol HTTP es defineixen diferents mètodes que indiquen l’acció que cal fer en una petició. Alguns dels mètodes més comuns són:</p>
+<table>
+<thead>
+<tr>
+<th>Mètode</th>
+<th>Funció principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td>Sol·licita un recurs sense modificar-lo.</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td>Envia dades al servidor per processar-los, per exemple, per enviar formularis.</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td>Actualitza un recurs si existeix o crea un nou recurs si no existeix.</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td>Elimina un recurs.</td>
+</tr>
+<tr>
+<td><code>HEAD</code></td>
+<td>Sol·licita únicament la capçalera de la resposta HTTP.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-url-i-recursos">6️⃣ URL i recursos<a class="headerlink" href="#6-url-i-recursos" title="Permanent link">¶</a></h2>
+<p>Una <strong>URL</strong> identifica un recurs dins la web:</p>
+<pre><code>https://www.exemple.com/carpeta/pagina.html
+</code></pre>
+<p>Parts principals: </p>
+<ul>
+<li><strong>Esquema</strong> com <code>http://</code> o <code>https://</code></li>
+<li><strong>Domini</strong> com <code>www.exemple.com</code> </li>
+<li><strong>Ruta</strong> que indica la ubicació del recurs en el servidor com <code>/carpeta/</code></li>
+</ul>
+<p>En l’exemple el recurs és <code>pagina.html</code>.</p>
+<h2 id="7-codis-destat-http">7️⃣ Codis d’estat HTTP<a class="headerlink" href="#7-codis-destat-http" title="Permanent link">¶</a></h2>
+<p>Cada resposta HTTP inclou un codi d’estat que indica si la petició s’ha resolt amb èxit o no. </p>
+<p>Hi ha cinc tipus de codis d’estat:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Categoria</th>
+<th>Significat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1xx</td>
+<td>Respostes informatives</td>
+</tr>
+<tr>
+<td style="text-align: center;">2xx</td>
+<td>Respostes correctes. Èxit</td>
+</tr>
+<tr>
+<td style="text-align: center;">3xx</td>
+<td>Redireccions</td>
+</tr>
+<tr>
+<td style="text-align: center;">4xx</td>
+<td>Errors de la part del client</td>
+</tr>
+<tr>
+<td style="text-align: center;">5xx</td>
+<td>Error de la part del servidor</td>
+</tr>
+</tbody>
+</table>
+<p>Exemples:</p>
+<ul>
+<li><strong>100 - Continue</strong>: Indica que la petició s’ha rebut i el client pot continuar amb la seva petició.</li>
+<li><strong>200 - OK</strong>: La petició s’ha completat amb èxit.</li>
+<li><strong>301 - Moved Permanently</strong>: Indica que el recurs sol·licitat s’ha mogut permanentment a una ubicació nova i es proporciona l’URL actualitzada.</li>
+<li><strong>403 - Forbidden</strong>: Indica que el servidor comprèn la petició del client, però no se’n permet l’accés. </li>
+<li><strong>404 - Not Found</strong>: El recurs sol·licitat no s’ha trobat al servidor.</li>
+<li><strong>500 - Internal Server Error</strong>: Hi ha hagut un error en el servidor al processar la petició.</li>
+</ul>
+<h3 id="exercici">Exercici<a class="headerlink" href="#exercici" title="Permanent link">¶</a></h3>
+<p>Cerca a Internet el significat del codi d’estat HTTP següent: </p>
+<ul>
+<li>418</li>
+</ul>
+<p><code>Referències</code>: </p>
+<ul>
+<li><a href="https://developer.mozilla.org/docs/Web/HTTP">MDN Web Docs: HTTP</a></li>
+<li><a href="https://ca.wikipedia.org/wiki/Hypertext_Transfer_Protocol">Wikipedia: Hypertext Transfer
+    Protocol</a></li>
+</ul>
+<h2 id="8-capcaleres-http">8️⃣ Capçaleres HTTP<a class="headerlink" href="#8-capcaleres-http" title="Permanent link">¶</a></h2>
+<p>El protocol HTTP utilitza capçaleres per transmetre informació addicional tant a les peticions com a les respostes. </p>
+<p>Les capçaleres poden incloure informació sobre el tipus de contingut, la longitud del contingut, la codificació, l’autenticació, etc.</p>
+<h2 id="9-versions-del-protocol">9️⃣ Versions del protocol<a class="headerlink" href="#9-versions-del-protocol" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Versió</th>
+<th style="text-align: center;">Data de publicació</th>
+<th>Característiques principals</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>HTTP/0.9</strong></td>
+<td style="text-align: center;">1991</td>
+<td>Versió molt senzilla que només admet peticions <code>GET</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HTTP/1.0</strong></td>
+<td style="text-align: center;">1996</td>
+<td>Afegeix capçaleres i més peticions: GET, POST, HEAD i PUT</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HTTP/1.1</strong></td>
+<td style="text-align: center;">1997</td>
+<td>Inclou millores de rendiment com la catxé i connexions persistents</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HTTP/2</strong></td>
+<td style="text-align: center;">2015</td>
+<td>Inclou millores de rendiment com la multiplexació i la compressió de capçaleres</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HTTP/3</strong></td>
+<td style="text-align: center;">2018</td>
+<td>Utilitza el protocol UDP per millorar el rendiment i seguritat (menor latència)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Evolució del protocol HTTP</strong></p>
+<p><figure id="_figure-1"><a class="glightbox" href="../img/http-123.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Com arribem a HTTP/3" src="../img/http-123.png"></a><figcaption>Figure 1: Imatge de BytByteGo.com</figcaption></figure></p>
+<p>El protocol ha anat evolucionant de maneres noves i interessants.</p>
+<ul>
+<li><strong>HTTP 1</strong> (i les seves subversions) van introduir funcions com ara connexions persistents, canalització i el concepte de capçaleres. El protocol es va construir sobre TCP i proporcionava una forma fiable de comunicació a través de la World Wide Web. Encara s’utilitza tot i tenir més de 25 anys. </li>
+<li><strong>HTTP 2</strong> va aportar noves funcions com ara multiplexació, priorització de fluxos, push del servidor i compressió HPACK. Tanmateix, encara utilitzava TCP com a protocol subjacent. </li>
+<li><strong>HTTP 3</strong> utilitza QUIC de Google, que es construeix sobre UDP. En altres paraules, HTTP 3 s’ha allunyat de TCP.</li>
+</ul>
+<h2 id="referencies">🔟 Referències<a class="headerlink" href="#referencies" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Protocolo_de_transferencia_de_hipertexto">TTP - Protocol de transferència d’hipertext</a></li>
+<li><a href="https://developer.mozilla.org/es/docs/Web/HTTP">El protocol HTTP. MDN Web Docs</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Cliente-servidor">Model Client/Servidor. Wikipedia</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Protocolo_seguro_de_transferencia_de_hipertexto">HTTPS - Protocol segur de transferència d’hipertext</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP">Codis d’estat HTTP</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Localizador_de_recursos_uniforme">URL (Uniform Resource Locator)</a> </li>
+<li><a href="https://www.youtube.com/watch?v=a-sBfyiXysI">HTTP/1 to HTTP/2 to HTTP/3</a></li>
+<li><a href="https://github.com/ByteByteGoHq/system-design-101#http-10---http-11---http-20---http-30-quic">System Design 101</a></li>
+</ul>
+<h2 id="llicencia-i-autoria">🔖 Llicència i autoria<a class="headerlink" href="#llicencia-i-autoria" title="Permanent link">¶</a></h2>
+<p>Contingut original de <strong>José Juan Sánchez Hernández</strong>
+sota llicència <strong>Creative Commons Reconeixement-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</strong></p>
+<p><figure id="_figure-2"><a class="glightbox" href="../img/by-nc-sa.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="center" alt=" " class="no-caption" src="../img/by-nc-sa.png" width="50%"></a><figcaption>Figure 2:  </figcaption></figure></p>
+<blockquote>
+<p>Adaptació i traducció al valencià respectant la llicència original.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "toc.integrate", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

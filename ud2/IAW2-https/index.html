@@ -1,0 +1,797 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentació del mòdul IAW">
+      
+      
+      
+      
+        <link rel="prev" href="../IAW2-http/">
+      
+      
+        <link rel="next" href="../IAW2-entorns/">
+      
+      
+      <link rel="icon" href="../img/logo.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+    
+    
+      
+        <title>HTTPS - 2ASIX - IAW</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/elmeuestil.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#el-protocol-https" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="2ASIX - IAW" class="md-header__button md-logo" aria-label="2ASIX - IAW" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            2ASIX - IAW
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              HTTPS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://espemm.github.io/IAW-2ASIX/" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW2-server/" class="md-tabs__link">
+        
+  
+    
+  
+  Implantació en Servidors
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW2-http/" class="md-tabs__link">
+        
+  
+    
+  
+  HTTP
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  HTTPS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW2-entorns/" class="md-tabs__link">
+        
+  
+    
+  
+  Entorns
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW2-phpmyadmin.md" class="md-tabs__link">
+        
+  
+    
+  
+  phpmyadmin
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW2-php.md" class="md-tabs__link">
+        
+  
+    
+  
+  PHP
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="2ASIX - IAW" class="md-nav__button md-logo" aria-label="2ASIX - IAW" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    2ASIX - IAW
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://espemm.github.io/IAW-2ASIX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW2-server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implantació en Servidors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW2-http/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTTP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    HTTPS
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    HTTPS
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-que-es-el-protocol-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      1️⃣ Què és el protocol HTTPS?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-quin-port-utilitza-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      2️⃣ Quin port utilitza HTTPS?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-criptografia-simetrica" class="md-nav__link">
+    <span class="md-ellipsis">
+      3️⃣ Criptografia simètrica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-criptografia-asimetrica" class="md-nav__link">
+    <span class="md-ellipsis">
+      4️⃣ Criptografia asimètrica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-com-funciona-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      5️⃣ Com funciona HTTPS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-autoritat-de-certificacio-ca" class="md-nav__link">
+    <span class="md-ellipsis">
+      6️⃣ Autoritat de Certificació (CA)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-tipus-de-certificats-ssltls" class="md-nav__link">
+    <span class="md-ellipsis">
+      7️⃣ Tipus de certificats SSL/TLS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-que-passa-quan-escrivim-una-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      8️⃣ Què passa quan escrivim una URL?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-referencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      9️⃣ Referències
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llicencia-i-autoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔖 Llicència i autoria
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW2-entorns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entorns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW2-phpmyadmin.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    phpmyadmin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW2-php.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PHP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="el-protocol-https">🔐 El protocol HTTPS<a class="headerlink" href="#el-protocol-https" title="Permanent link">¶</a></h1>
+<h2 id="1-que-es-el-protocol-https">1️⃣ Què és el protocol HTTPS?<a class="headerlink" href="#1-que-es-el-protocol-https" title="Permanent link">¶</a></h2>
+<p>HTTPS (Hypertext Transfer Protocol Secure) és la versió segura del protocol HTTP.</p>
+<p>Empra el protocol criptogràfic TLS (Transport Layer Security) per a: </p>
+<ol>
+<li>Xifrar les dades transmeses.</li>
+<li>Verificar l’autenticitat del client i del servidor.</li>
+<li>Assegurar la integritat de les dades.</li>
+</ol>
+<h2 id="2-quin-port-utilitza-https">2️⃣ Quin port utilitza HTTPS?<a class="headerlink" href="#2-quin-port-utilitza-https" title="Permanent link">¶</a></h2>
+<ul>
+<li>HTTP → port 80</li>
+<li>HTTPS → port 443</li>
+</ul>
+<h2 id="3-criptografia-simetrica">3️⃣ Criptografia simètrica<a class="headerlink" href="#3-criptografia-simetrica" title="Permanent link">¶</a></h2>
+<p>Utilitza <strong>una sola clau</strong> per a xifrar i desxifrar.</p>
+<p>Avantatge: ràpida.</p>
+<p>Inconvenient: la distribució segura de la clau.</p>
+<p><strong>Exemple:</strong> AES (Advanced Encryption Standard)</p>
+<p>📚 <a href="https://ca.wikipedia.org/wiki/Criptografia_sim%C3%A8trica">Criptografia simètrica — Wikipedia</a></p>
+<h2 id="4-criptografia-asimetrica">4️⃣ Criptografia asimètrica<a class="headerlink" href="#4-criptografia-asimetrica" title="Permanent link">¶</a></h2>
+<p>Utilitza <strong>dues claus diferents</strong>:</p>
+<ul>
+<li>Pública → per a xifrar</li>
+<li>Privada → per a desxifrar</li>
+</ul>
+<p>Més segura però més lenta.</p>
+<p><strong>Exemple:</strong> RSA (Rivest–Shamir–Adleman)</p>
+<p>📚 <a href="https://ca.wikipedia.org/wiki/Criptografia_asim%C3%A8trica">Criptografia asimètrica —
+Wikipedia</a></p>
+<h2 id="5-com-funciona-https">5️⃣ Com funciona HTTPS<a class="headerlink" href="#5-com-funciona-https" title="Permanent link">¶</a></h2>
+<ul>
+<li>
+<p><strong>Pas 1. TCP 3-Way Handshake</strong></p>
+<p>Client i servidor estableixen la connexió TCP inicial.</p>
+</li>
+<li>
+<p><strong>Pas 2. Validació del certificat SSL/TLS</strong></p>
+</li>
+</ul>
+<ol>
+<li>El client envia un <em>ClientHello</em> amb la versió de TLS i algoritmes de xifrat preferits.</li>
+<li>El servidor respon amb <em>ServerHello</em> i envia el seu certificat SSL/TLS.</li>
+<li>El certificat conté la clau pública i està signat per una <strong>CA</strong>.</li>
+<li>El client comprova la validesa del certificat.</li>
+</ol>
+<ul>
+<li>
+<p><strong>Pas 3. Intercanvi de la clau de sessió</strong></p>
+<p>El client genera una <strong>clau de sessió secreta</strong>, la xifra amb la <strong>clau pública</strong> del servidor i l’envia.</p>
+<p>El servidor la desxifra amb la seua <strong>clau privada</strong>.</p>
+</li>
+<li>
+<p><strong>Pas 4. Intercanvi de dades</strong></p>
+<p>La comunicació posterior es fa amb <strong>xifrat simètric</strong> usant la clau de sessió compartida.</p>
+</li>
+</ul>
+<p><figure id="_figure-1"><a class="glightbox" href="../img/0220-how-does-https-work.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Com funciona https" src="../img/0220-how-does-https-work.png"></a><figcaption>Figure 1: Imatge de BytByteGo.com</figcaption></figure></p>
+<h2 id="6-autoritat-de-certificacio-ca">6️⃣ Autoritat de Certificació (CA)<a class="headerlink" href="#6-autoritat-de-certificacio-ca" title="Permanent link">¶</a></h2>
+<p>Una <strong>CA</strong> és una entitat de confiança que emet i revoca certificats digitals per a garantir la seguretat de les comunicacions HTTPS.</p>
+<p>📚 <a href="https://ca.wikipedia.org/wiki/Autoritat_de_certificaci%C3%B3">Autoritat de Certificació — Wikipedia</a></p>
+<h2 id="7-tipus-de-certificats-ssltls">7️⃣ Tipus de certificats SSL/TLS<a class="headerlink" href="#7-tipus-de-certificats-ssltls" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tipus</th>
+<th>Descripció</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Domini únic</td>
+<td>Vàlid per a un sol domini</td>
+<td>ieseljust.com</td>
+</tr>
+<tr>
+<td>Wildcard</td>
+<td>Vàlid per a un domini i subdominis</td>
+<td>*.ieseljust.com</td>
+</tr>
+<tr>
+<td>Multidomini (SAN/UCC)</td>
+<td>Vàlid per a diversos dominis</td>
+<td>ieseljust.com, altredomini.com</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>SAN = Subject Alternative Name</p>
+<p>UCC = Unified Communications Certificate</p>
+</blockquote>
+<h2 id="8-que-passa-quan-escrivim-una-url">8️⃣ Què passa quan escrivim una URL?<a class="headerlink" href="#8-que-passa-quan-escrivim-una-url" title="Permanent link">¶</a></h2>
+<ol>
+<li>Resolució DNS del domini.</li>
+<li>Connexió TCP.</li>
+<li>Negociació TLS i validació del certificat.</li>
+<li>Comunicació segura i xifrada.</li>
+</ol>
+<p><figure id="_figure-2"><a class="glightbox" href="../img/0393-type-a-url-into-your-browser.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Diagrama de ByteByteGo.com" src="../img/0393-type-a-url-into-your-browser.png"></a><figcaption>Figure 2: Imatge de BytByteGo.com</figcaption></figure></p>
+<h2 id="9-referencies">9️⃣ Referències<a class="headerlink" href="#9-referencies" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://ca.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP — Wikipedia</a></li>
+<li><a href="https://ca.wikipedia.org/wiki/Hypertext_Transfer_Protocol_Secure">HTTPS — Wikipedia</a></li>
+<li><a href="https://ca.wikipedia.org/wiki/Transport_Layer_Security">TLS — Wikipedia</a></li>
+<li><a href="https://ca.wikipedia.org/wiki/Certificat_digital">Certificat digital — Wikipedia</a></li>
+<li><a href="https://ca.wikipedia.org/wiki/Infraestructura_de_clau_p%C3%BAblica">Infraestructura de clau pública — Wikipedia</a></li>
+<li><a href="https://bytebytego.com">System Design 101 — ByteByteGo</a></li>
+<li><a href="https://developers.cloudflare.com/">Cloudflare Docs — Què és HTTPS?</a></li>
+</ul>
+<h2 id="llicencia-i-autoria">🔖 Llicència i autoria<a class="headerlink" href="#llicencia-i-autoria" title="Permanent link">¶</a></h2>
+<p>Contingut original de <strong>José Juan Sánchez Hernández</strong>
+sota llicència <strong>Creative Commons Reconeixement-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</strong></p>
+<p><figure id="_figure-3"><a class="glightbox" href="../img/by-nc-sa.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="center" alt="Llicència" class="no-caption" src="../img/by-nc-sa.png" width="50%"></a><figcaption>Figure 3: Llicència</figcaption></figure></p>
+<blockquote>
+<p>Adaptació i traducció al valencià respectant la llicència original.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "toc.integrate", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

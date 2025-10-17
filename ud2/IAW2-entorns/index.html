@@ -1,0 +1,1211 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentació del mòdul IAW">
+      
+      
+      
+      
+        <link rel="prev" href="../IAW2-https/">
+      
+      
+      
+      <link rel="icon" href="../img/logo.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+    
+    
+      
+        <title>Entorns - 2ASIX - IAW</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/elmeuestil.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#entorns-de-desplegament" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="2ASIX - IAW" class="md-header__button md-logo" aria-label="2ASIX - IAW" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            2ASIX - IAW
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Entorns
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://espemm.github.io/IAW-2ASIX/" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW2-server/" class="md-tabs__link">
+        
+  
+    
+  
+  Implantació en Servidors
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW2-http/" class="md-tabs__link">
+        
+  
+    
+  
+  HTTP
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW2-https/" class="md-tabs__link">
+        
+  
+    
+  
+  HTTPS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Entorns
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW2-phpmyadmin.md" class="md-tabs__link">
+        
+  
+    
+  
+  phpmyadmin
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW2-php.md" class="md-tabs__link">
+        
+  
+    
+  
+  PHP
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="2ASIX - IAW" class="md-nav__button md-logo" aria-label="2ASIX - IAW" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    2ASIX - IAW
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://espemm.github.io/IAW-2ASIX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW2-server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implantació en Servidors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW2-http/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTTP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW2-https/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTTPS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Entorns
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Entorns
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-servidors-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      1️⃣ Servidors web
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-lamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      2️⃣ LAMP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-lemp" class="md-nav__link">
+    <span class="md-ellipsis">
+      3️⃣ LEMP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      4️⃣ LINUX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      5️⃣ Apache
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5️⃣ Apache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio-en-ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació en Ubuntu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modificar-el-port-per-defecte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificar el port per defecte
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canviar-larrel-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Canviar l&rsquo;arrel web
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurar-hosts-virtuals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurar Hosts Virtuals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilitzar-moduls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilitzar mòduls
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      6️⃣ Nginx
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      7️⃣ Mysql
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7️⃣ Mysql">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio-en-ubuntu_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació en Ubuntu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configura-mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configura MySQL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      8️⃣ PHP
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW2-phpmyadmin.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    phpmyadmin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW2-php.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PHP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="entorns-de-desplegament">🔺Entorns de desplegament<a class="headerlink" href="#entorns-de-desplegament" title="Permanent link">¶</a></h1>
+<h2 id="1-servidors-web">1️⃣ Servidors web<a class="headerlink" href="#1-servidors-web" title="Permanent link">¶</a></h2>
+<p><strong class="c1">Apache vs Nginx</strong></p>
+<p>Per tal de desplegar aplicacions web necessitarem almenys un <strong>Servidor Web</strong> (per a l’allotjament de pàgines web estàtiques).</p>
+<p>El servidor web utilitza un <strong>sistema operatiu</strong> com a base per al seu funcionament. El sistema operatiu que en més del 95% de les ocasions serà un sistema <strong>Linux</strong>.</p>
+<p>Si, se va a servir pàgines dinàmiques, caldrà un programari per a la gestió de les <strong>bases de dades</strong>  (MySQL habitualment), i un llenguatge de programació per gestionar el contingut dinàmic (sol ser PHP). </p>
+<p>Existeixen gran quantitat de servidors web diferents, des d’<strong>Apache</strong> i <strong>Nginx</strong>, els més coneguts i utilitzats amb més d’un 85% d’ús entre tots dos, fins a altres servidors menys coneguts com <strong>Microsoft IIS</strong> (si fem servir un servidor Windows), LiteSpeed, Node.js, etc.</p>
+<p>Els dos servidors més utilitzats per muntar pàgines web avui dia són Apache i Nginx, però, és impossible dir que un és millor que un altre ja que cadascun té les seves pròpies fortaleses i debilitats i pot millorar millor sota certes circumstàncies o simplement ser més senzill d’utilitzar.</p>
+<p><code>Gràfica comparativa de servidors web</code></p>
+<p><figure id="_figure-1"><a class="glightbox" href="../img/comparativa_servers.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Imatge de W3Techs" src="../img/comparativa_servers.png"></a><figcaption>Figure 1: Imatge de W3Techs</figcaption></figure></p>
+<p>Característiques de Nginx:</p>
+<ul>
+<li>És lleuger </li>
+<li>És multiplataforma i fàcil d’instal·lar</li>
+<li>Es pot utilitzar amb Apache! </li>
+<li>Memòria catxé </li>
+<li>Balancejador de càrrega </li>
+<li>Suport comunitari i professional </li>
+<li>Compatibilitat amb les aplicacions web més populars </li>
+</ul>
+<p>Nginx és compatible amb una gran quantitat de CMS existents al mercat, i hi ha un molts tutorials i documentació per instal·lar aquests sota Nginx, com per exemple: Wordpress, Joomla, Drupal, phpBB …</p>
+<h2 id="2-lamp">2️⃣ LAMP<a class="headerlink" href="#2-lamp" title="Permanent link">¶</a></h2>
+<p><strong>LAMP</strong> és l’acrònim usat per descriure un sistema d’infraestructura d’Internet que utilitza les eines següents: </p>
+<ul>
+<li><strong>L</strong>inux (Sistema Operatiu) </li>
+<li><strong>A</strong>pache (Servidor Web) </li>
+<li><strong>M</strong>ySQL/MariaDB (Sistema Gestor de Bases de Dades) </li>
+<li><strong>P</strong>HP (llenguatge de programació)</li>
+</ul>
+<p><figure id="_figure-2"><a class="glightbox" href="../img/LAMP.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="center" alt="Imatge generada amb imatges Wikimedia Commons" src="../img/LAMP.png"></a><figcaption>Figure 2: Imatge generada amb imatges Wikimedia Commons</figcaption></figure></p>
+<h2 id="3-lemp">3️⃣ LEMP<a class="headerlink" href="#3-lemp" title="Permanent link">¶</a></h2>
+<p><strong>LEMP</strong> és l’acrònim usat per descriure un sistema d’infraestructura d’Internet que utilitza les eines següents: </p>
+<ul>
+<li><strong>L</strong>inux (Sistema Operatiu) </li>
+<li><strong>E</strong> Nginx (Servidor Web) </li>
+<li><strong>M</strong>ySQL/MariaDB (Sistema Gestor de Bases de Dades) </li>
+<li><strong>P</strong>HP (llenguatge de programació)</li>
+</ul>
+<p><figure id="_figure-3"><a class="glightbox" href="../img/LEMP.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="center" alt="Imatge generada amb imatges Wikimedia Commons" src="../img/LEMP.png"></a><figcaption>Figure 3: Imatge generada amb imatges Wikimedia Commons</figcaption></figure></p>
+<hr>
+<h2 id="4-linux">4️⃣ LINUX<a class="headerlink" href="#4-linux" title="Permanent link">¶</a></h2>
+<p><strong class="c1">Ubuntu</strong>
+- <a href="https://www.linode.com/docs/guides/apt-package-manager/?lang=es">APT</a>
+- <a href="https://documentation.ubuntu.com/server/how-to/#how-to">Guies Ubuntu Server</a>
+- <a href="https://documentation.ubuntu.com/public-cloud/">Ubuntu al Cloud</a></p>
+<p><strong class="c1">Debian</strong>
+- <a href="https://www.debian.org/doc/index.es.html">Documentació de Debian</a>
+- <a href="https://www.debian.org/releases/stable/amd64/">Guia d’instal·lació PC amd64</a></p>
+<p><strong class="c1">Linux Mint</strong>
+- <a href="https://linuxmint-installation-guide.readthedocs.io/en/latest/">Guia d’instal·lació</a>
+- <a href="https://linuxmint-user-guide.readthedocs.io/en/latest/">Guia d’usuari</a></p>
+<p><strong class="c1">Red Hat</strong>
+- <a href="https://docs.redhat.com/es">Documentació de Red Hat</a>
+- <a href="https://docs.redhat.com/es/documentation/red_hat_enterprise_linux/10/html/interactively_installing_rhel_from_installation_media/index">Instal·lació de RHEL</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a href="../img/refcard.es.pdf">Targeta de referència per a Debian</a></p>
+</div>
+<h2 id="5-apache">5️⃣ Apache<a class="headerlink" href="#5-apache" title="Permanent link">¶</a></h2>
+<p>Apache és un <strong>servidor web</strong> de <strong>codi obert</strong> i <strong>multiplataforma</strong> que permet desplegar aplicacions web en un servidor. 
+En aquest document es descriu com instal·lar Apache a Ubuntu.</p>
+<p>El servidor HTTP Apache és un dels servidor web més utilitzat al món. Proporciona moltes característiques poderoses, incloent mòduls carregables dinàmicament, suport robust de mitjans i una àmplia integració amb altres programaris populars.</p>
+<p><strong class="c1">Requisits</strong></p>
+<ul>
+<li>Servidor Linux (Ubuntu Server 22.04 o +)</li>
+<li>Accés a terminal amb permisos de superusuari</li>
+</ul>
+<h3 id="installacio-en-ubuntu">Instal·lació en Ubuntu<a class="headerlink" href="#installacio-en-ubuntu" title="Permanent link">¶</a></h3>
+<p>Necessitareu un servidor Ubuntu configurat amb un usuari no root amb privilegis de sudo i un firewall habilitat per bloquejar ports no essencials.</p>
+<p><a href="https://help.ubuntu.com/community/UFW">Firewall ufw</a></p>
+<p>Passes a seguir:</p>
+<p><strong class="c1">Pas 1 — Instal·lació d’Apache</strong></p>
+<p>Apache està disponible dins dels repositoris de programari predeterminats d’Ubuntu, cosa que fa possible instal·lar-lo usant eines convencionals de gestió de paquets.</p>
+<p>Comença actualitzant l’índex de paquets locals per reflectir els darrers canvis upstream:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</code></pre></div>
+<p>Després, instal·la el paquet apache2:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>apache2
+</code></pre></div>
+<p>Després de confirmar la instal·lació, apt instal·larà Apache i totes les dependències requerides.</p>
+<p><strong class="c1">Pas 2 — Ajust del Firewall</strong></p>
+<p>Abans de provar Apache, cal modificar la configuració del tallafoc per permetre l’accés extern als ports web predeterminats. Tindreu un firewall UFW configurat (si ja ho heu fet) per restringir l’accés al vostre servidor.</p>
+<p>Durant la instal·lació, Apache es registra amb UFW per proporcionar alguns perfils d’aplicació que es poden utilitzar per habilitar o desactivar l’accés a Apache a través del tallafoc.</p>
+<p>Llista els perfils d’aplicació de ufw executant el següent:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>app<span class="w"> </span>list
+</code></pre></div>
+<p>L’eixida serà una llista dels perfils d’aplicació:</p>
+<div class="highlight"><pre><span></span><code>Available<span class="w"> </span>applications:<span class="w"> </span>
+Apatxe<span class="w"> </span>
+Apatxe<span class="w"> </span>Full<span class="w"> </span>
+Apache<span class="w"> </span>Secure<span class="w"> </span>
+OpenSSH
+</code></pre></div>
+<p>Com indica l’eixida, hi ha tres perfils disponibles per a Apache: </p>
+<ul>
+<li><strong>Apache</strong>: Aquest perfil obre només el port 80 (tràfic web normal i no xifrat) </li>
+<li><strong>Apache Full</strong>: Aquest perfil obre tant el port 80 (tràfic web normal i no xifrat) com el port 443 (tràfic xifrat TLS/SSL) </li>
+<li><strong>Apache Secure</strong>: Aquest perfil només obre el port 443 (tràfic xifrat TLS/SSL)</li>
+</ul>
+<p>Es recomana habilitar el perfil més restrictiu que encara permeta el trànsit que heu configurat. Com que encara no heu configurat SSL per al vostre servidor en aquesta guia, només haureu de permetre el trànsit al port 80:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="s1">'Apache'</span>
+</code></pre></div>
+<p>Durant la instal·lació, Apache es registra amb UFW per proporcionar alguns perfils d’aplicació que es poden utilitzar per habilitar o desactivar l’accés a Apache a través del tallafoc.</p>
+<p>Podeu verificar el canvi comprovant l’estat:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>status
+</code></pre></div>
+<p>L’eixida proporcionarà una llista del trànsit HTTP permès:</p>
+<div class="highlight"><pre><span></span><code>Status:<span class="w"> </span>active
+
+To<span class="w">                      </span>Action<span class="w">          </span>From
+--<span class="w">                      </span>------<span class="w">          </span>----
+OpenSSH<span class="w">                 </span>ALLOW<span class="w">           </span>Anywhere
+Apatxe<span class="w">                  </span>ALLOW<span class="w">           </span>Anywhere
+OpenSSH<span class="w"> </span><span class="o">(</span>v6<span class="o">)</span><span class="w">            </span>ALLOW<span class="w">           </span>Anywhere<span class="w"> </span><span class="o">(</span>v6<span class="o">)</span>
+Apatxe<span class="w"> </span><span class="o">(</span>v6<span class="o">)</span><span class="w">             </span>ALLOW<span class="w">           </span>Anywhere<span class="w"> </span><span class="o">(</span>v6<span class="o">)</span>
+</code></pre></div>
+<p>Com indica l’eixida, el perfil s’ha activat per permetre l’accés al servidor web Apache.</p>
+<p><strong class="c1">Pas 3 — Comprovació del teu servidor web</strong></p>
+<p>Al final del procés d’instal·lació, Ubuntu inicia Apache. El servidor web ja estarà en funcionament.</p>
+<p>Assegureu-vos que el servei estiga actiu executant l’ordre per al sistema init systemd:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>apache2
+</code></pre></div>
+<p>Eixida:</p>
+<div class="highlight"><pre><span></span><code>●<span class="w"> </span>apache2.service<span class="w"> </span>-<span class="w"> </span>The<span class="w"> </span>Apache<span class="w"> </span>HTTP<span class="w"> </span>Server<span class="w"> </span>
+<span class="w">        </span>Loaded:<span class="w"> </span>loaded<span class="w"> </span><span class="o">(</span>/lib/systemd/system/apache2.service<span class="p">;</span><span class="w"> </span>enabled<span class="p">;</span><span class="w"> </span>vendor<span class="w"> </span>prese&gt;<span class="w"> </span>
+<span class="w">        </span>Active:<span class="w"> </span>active<span class="w"> </span><span class="o">(</span>running<span class="o">)</span><span class="w"> </span>since<span class="w"> </span>Tue<span class="w"> </span><span class="m">2022</span>-04-26<span class="w"> </span><span class="m">15</span>:33:21<span class="w"> </span>UTC<span class="p">;</span><span class="w"> </span>43s<span class="w"> </span>ago<span class="w"> </span>
+<span class="w">            </span>Docs:<span class="w"> </span>https://httpd.apache.org/docs/2.4/<span class="w"> </span>
+<span class="w">    </span>Main<span class="w"> </span>PID:<span class="w"> </span><span class="m">5089</span><span class="w"> </span><span class="o">(</span>apache2<span class="o">)</span><span class="w"> </span>
+<span class="w">            </span>Tasks:<span class="w"> </span><span class="m">55</span><span class="w"> </span><span class="o">(</span>límit:<span class="w"> </span><span class="m">1119</span><span class="o">)</span><span class="w"> </span>
+<span class="w">        </span>Memory:<span class="w"> </span><span class="m">4</span>.8M<span class="w"> </span>
+<span class="w">                </span>CPU:<span class="w"> </span>33ms<span class="w"> </span>
+<span class="w">        </span>CGroup:<span class="w"> </span>/system.slice/apache2.service<span class="w"> </span>
+<span class="w">                        </span>├─5089<span class="w"> </span>/usr/sbin/apache2<span class="w"> </span>-k<span class="w"> </span>start<span class="w"> </span>
+<span class="w">                        </span>├─5091<span class="w"> </span>/usr/sbin/apache2<span class="w"> </span>-k<span class="w"> </span>start<span class="w"> </span>
+<span class="w">                        </span>└─5092<span class="w"> </span>/usr/sbin/apache2<span class="w"> </span>-k<span class="w"> </span>start
+</code></pre></div>
+<p>L’eixida indica que el servei s’ha iniciat correctament. No obstant això, la millor manera de provar-ho és sol·licitar una pàgina web.</p>
+<p>Podeu accedir a la pàgina d’inici per defecte d’Apache per confirmar que el programari funciona correctament a través de la vostra adreça IP. Si no coneixeu l’adreça IP del vostre servidor, podeu obtenir-la de diverses maneres des de la línia de comandaments.</p>
+<p>Intenteu escriure el següent a l’indicador d’ordres del vostre servidor:</p>
+<div class="highlight"><pre><span></span><code>hostname<span class="w"> </span>-I
+</code></pre></div>
+<p>Rebràs algunes adreces separades per espais. Pots provar cadascuna al teu navegador web per determinar si funcionen.</p>
+<p>Una altra opció és fer servir l’eina gratuïta icanhazip.com. Aquest és un lloc web que, quan s’hi accedeix, retorna l’adreça IP pública de la teva màquina segons es llegeix des d’una altra ubicació a Internet:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-4<span class="w"> </span>icanhazip.com
+</code></pre></div>
+<p>Quan tingueu l’adreça IP del vostre servidor, introduïu-la a la barra d’adreces del vostre navegador:</p>
+<div class="highlight"><pre><span></span><code>http://your_server_ip
+</code></pre></div>
+<p>Voreu la pàgina predeterminada d’Apache a Ubuntu com a la imatge següent:</p>
+<p><figure id="_figure-4"><a class="glightbox" href="../img/ini_apache.bmp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="center" alt="Pàgina d'inici d'Apache" src="../img/ini_apache.bmp"></a><figcaption>Figure 4: Pàgina d'inici d'Apache</figcaption></figure></p>
+<p>La pàgina inclou informació bàsica sobre arxius i ubicacions de directoris importants d’Apache.</p>
+<p><strong class="c1">Pas 4 - Gestió del Procés d’Apache</strong></p>
+<p>Algunes ordres bàsiques per a la gestió d’Apache usant systemctl.</p>
+<ul>
+<li>
+<p>Parar el servidor web:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>apache2
+</code></pre></div>
+</li>
+<li>
+<p>Iniciar el servidor web quan està parat:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>apache2
+</code></pre></div>
+</li>
+<li>
+<p>Aturar i després iniciar el servei novament:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
+</code></pre></div>
+</li>
+<li>
+<p>Si simplement estàs fent canvis de configuració, Apache sovint pot recarregar sense perdre connexions. Per fer això, utilitza la següent ordre:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>apache2
+</code></pre></div>
+</li>
+<li>
+<p>Per defecte, l’Apache està configurat per iniciar-se automàticament quan el servidor arranca. Si això no és el que desitges, desactiva aquest comportament executant:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>disable<span class="w"> </span>apache2
+</code></pre></div>
+</li>
+<li>
+<p>Per tornar a habilitar el servei perquè s’inicie en arrancar:</p>
+<p></p><div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>apache2
+</code></pre></div>
+Apache ara s’iniciarà automàticament quan el servidor torne a arrancar.
+</li>
+</ul>
+<h3 id="modificar-el-port-per-defecte">Modificar el port per defecte<a class="headerlink" href="#modificar-el-port-per-defecte" title="Permanent link">¶</a></h3>
+<p>Per indicar al servidor web Apache a enllaçar-se i escoltar el trànsit web en ports diferents dels ports web estàndard, s’ha d’afegir una nova declaració que continga el nou port per a futurs enllaços.</p>
+<p>En sistemes basats en Debian/Ubuntu, el fitxer de configuració que cal modificar és <code>/etc/apache2/ports</code>.conf. En distribucions basades en RHEL/CentOS, editeu el fitxer <code>/etc/httpd/conf/httpd.conf</code>.</p>
+<p>Obrir el fitxer específic de la distribució instal·lada amb un editor de text de consola i afegir la nova declaració de port com es mostra a continuació:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># nano /etc/apache2/ports.conf [A Debian/Ubuntu]</span>
+<span class="c1"># nano /etc/httpd/conf/httpd.conf [A RHEL/CentOS]</span>
+</code></pre></div>
+<p>Si només se canvia el port o s’afegeixen més ports ací, probablement també s’haurà de canviar la declaració de VirtualHost a <code>/etc/apache2/sites-enabled/000-default.conf</code>. </p>
+<div class="highlight"><pre><span></span><code>Listen<span class="w"> </span><span class="m">80</span><span class="w"> </span>
+Listen<span class="w"> </span><span class="m">8081</span><span class="w"> </span>
+
+&lt;IfModule<span class="w"> </span>ssl_module&gt;<span class="w"> </span>
+<span class="w">    </span>Listen<span class="w"> </span><span class="m">443</span><span class="w"> </span>
+&lt;/IfModule&gt;<span class="w"> </span>
+
+&lt;IfModule<span class="w"> </span>mod_gnutls.c&gt;<span class="w"> </span>
+<span class="w">    </span>Listen<span class="w"> </span><span class="m">443</span><span class="w"> </span>
+&lt;/IfModule&gt;
+</code></pre></div>
+<p>En aquest exemple, configurariem el servidor HTTP Apache per escoltar connexions al port 8081. Assegureu-vos d’afegir la declaració a continuació en aquest fitxer, després de la directiva que instrueix el servidor web a escoltar al port 80, com s’il·lustra a continuació:</p>
+<div class="highlight"><pre><span></span><code>Listen<span class="w"> </span><span class="m">8081</span>
+</code></pre></div>
+<p><strong c1="c1">Canviar el port d’Apache a Debian i Ubuntu</strong></p>
+<p>Després d’haver afegit la línia anterior, s’ha de crear o alterar un host virtual d’Apache en distribucions basades en Debian/Ubuntu per iniciar el procés d’enllaç, específic als vostres propis requisits de vhost.</p>
+<p><strong c1="c1">Canviar el port d’Apache a CentOS i RHEL</strong></p>
+<p>En distribucions CentOS/RHEL, el canvi s’aplica directament al sistema virtual per defecte. A l’exemple de continuació, modificarem el host virtual predeterminat del servidor web i l’indicarem a Apache que escolte el trànsit web des del port 80 al port 8081.</p>
+<p>Caldrà obrir i editar el fitxer <code>000-default.conf</code> i canviar el port a 8081 tal com es mostra a continuació:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># nano /etc/apache2/sites-enabled/000-default.conf</span>
+</code></pre></div>
+<p><figure id="_figure-5"><a class="glightbox" href="../img/ap1.bmp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Modificació del lloc per defecte" src="../img/ap1.bmp"></a><figcaption>Figure 5: Modificació del lloc per defecte</figcaption></figure></p>
+<p><strong c1="c1">Canviar el port d’Apache en Virtualhost</strong></p>
+<p>Finalment, per aplicar els canvis i fer que Apache s’enllaçe al nou port, reiniciem el dimoni i verifiquem la taula de sockets de xarxa local usant l’ordre netstat o ss. </p>
+<p>El port 8081 en escolta s’hauria de mostrar a la taula de xarxa del servidor.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># systemctl restart apache2</span>
+<span class="c1"># netstat -tlpn | grep apache</span>
+<span class="c1"># ss -tlpn | grep apache</span>
+</code></pre></div>
+<p><figure id="_figure-6"><a class="glightbox" href="../img/ap2.bmp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Comprovació" src="../img/ap2.bmp"></a><figcaption>Figure 6: Comprovació</figcaption></figure></p>
+<p><strong c1="c1">Verificar el port d’Apache</strong></p>
+<p>La comprobació també pot consistir en obrir un navegador i navegar a l’adreça IP del vostre servidor o nom de domini al port 8081. La pàgina predeterminada d’Apache s’hauria de mostrar al navegador. </p>
+<p>No obstant això, si no podeu navegar a la pàgina web, torneu a la consola del servidor i assegureu-vos que les regles de tallafocs adequades estiguen configurades per permetre el trànsit del port.</p>
+<div class="highlight"><pre><span></span><code>http://server.ip:8081
+</code></pre></div>
+<p><figure id="_figure-7"><a class="glightbox" href="../img/ap3.bmp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Web al port 8081" src="../img/ap3.bmp"></a><figcaption>Figure 7: Web al port 8081</figcaption></figure></p>
+<p><strong c1="c1">Pàgina per defecte d’Apache a Debian i Ubuntu</strong></p>
+<p>En distribucions Linux basades en CentOS/RHEL, instal·leu el paquet policycoreutils per afegir les regles SELinux requerides perquè Apache s’enllaçe al nou port i reinicieu el servidor HTTP Apache per aplicar els canvis.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># yum install policycoreutils</span>
+</code></pre></div>
+<p>Afegiu regles SELinux per al port 8081:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># semanage port -a -t http_port_t -p tcp 8081</span>
+<span class="c1"># semanage port -m -t http_port_t -p tcp 8081</span>
+</code></pre></div>
+<p>Reinicieu el servidor web Apache:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># systemctl restart httpd.service</span>
+</code></pre></div>
+<p>Executeu l’ordre netstat o ss per verificar si el nou port s’enllaça i escolta el trànsit entrant amb èxit:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># netstat -tlpn | grep httpd</span>
+<span class="c1"># ss -tlpn | grep httpd</span>
+</code></pre></div>
+<p><figure id="_figure-8"><a class="glightbox" href="../img/ap4.bmp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Verificació" src="../img/ap4.bmp"></a><figcaption>Figure 8: Verificació</figcaption></figure></p>
+<p><strong c1="c1">Verificar el port d’Apache a CentOS i RHEL</strong></p>
+<p>Obre un navegador i navegua a l’adreça IP del vostre servidor o nom de domini al port 8081 per verificar si el nou port web és accessible a la vostra xarxa. La pàgina predeterminada d’Apache s’hauria de mostrar al navegador:</p>
+<div class="highlight"><pre><span></span><code>http://server.ip:8081
+</code></pre></div>
+<p>Si no pots navegar a l’adreça anterior, assegura’t d’afegir les regles de tallafocs adequades a la taula de tallafocs del servidor.</p>
+<h3 id="canviar-larrel-web">Canviar l’arrel web<a class="headerlink" href="#canviar-larrel-web" title="Permanent link">¶</a></h3>
+<h3 id="configurar-hosts-virtuals">Configurar Hosts Virtuals<a class="headerlink" href="#configurar-hosts-virtuals" title="Permanent link">¶</a></h3>
+<h3 id="utilitzar-moduls">Utilitzar mòduls<a class="headerlink" href="#utilitzar-moduls" title="Permanent link">¶</a></h3>
+<h2 id="6-nginx">6️⃣ Nginx<a class="headerlink" href="#6-nginx" title="Permanent link">¶</a></h2>
+<p>Nginx és un <strong>servidor web</strong> de <strong>codi obert</strong> i <strong>multiplataforma</strong> que permet desplegar aplicacions web en un servidor. 
+En aquest document es descriu com instal·lar Nginx en Ubuntu.</p>
+<p>El servidor HTTP Nginx és el servidor web més utilitzat al món.</p>
+<p><strong class="c1">Requisits</strong></p>
+<ul>
+<li>Servidor Linux (Ubuntu Server 22.04 o +)</li>
+<li>Accés a terminal amb permisos de superusuari</li>
+</ul>
+<p><strong class="c1">Instal·lació</strong></p>
+<p>Per instal·lar Nginx, utilitzem la següent ordre:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nginx
+</code></pre></div>
+<p>Al finalitzar la instal·lació, caldrà verificar que Nginx s’està executant correctament:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>nginx
+</code></pre></div>
+<p>Eixida: </p>
+<div class="highlight"><pre><span></span><code>●<span class="w"> </span>nginx.service<span class="w"> </span>–<span class="w"> </span>A<span class="w"> </span>high<span class="w"> </span>performance<span class="w"> </span>web<span class="w"> </span>server<span class="w"> </span>and<span class="w"> </span>reverse<span class="w"> </span>proxy<span class="w"> </span>server<span class="w"> </span>
+
+<span class="w">    </span>Loaded:<span class="w"> </span>loaded<span class="w"> </span><span class="o">(</span>/lib/systemd/system/nginx.service<span class="p">;</span><span class="w"> </span>enabled<span class="p">;</span><span class="w"> </span>vendor<span class="w"> </span>preset:<span class="w"> </span>enabled<span class="o">)</span><span class="w"> </span>
+
+<span class="w">    </span>Active:<span class="w"> </span>active<span class="w"> </span><span class="o">(</span>running<span class="o">)</span><span class="w"> </span>since<span class="w"> </span>…
+</code></pre></div>
+<p><strong>Estructura d’arxius</strong></p>
+<table>
+<thead>
+<tr>
+<th>Ruta</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/etc/nginx/nginx.conf</code></td>
+<td>Configuració principal</td>
+</tr>
+<tr>
+<td><code>/etc/nginx/sites-available/</code></td>
+<td>Configs disponibles (una per lloc)</td>
+</tr>
+<tr>
+<td><code>/etc/nginx/sites-enabled/</code></td>
+<td>Configs actives (symlinks)</td>
+</tr>
+<tr>
+<td><code>/var/www/html/</code></td>
+<td>Arrel web per defecte</td>
+</tr>
+<tr>
+<td><code>/var/log/nginx/access.log</code></td>
+<td>Logs d’accés</td>
+</tr>
+<tr>
+<td><code>/var/log/nginx/error.log</code></td>
+<td>Logs d’errors</td>
+</tr>
+</tbody>
+</table>
+<p><strong class="c1">Configuració del Firewall</strong></p>
+<p>Per assegurar-nos que el nostre servidor web siga accessible, caldrà permetre el trànsit HTTP (com a mínim) i HTTPS  en el tallafoc:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="s1">'Nginx Full'</span>
+
+sudo<span class="w"> </span>ufw<span class="w"> </span><span class="nb">enable</span>
+
+sudo<span class="w"> </span>ufw<span class="w"> </span>status
+</code></pre></div>
+<p><strong class="c1">Provar Nginx</strong></p>
+<p>Amb Nginx instal·lat i el tallafoc configurat, és hora de provar que el nostre servidor està funcionant. </p>
+<p>Obrim el nostre navegador i visitem l’adreça IP del nostre servidor: <code>http://la-teua-adreça-ip</code></p>
+<p>Si tot està configurat correctament, hauríem de veure la pàgina de benvinguda predeterminada de Nginx que diu “Welcome to nginx!”.</p>
+<p><figure id="_figure-9"><a class="glightbox" href="../img/default_page_nginx.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="center" alt="Pàgina d'inici de Nginx" src="../img/default_page_nginx.png"></a><figcaption>Figure 9: Pàgina d'inici de Nginx</figcaption></figure></p>
+<p><strong class="c1">Configuració d’un Server Block</strong></p>
+<p>Els Server Blocks són com els Virtual Hosts a Apache. Configurarem un Server Block per a un domini específic.</p>
+<p>Primer, creem un nou fitxer de configuració per al nostre domini:</p>
+<p>sudo nano /etc/nginx/sites-available/el teu-domini.com</p>
+<p>Agreguem la següent configuració bàsica a l’arxiu:</p>
+<div class="highlight"><pre><span></span><code>server<span class="w"> </span><span class="o">{</span><span class="w"> </span>
+
+<span class="w">    </span>listen<span class="w"> </span><span class="m">80</span><span class="p">;</span><span class="w"> </span>
+
+<span class="w">    </span>server_name<span class="w"> </span>el-teu-domini.com<span class="w"> </span>www.el-teu-domini.com<span class="p">;</span><span class="w"> </span>
+
+<span class="w">    </span>root<span class="w"> </span>/var/www/el-teu-domini.com/html<span class="p">;</span><span class="w"> </span>
+
+<span class="w">    </span>index<span class="w"> </span>index.html<span class="w"> </span>index.htm<span class="p">;</span><span class="w"> </span>
+
+<span class="w">    </span>location<span class="w"> </span>/<span class="w"> </span><span class="o">{</span><span class="w"> </span>
+
+<span class="w">        </span>try_files<span class="w"> </span><span class="nv">$uri</span><span class="w"> </span><span class="nv">$uri</span>/<span class="w"> </span><span class="o">=</span><span class="m">404</span><span class="p">;</span><span class="w"> </span>
+
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>Després de guardar l’arxiu, creem el directori per al lloc web:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/www/el-teu-domini.com/html
+</code></pre></div>
+<p>On guardarem l’arxiu <code>index.html</code></p>
+<p>Caldrà establir els permisos correctes:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span><span class="nv">$USER</span>:<span class="nv">$USER</span><span class="w"> </span>/var/www/el-teu-domini.com/html
+
+sudo<span class="w"> </span>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/www/el<span class="w"> </span>teu-domini.com
+</code></pre></div>
+<p><strong class="c1">Habilitar el canvi de la Configuració</strong></p>
+<p>Per habilitar el nou lloc, crearem un enllaç simbòlic al directori sites-enabled:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/etc/nginx/sites-available/el-teu-domini.com<span class="w"> </span>/etc/nginx/sites-enabled/
+</code></pre></div>
+<p>Comrovem la configuració de Nginx per assegurar-nos que no hi ha errors de sintaxi:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nginx<span class="w"> </span>-t
+</code></pre></div>
+<p><strong class="c1">Reiniciar Nginx</strong></p>
+<p>Si tot està bé, reiniciem Nginx per aplicar els canvis:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>nginx
+</code></pre></div>
+<p><strong class="c1">Provar el nou lloc</strong></p>
+<p>Assegurar-se que la màquina:
+    - té assignat el nom del domini per al que hem creat el nou lloc web.
+    - crida al port configurat</p>
+<p>Ara, obrim el navegador i visitem el nou domini: <code>http://el-teu-domini.com</code> i indicarem el  port si no és el de per defecte <code>http://el-teu-domini.com:port</code> </p>
+<hr>
+<ul>
+<li><a href="https://www.f5.com/go/product/welcome-to-nginx">Pàgina oficial de nginx</a></li>
+<li><a href="https://www.f5.com/go/product/welcome-to-nginx">Documentació de nginx</a></li>
+</ul>
+<h2 id="7-mysql">7️⃣ Mysql<a class="headerlink" href="#7-mysql" title="Permanent link">¶</a></h2>
+<p>MySQL és un <strong>servidor de base de dades SQL</strong> ràpid, multifil, multiusuari i robust. Està destinat a sistemes de producció de càrrega pesada i crítics per a la missió, així com a programari desplegat en massa.</p>
+<h3 id="installacio-en-ubuntu_1">Instal·lació en Ubuntu<a class="headerlink" href="#installacio-en-ubuntu_1" title="Permanent link">¶</a></h3>
+<p>Per instal·lar MySQL, executa la següent ordre des d’un terminal:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>mysql-server
+</code></pre></div>
+<p>Al finalitzar la instal·lació, el servidor MySQL hauria d’iniciar-se automàticament. Podeu verificar ràpidament el vostre estat actual mitjançant systemd:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>service<span class="w"> </span>mysql<span class="w"> </span>status
+</code></pre></div>
+<p>Hauria de proporcionar una eixida similar a la següent:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span>●<span class="w"> </span>mysql.service<span class="w"> </span>-<span class="w"> </span>MySQL<span class="w"> </span>Community<span class="w"> </span>Server<span class="w"> </span>
+<span class="w">        </span>Loaded:<span class="w"> </span>loaded<span class="w"> </span><span class="o">(</span>/lib/systemd/system/mysql.service<span class="p">;</span><span class="w"> </span>enabled<span class="p">;</span><span class="w"> </span>vendor<span class="w"> </span>preset:<span class="w"> </span>enabled<span class="o">)</span><span class="w"> </span>
+<span class="w">        </span>Active:<span class="w"> </span>active<span class="w"> </span><span class="o">(</span>running<span class="o">)</span><span class="w"> </span>since<span class="w"> </span>Tue<span class="w"> </span><span class="m">2019</span>-10-08<span class="w"> </span><span class="m">14</span>:37:38<span class="w"> </span>PDT<span class="p">;</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>weeks<span class="w"> </span><span class="m">5</span><span class="w"> </span>days<span class="w"> </span>ago<span class="w"> </span>
+<span class="w">    </span>Main<span class="w"> </span>PID:<span class="w"> </span><span class="m">2028</span><span class="w"> </span><span class="o">(</span>mysqld<span class="o">)</span><span class="w"> </span>
+<span class="w">        </span>Tasks:<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="o">(</span>límit:<span class="w"> </span><span class="m">4915</span><span class="o">)</span><span class="w"> </span>
+<span class="w">        </span>CGroup:<span class="w"> </span>/system.slice/mysql.service<span class="w"> </span>
+<span class="w">                  </span>└─2028<span class="w"> </span>/usr/sbin/mysqld<span class="w"> </span>--daemonize<span class="w"> </span>--pid-file<span class="o">=</span>/run/mysqld/mysqld.pid<span class="w"> </span>
+<span class="w">    </span>Oct<span class="w"> </span><span class="m">08</span><span class="w"> </span><span class="m">14</span>:37:36<span class="w"> </span>db.example.org<span class="w"> </span>systemd<span class="o">[</span><span class="m">1</span><span class="o">]</span>:<span class="w"> </span>Starting<span class="w"> </span>MySQL<span class="w"> </span>Community<span class="w"> </span>Server...<span class="w"> </span>
+<span class="w">    </span>Oct<span class="w"> </span><span class="m">08</span><span class="w"> </span><span class="m">14</span>:37:38<span class="w"> </span>db.example.org<span class="w"> </span>systemd<span class="o">[</span><span class="m">1</span><span class="o">]</span>:<span class="w"> </span>Started<span class="w"> </span>MySQL<span class="w"> </span>Community<span class="w"> </span>Server.
+</code></pre></div>
+<p>L’estat de la xarxa del servei MySQL també el pots verificar amb l’ordre ss des del terminal:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ss<span class="w"> </span>-tap<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>mysql
+</code></pre></div>
+<p>Com a resultat, hauries de veure algo semblant a lo següent:</p>
+<div class="highlight"><pre><span></span><code>LLISTEN<span class="w">     </span><span class="m">0</span><span class="w">       </span><span class="m">151</span><span class="w">         </span><span class="m">127</span>.0.0.1:mysql<span class="w">         </span><span class="m">0</span>.0.0.0:*<span class="w">   </span>users:<span class="o">((</span><span class="s2">"mysqld"</span>,pid<span class="o">=</span><span class="m">149190</span>,fd<span class="o">=</span><span class="m">29</span><span class="o">))</span>
+LLISTEN<span class="w">     </span><span class="m">0</span><span class="w">       </span><span class="m">70</span><span class="w">                  </span>*:33060<span class="w">               </span>*:*<span class="w">   </span>users:<span class="o">((</span><span class="s2">"mysqld"</span>,pid<span class="o">=</span><span class="m">149190</span>,fd<span class="o">=</span><span class="m">32</span><span class="o">))</span>
+</code></pre></div>
+<p>Si el servidor no funciona correctament, se pot reiniciar: </p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>service<span class="w"> </span>mysql<span class="w"> </span>restart
+</code></pre></div>
+<p>Un bon punt de partida per solucionar problemes és revisar el diari de systemd, al qual se pot accedir des del terminal:</p>
+<div class="highlight"><pre><span></span><code>suo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>mysql.service
+</code></pre></div>
+<h3 id="configura-mysql">Configura MySQL<a class="headerlink" href="#configura-mysql" title="Permanent link">¶</a></h3>
+<p>Podeu editar els fitxers en <strong>/etc/mysql/</strong> per configurar els paràmetres bàsics: fitxer de registre, número de port, etc. </p>
+<p>Per exemple, per configurar MySQL per escoltar connexions de hosts de xarxa, al fitxer /etc/mysql/mysql.conf.d/mysqld.cnf, canvia la directiva bind-address a l’adreça IP del servidor:</p>
+<div class="highlight"><pre><span></span><code>bind-address<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">192</span>.168.0.5<span class="w"> </span>
+</code></pre></div>
+<blockquote>
+<p>Nota: Caldria reemplaçar 192.168.0.5 amb l’adreça apropiada, que podeu determinar mitjançant l’ordre <code>ip address show</code></p>
+</blockquote>
+<p>Al fer canvis de configuració, caldrà reiniciar el dimoni MySQL amb la següent ordre:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>mysql.service
+</code></pre></div>
+<h2 id="8-php">8️⃣ PHP<a class="headerlink" href="#8-php" title="Permanent link">¶</a></h2>
+<p>PHP és un <strong>llenguatge de scripting de propòsit general</strong> ideal per al desenvolupament web, ja que els scripts de PHP es poden incrustar en HTML. </p>
+<p>Aquesta guia explica com instal·lar i configurar PHP en un sistema Ubuntu amb Apache2 i MySQL. Per tant, abans d’instal·lar PHP, caldrà instal·lar Apache (o altre servidor web) i un servei de base de dades com MySQL. </p>
+<p><strong class="c1">1 - Instal·lar PHP</strong></p>
+<p>PHP està disponible en Ubuntu Linux, però a diferència del llenguatge Python (que ve preinstal·lat en Linux), has d’instal·lar-lo manualment.</p>
+<p>Per instal·lar PHP i el mòdul PHP d’Apache, introduïu l’ordre següent en el terminal:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>php<span class="w"> </span>libapache2-mod-php
+</code></pre></div>
+<p><strong class="c1">2 - Paquets Opcionals</strong></p>
+<p>Els paquets següents són opcionals i els podeu instal·lar si els necessiteu per a la vostra configuració: </p>
+<ul>
+<li>
+<p><strong>PHP-CLI</strong>: Pots executar scripts de PHP a través de la Interfície de Línia de comandaments (CLI). Per fer-ho, primer cal instal·lar el paquet php-cli. Pots instal·lar-lo executant la següent ordre: </p>
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>php-cli
+</code></pre></div>
+</li>
+<li>
+<p><strong>PHP-CGI</strong>: També pots executar scripts de PHP sense instal·lar el mòdul PHP d’Apache. Per aconseguir això, has d’instal·lar el paquet php-cgi: </p>
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>php-cgi<span class="w"> </span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>PHP-MySQL</strong>: Per utilitzar MySQL amb PHP, cal instal·lar el paquet php-mysql: </p>
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>php-mysql<span class="w"> </span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>PHP-PgSQL</strong>: De manera similar, per a utilitzar PostgreSQL amb PHP, cal instal·lar el paquet php-pgsql: </p>
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>php-pgsql
+</code></pre></div>
+</li>
+</ul>
+<p><strong class="c1">3 - Configurar PHP</strong></p>
+<p>Si s’han instal·lat els paquets <code>libapache2-mod-php</code> o <code>php-cgi</code>, es poden executar scripts de PHP des del navegador web. Per altra banda, si s’ha instal·lat el paquet <code>php-cli</code>, es poden executar scripts de PHP en una terminal.</p>
+<p>Per defecte, quan s’instal·la <code>libapache2-mod-php</code>, el servidor web Apache2 es configura per executar scripts de PHP usant aquest mòdul. Primer, verifica si els fitxers <code>/etc/apache2/mods-enabled/php8.*.conf</code> i <code>/etc/apache2/mods-enabled/php8.*.load</code> existeixen. Si no existeixen, podeu habilitar el mòdul usant l’ordre <code>a2enmod</code>.</p>
+<p>Quan s’haja instal·lat els paquets relacionats amb PHP i habilitat el mòdul PHP d’Apache, cal reiniciar el servidor web Apache2 per a executar scripts de PHP executant la següent ordre:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2.service
+</code></pre></div>
+<p><strong class="c1">4 - Comprovar que la instal·lació s’ha realitzat correctament</strong></p>
+<p>Crea un fitxer anomenat <code>info.php</code> al directori <code>/var/www/html</code></p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/var/www/html/info.php
+</code></pre></div>
+<p>Afegeix el contingut següent:</p>
+<div class="highlight"><pre><span></span><code>&lt;?php
+phpinfo<span class="o">()</span><span class="p">;</span>
+?&gt;
+</code></pre></div>
+<p>Ara accediu des d’un navegador a la URL: <code>http://IP/info.php</code>, on IP serà l’adreça IP de la vostra màquina. </p>
+<p>Per exemple, si l’adreça IP de la vostra màquina és <code>192.168.100.2</code>, l’URL serà: <code>http://192.168.100.2/info.php</code></p>
+<p>Si PHP està instal·lat correctament, veureu una pàgina amb informació sobre la versió de PHP, la configuració del servidor i la configuració de PHP.</p>
+<p><strong class="c1">5 - Més informació</strong></p>
+<ul>
+<li><a href="https://www.php.net/docs.php">Documentació de php.net</a></li>
+<li><a href="https://help.ubuntu.com/community/ApacheMySQLPHP">Wiki d’Apache MySQL PHP Ubuntu</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "toc.integrate", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
