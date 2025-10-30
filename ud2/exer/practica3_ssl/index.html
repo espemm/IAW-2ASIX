@@ -1,0 +1,717 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentació del mòdul IAW">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../img/logo.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+    
+    
+      
+        <title>UD 02. Pràctica - 2ASIX - IAW</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/elmeuestil.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practica-3-certificat-ssltls" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="2ASIX - IAW" class="md-header__button md-logo" aria-label="2ASIX - IAW" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            2ASIX - IAW
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UD 02. Pràctica
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://espemm.github.io/IAW-2ASIX/" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../IAW2-server/" class="md-tabs__link">
+        
+  
+    
+  
+  Implantació en Servidors
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../IAW2-http/" class="md-tabs__link">
+        
+  
+    
+  
+  HTTP
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../IAW2-https/" class="md-tabs__link">
+        
+  
+    
+  
+  HTTPS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../IAW2-entorns/" class="md-tabs__link">
+        
+  
+    
+  
+  Entorns
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../IAW2-phpmyadmin/" class="md-tabs__link">
+        
+  
+    
+  
+  phpmyadmin
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../IAW2-php/" class="md-tabs__link">
+        
+  
+    
+  
+  PHP
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="2ASIX - IAW" class="md-nav__button md-logo" aria-label="2ASIX - IAW" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    2ASIX - IAW
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://espemm.github.io/IAW-2ASIX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IAW2-server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implantació en Servidors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IAW2-http/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTTP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IAW2-https/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTTPS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IAW2-entorns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entorns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IAW2-phpmyadmin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    phpmyadmin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IAW2-php/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PHP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="practica-3-certificat-ssltls">Pràctica 3: Certificat SSL/TLS<a class="headerlink" href="#practica-3-certificat-ssltls" title="Permanent link">¶</a></h1>
+<h2 id="objectiu">Objectiu<a class="headerlink" href="#objectiu" title="Permanent link">¶</a></h2>
+<ul>
+<li>Creeu un certificat SSL/TLS autosignat amb l’eina openssl. </li>
+<li>Configurar el servidor web Nginx perquè utilitze el certificat SSL/TLS autosignat.</li>
+<li>Redirigir HTTP a HTTPS</li>
+</ul>
+<hr>
+<h2 id="https-creacio-i-configuracio-dun-certificat-ssltls-autosignat">HTTPS. Creació i configuració d’un certificat SSL/TLS autosignat<a class="headerlink" href="#https-creacio-i-configuracio-dun-certificat-ssltls-autosignat" title="Permanent link">¶</a></h2>
+<p>En aquesta pràctica crearem un <strong>certificat SSL/TLS autosignat</strong> amb l’eina <strong>openssl</strong>. Una vegada creat configurarem el servidor web Nginx perquè utilitze aquest certificat.</p>
+<p>El procés de creació d’un certificat autosignat consta dels passos següents: </p>
+<ul>
+<li>Crear una clau privada i un certificat autosignat. </li>
+<li>Configurar la clau privada i el certificat autosignat al servidor web.</li>
+</ul>
+<p>Tingueu en compte que quan un client accedisca des d’un navegador web a un lloc web que utilitza un certificat autosignat, es mostrarà un missatge d’advertiment indicant que <code>el certificat no és de confiança</code>. Per exemple, en el cas de Mozilla Firefox, el missatge d’advertiment és el següent: </p>
+<p><figure id="_figure-1"><a class="glightbox" href="../../img/no_segur_fx.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Advertència Firefox" src="../../img/no_segur_fx.png" width="65%"></a><figcaption>Figure 1: Advertència Firefox</figcaption></figure></p>
+<p>::: note
+  Certificat no fiable, el certificat no és de confiança, perquè no ha estat emès per una <strong>autoritat de certificació (CA)</strong>.
+:::</p>
+<p>Si el client accepta el certificat, el navegador web l’emmagatzemarà al magatzem de certificats i no tornarà a mostrar el missatge d’advertiment.</p>
+<p>::: warning
+  No es recomana utilitzar certificats autosignats a llocs web públics, per tant, aquesta pràctica s’utilitza amb fins educatius per conèixer amb detall com funciona el procés de creació i configuració d’un certificat autosignat.
+:::</p>
+<h2 id="tasques-a-fer">Tasques a fer<a class="headerlink" href="#tasques-a-fer" title="Permanent link">¶</a></h2>
+<p>En aquesta pràctica has de realitzar la instal·lació i <strong>configuració d’un certificat SSL/TLS autosignat</strong> al servidor web Nginx al teu Ubuntu Server.</p>
+<p>A continuació es descriuen molt breument algunes de les tasques que haureu de realitzar. </p>
+<ul>
+<li>Utilitzar la <strong>resolució estàtica</strong>, modificant el fitxer <code>/etc/hosts</code> de l’ordinador des del qual accedirem a la pàgina i poder accedir-hi mitjançant nom de domini. </li>
+<li>Automatitzar la instal·lació d’una pila LEMP (instal·la cada element per separat)</li>
+<li>Automatitzar la creació i configuració d’un certificat autosignat SSL/TLS amb openssl per al servidor web Nginx.</li>
+<li>Comprovar que s’hi pot accedir, tant per http com per https des d’un navegador web.</li>
+<li>Redirigir http a https.</li>
+<li>Comprovar el bon funcionament de la redirecció.</li>
+<li>Documentar en markdown el procés.</li>
+</ul>
+<hr>
+<h2 id="passos-detallats">Passos detallats<a class="headerlink" href="#passos-detallats" title="Permanent link">¶</a></h2>
+<h3 id="installacio-de-la-pila-lemp">Instal·lació de la pila LEMP<a class="headerlink" href="#installacio-de-la-pila-lemp" title="Permanent link">¶</a></h3>
+<ul>
+<li>Crea el <code>script</code> per automatitzar la creació de la pila en un linux</li>
+<li>Executa el <code>script</code></li>
+<li>Comprova que s’ha instal·lat tot correctament</li>
+</ul>
+<hr>
+<h3 id="creacio-del-certificat-autosignat">Creació del certificat autosignat<a class="headerlink" href="#creacio-del-certificat-autosignat" title="Permanent link">¶</a></h3>
+<p>Per a crear el certificat autosignat utilitzarem <strong>openssl</strong>:</p>
+<p>Comandament a utilitzar:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>openssl<span class="w"> </span>req<span class="w"> </span>-x509<span class="w"> </span>-nodes<span class="w"> </span>-days<span class="w"> </span><span class="m">365</span><span class="w"> </span>-newkey<span class="w"> </span>rsa:2048<span class="w"> </span>-keyout<span class="w"> </span>/etc/ssl/private/nginx-selfsigned.key<span class="w"> </span>-out<span class="w"> </span>/etc/ssl/certs/nginx-selfsigned.crt
+</code></pre></div>
+<ul>
+<li><strong>req</strong>: La subordre req s’utilitza per crear sol·licituds de certificat en format PKCS#10. També es pot utilitzar per crear certificats autosignats, que serà l’ús que li donarem en aquesta pràctica. </li>
+<li><strong>-x509</strong>: Indica que volem crear un certificat autosignat en comptes d’una sol·licitud de certificat, que s’enviaria a una autoritat de certificació. </li>
+<li><strong>-nodes</strong>: Indica que la clau privada del certificat no estarà protegida per contrasenya i estarà sense xifrar. Això permet que les aplicacions utilitzen el certificat sense haver d’introduir una contrasenya cada vegada que s’utilitze. </li>
+<li><strong>-days 365</strong> :Aquest paràmetre indica la validesa del certificat. En aquest cas, hem configurat una validesa de 365 dies. </li>
+<li><strong>-newkey rsa:2048</strong>: Aquest paràmetre indica que volem generar una nova clau privada RSA de 2048 bits juntament amb el certificat. La longitud de clau de 2048 bits és un estàndard raonable per a la seguretat actualment. </li>
+<li><strong>-keyout /etc/ssl/ private /nginx-selfsigned.key</strong>: Indica la ubicació i el nom del fitxer on es desarà la clau privada generada. En aquest cas, hem seleccionat que es guarde en la ruta i nom <code>/etc/ssl/private/nginx-selfsigned.key</code>. </li>
+<li><strong>-out /etc/ssl/certs/nginx-selfsigned.crt</strong>: Indica la ubicació i el nom del fitxer on es desarà el certificat. En aquest cas, hem seleccionat que es guarde en la ruta i nom <code>/etc/ssl/certs/nginx-selfsigned.crt</code>.</li>
+</ul>
+<p>En executar l’ordre haurem d’introduir una sèrie de dades per teclat que s’afegiran al certificat.</p>
+<p>Les dades que hem d’introduir són les següents: </p>
+<ul>
+<li><strong>Codi del país</strong> de 2 caràcters que identifica el país on s’emet el certificat. Per exemple,ES per a Espanya. </li>
+<li><strong>Província</strong> on s’emet el certificat. </li>
+<li><strong>Localitat</strong> on s´emet el certificat. </li>
+<li><strong>Nom de l’organització</strong> per a la qual s’emet el certificat. </li>
+<li><strong>Nom de la unitat o secció</strong> de l’organització. </li>
+<li><strong>Nom del domini</strong> per al qual s’emet el certificat. </li>
+<li><strong>email</strong>.</li>
+</ul>
+<h2 id="automatitzar-la-creacio-del-certificat-autosignat">Automatitzar la creació del certificat autosignat<a class="headerlink" href="#automatitzar-la-creacio-del-certificat-autosignat" title="Permanent link">¶</a></h2>
+<p>Per automatitzar la creació d’un certificat autosignat des d’un <strong>script</strong> de Bash, podem fer ús del paràmetre subj que ens permet passar les dades que s’adjunten al certificat com a arguments des de la línia d’ordres.</p>
+<p><strong>Exemple</strong></p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="nb">set</span><span class="w"> </span>-x
+
+<span class="c1"># Configuramos las variables con los datos que necesita el certificado</span>
+<span class="nv">OPENSSL_COUNTRY</span><span class="o">=</span><span class="s2">"ES"</span>
+<span class="nv">OPENSSL_PROVINCE</span><span class="o">=</span><span class="s2">"Valencia"</span>
+<span class="nv">OPENSSL_LOCALITY</span><span class="o">=</span><span class="s2">"Tavernes de la Valldigna"</span>
+<span class="nv">OPENSSL_ORGANIZATION</span><span class="o">=</span><span class="s2">"IES Jaume II el Just"</span>
+<span class="nv">OPENSSL_ORGUNIT</span><span class="o">=</span><span class="s2">"Departamento de Informatica"</span>
+<span class="nv">OPENSSL_COMMON_NAME</span><span class="o">=</span><span class="s2">"practica-https.local"</span>
+<span class="nv">OPENSSL_EMAIL</span><span class="o">=</span><span class="s2">"emico@ieseljust.com"</span>
+
+<span class="c1"># Creamos el certificado autofirmado</span>
+
+sudo<span class="w"> </span>openssl<span class="w"> </span>req<span class="w"> </span>-x509<span class="w"> </span>-nodes<span class="w"> </span>-days<span class="w"> </span><span class="m">365</span><span class="w"> </span>-newkey<span class="w"> </span>rsa:2048<span class="w"> </span>-keyout<span class="w"> </span>/etc/ssl/private/nginx-selfsigned.key<span class="w"> </span>-out<span class="w"> </span>/etc/ssl/certs/nginx-selfsigned.crt<span class="w"> </span>-subj<span class="w"> </span><span class="s2">"/C=</span><span class="nv">$OPENSSL_COUNTRY</span><span class="s2">/ST=</span><span class="nv">$OPENSSL_PROVINCE</span><span class="s2">/L=</span><span class="nv">$OPENSSL_LOCALITY</span><span class="s2">/O=</span><span class="nv">$OPENSSL_ORGANIZATION</span><span class="s2">/OU=</span><span class="nv">$OPENSSL_ORGUNIT</span><span class="s2">/CN=</span><span class="nv">$OPENSSL_COMMON_NAME</span><span class="s2">/emailAddress=</span><span class="nv">$OPENSSL_EMAIL</span><span class="s2">"</span>
+</code></pre></div>
+<h3 id="consultar-certificat">Consultar certificat<a class="headerlink" href="#consultar-certificat" title="Permanent link">¶</a></h3>
+<p>Com <strong>consultar la informació del subjecte</strong> del certificat</p>
+<div class="highlight"><pre><span></span><code>openssl<span class="w"> </span>x509<span class="w"> </span>-in<span class="w"> </span>/etc/ssl/certs/nginx-selfsigned.crt<span class="w"> </span>-noout<span class="w"> </span>-subject
+</code></pre></div>
+<p>Com consultar la data de caducitat del certificat </p>
+<div class="highlight"><pre><span></span><code>openssl<span class="w"> </span>x509<span class="w"> </span>-in<span class="w"> </span>/etc/ssl/certs/nginx-selfsigned.crt<span class="w"> </span>-noout<span class="w"> </span>-dates
+</code></pre></div>
+<hr>
+<h3 id="configurar-un-block-ssltsl-en-nginx">Configurar un Block SSL/TSL en Nginx<a class="headerlink" href="#configurar-un-block-ssltsl-en-nginx" title="Permanent link">¶</a></h3>
+<p><strong>Configurar el Bloc SSL</strong></p>
+<p>Prèviament haurem de tindre:</p>
+<ul>
+<li>La clau privada.</li>
+<li>El certificat.</li>
+<li>Tant els clients com el servidor poden accedir-se i resolen el nom del servidor web.</li>
+<li>El port <strong>443</strong> està obert al firewall del servidor local.</li>
+</ul>
+<p>Configurar el <strong>site segur ssl</strong> en <code>/etc/nginx/sites-available/segur</code>:</p>
+<div class="highlight"><pre><span></span><code>server<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>listen<span class="w"> </span><span class="m">443</span><span class="w"> </span>ssl<span class="p">;</span>
+<span class="w">    </span>server_name<span class="w"> </span>intranet.local<span class="p">;</span>
+
+<span class="w">    </span>ssl_certificate<span class="w"> </span>/etc/ssl/certs/nginx-selfsigned.crt<span class="p">;</span>
+<span class="w">    </span>ssl_certificate_key<span class="w"> </span>/etc/ssl/private/nginx-selfsigned.key<span class="p">;</span>
+
+<span class="w">    </span>root<span class="w"> </span>/var/www/segur<span class="p">;</span>
+<span class="w">    </span>index<span class="w"> </span>index.html<span class="p">;</span>
+
+<span class="w">    </span>location<span class="w"> </span>/<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>try_files<span class="w"> </span><span class="nv">$uri</span><span class="w"> </span><span class="nv">$uri</span>/<span class="w"> </span><span class="o">=</span><span class="m">404</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p><strong>Crear el site segur</strong></p>
+<ul>
+<li>Crear el directori <code>/var/www/segur</code></li>
+<li>Crear el document d’inici <code>index.html</code>. Per exemple:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"ca"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"viewport"</span> <span class="na">content</span><span class="o">=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>PRÀCTICA WEB ESTÀTICA HTTPS<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Site Segur Local - intranet<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Servidor nginx<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>Recarregar nginx</strong></p>
+<p>Per tal d’aplicar els canvis:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nginx<span class="w"> </span>-t
+sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>nginx
+</code></pre></div>
+<p><strong>Verificar el correcte funcionement</strong></p>
+<p>Des d’un client, accedir per <code>IP</code>:</p>
+<div class="highlight"><pre><span></span><code>https://IP_server
+</code></pre></div>
+<p>Des d’un client, accedir per <code>nom</code>:</p>
+<div class="highlight"><pre><span></span><code>https://nom_server
+</code></pre></div>
+<h3 id="block-de-redireccio-de-http-a-https">Block de redirecció de HTTP a HTTPS<a class="headerlink" href="#block-de-redireccio-de-http-a-https" title="Permanent link">¶</a></h3>
+<p>És habitual que l’accés a un lloc utilitzant http es redirigisca automàticament al lloc https.</p>
+<p>En nginx caldria tindre, en el bloc per defecte <code>default</code>, establida la redirecció:</p>
+<div class="highlight"><pre><span></span><code>server<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>listen<span class="w"> </span><span class="m">80</span><span class="p">;</span>
+<span class="w">    </span>server_name<span class="w"> </span>nom_server<span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="m">301</span><span class="w"> </span>https://nom_server<span class="p">;</span>
+<span class="o">}</span>
+</code></pre></div>
+<p><strong>Verificació i recàrrega de nginx</strong></p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nginx<span class="w"> </span>-t
+sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>nginx
+</code></pre></div>
+<p>Accedeix des del navegador d’un client:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span>http://nom_server
+</code></pre></div>
+<p>I veuràs que es carrega l’adreça <code>https://nom_server</code></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "toc.integrate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

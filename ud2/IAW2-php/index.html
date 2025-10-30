@@ -11,6 +11,8 @@
       
       
       
+        <link rel="prev" href="../IAW2-phpmyadmin/">
+      
       
       
       <link rel="icon" href="../img/logo.ico">
@@ -18,7 +20,7 @@
     
     
       
-        <title>Pràctica 01‑01 — Teoria: LAMP Stack i configuració d’Apache - 2ASIX - IAW</title>
+        <title>PHP - 2ASIX - IAW</title>
       
     
     
@@ -78,11 +80,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#practica-0101-teoria-lamp-stack-i-configuracio-dapache" class="md-skip">
-          Saltar a contenido
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -114,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pràctica 01‑01 &mdash; Teoria: LAMP Stack i configuració d&rsquo;Apache
+              PHP
             
           </span>
         </div>
@@ -262,7 +259,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../IAW2-phpmyadmin.md" class="md-tabs__link">
+      <a href="../IAW2-phpmyadmin/" class="md-tabs__link">
         
   
     
@@ -277,9 +274,11 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../IAW2-php.md" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
     
@@ -438,7 +437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../IAW2-phpmyadmin.md" class="md-nav__link">
+      <a href="../IAW2-phpmyadmin/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -455,10 +454,17 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../IAW2-php.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -467,6 +473,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -486,124 +493,9 @@
                   
 
 
-<h1 id="practica-0101-teoria-lamp-stack-i-configuracio-dapache">Pràctica 01‑01 — Teoria: LAMP Stack i configuració d’Apache<a class="headerlink" href="#practica-0101-teoria-lamp-stack-i-configuracio-dapache" title="Permanent link">¶</a></h1>
-<p><strong>Adaptació en valencià del material original de José Juan Sánchez
-Hernández (CC BY‑NC‑SA 4.0)</strong></p>
-<h2 id="index-de-continguts">Índex de continguts<a class="headerlink" href="#index-de-continguts" title="Permanent link">¶</a></h2>
-<ol>
-<li>Introducció i objectiu\</li>
-<li>Configuració de directoris en Apache\</li>
-<li>Habilitar/deshabilitar mòduls d’Apache\</li>
-<li>Directiva <code>DirectoryIndex</code>\</li>
-<li>Host virtuals (Virtual Hosts)\</li>
-<li>Protecció de directoris amb <code>.htaccess</code>\</li>
-<li>Resum i consideracions finals\</li>
-<li>Referències\</li>
-<li>Llicència i autoria</li>
-</ol>
-<hr>
-<h2 id="1-introduccio-i-objectiu">1. Introducció i objectiu<a class="headerlink" href="#1-introduccio-i-objectiu" title="Permanent link">¶</a></h2>
-<p>En aquesta pràctica es treballa amb una pila <strong>LAMP</strong> (Linux, Apache,
-MySQL, PHP) en una instància de servidor.\
-S’aprèn a configurar Apache perquè servesca continguts HTML/PHP,
-gestionar directoris i crear host virtuals, entre altres coses.</p>
-<h2 id="2-configuracio-de-directoris-a-apache">2. Configuració de directoris a Apache<a class="headerlink" href="#2-configuracio-de-directoris-a-apache" title="Permanent link">¶</a></h2>
-<p>Bloc d’exemple:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;Directory</span><span class="w"> </span><span class="s">/home/ubuntu/misitioweb</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nb">Options</span><span class="w"> </span>Indexes<span class="w"> </span>FollowSymLinks
-<span class="w">    </span><span class="nb">AllowOverride</span><span class="w"> </span><span class="k">None</span>
-<span class="w">    </span><span class="nb">Require</span><span class="w"> </span><span class="k">all</span><span class="w"> </span>granted
-<span class="nt">&lt;/Directory&gt;</span>
-</code></pre></div>
-<ul>
-<li><code>Options Indexes FollowSymLinks</code>: permet llistar continguts i seguir
-    enllaços.\</li>
-<li><code>AllowOverride None</code>: impedeix l’ús de <code>.htaccess</code>.\</li>
-<li><code>Require all granted</code>: dóna accés a tots els clients.\
-    Després cal reiniciar Apache:</li>
-</ul>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
-</code></pre></div>
-<h2 id="3-habilitar-deshabilitar-moduls-dapache">3. Habilitar / deshabilitar mòduls d’Apache<a class="headerlink" href="#3-habilitar-deshabilitar-moduls-dapache" title="Permanent link">¶</a></h2>
-<p>Activar un mòdul:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>a2enmod<span class="w"> </span>nom_del_modul
-sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
-</code></pre></div>
-<p>Exemple:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>a2enmod<span class="w"> </span>rewrite
-</code></pre></div>
-<p>Desactivar:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>a2dismod<span class="w"> </span>nom_del_modul
-sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
-</code></pre></div>
-<h2 id="4-directiva-directoryindex">4. Directiva <code>DirectoryIndex</code><a class="headerlink" href="#4-directiva-directoryindex" title="Permanent link">¶</a></h2>
-<p>Defineix l’ordre de fitxers que Apache servirà per defecte:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">DirectoryIndex</span><span class="w"> </span>index.php<span class="w"> </span>index.html
-</code></pre></div>
-<p>Apareix en la configuració global o en cada virtual host.</p>
-<h2 id="5-host-virtuals-virtual-hosts">5. Host virtuals (Virtual Hosts)<a class="headerlink" href="#5-host-virtuals-virtual-hosts" title="Permanent link">¶</a></h2>
-<p>Permeten que un mateix servidor gestione diversos dominis.</p>
-<ol>
-<li>
-<p>Crear un fitxer, per exemple
-    <code>/etc/apache2/sites-available/miweb.conf</code>.\</p>
-</li>
-<li>
-<p>Definir <code>ServerName</code>, <code>DocumentRoot</code>, logs, etc.\</p>
-</li>
-<li>
-<p>Activar:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>a2ensite<span class="w"> </span>miweb.conf
-sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>apache2
-</code></pre></div>
-</li>
-<li>
-<p>Desactivar el host per defecte si cal:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>a2dissite<span class="w"> </span><span class="m">000</span>-default.conf
-sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>apache2
-</code></pre></div>
-</li>
-</ol>
-<p>També es pot editar <code>/etc/hosts</code> per fer proves locals.</p>
-<h2 id="6-proteccio-de-directoris-amb-htaccess">6. Protecció de directoris amb <code>.htaccess</code><a class="headerlink" href="#6-proteccio-de-directoris-amb-htaccess" title="Permanent link">¶</a></h2>
-<p>Exemple d’autenticació bàsica:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">AuthType</span><span class="w"> </span>Basic
-<span class="nb">AuthName</span><span class="w"> </span><span class="s2">"Accés restringit"</span>
-<span class="nb">AuthUserFile</span><span class="w"> </span><span class="s2">"/etc/apache2/.htpasswd"</span>
-<span class="nb">Require</span><span class="w"> </span>valid-user
-</code></pre></div>
-<p>Cal permetre <code>AllowOverride All</code> en la configuració del directori:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;Directory</span><span class="w"> </span><span class="s">"/var/www/html/stats"</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nb">AllowOverride</span><span class="w"> </span><span class="k">All</span>
-<span class="nt">&lt;/Directory&gt;</span>
-</code></pre></div>
-<p>Crear <code>.htpasswd</code> amb:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>htpasswd<span class="w"> </span>-c<span class="w"> </span>/etc/apache2/.htpasswd<span class="w"> </span>usuari
-</code></pre></div>
-<h2 id="7-resum-i-consideracions-finals">7. Resum i consideracions finals<a class="headerlink" href="#7-resum-i-consideracions-finals" title="Permanent link">¶</a></h2>
-<ul>
-<li>Configura correctament directoris i permisos.\</li>
-<li>Activa només els mòduls necessaris (<code>rewrite</code>, etc.).\</li>
-<li>Usa <code>DirectoryIndex</code> per definir fitxers predeterminats.\</li>
-<li>Amb virtual hosts pots allotjar diverses webs.\</li>
-<li><code>.htaccess</code> permet personalitzar configuracions locals amb
-    precaució.</li>
-</ul>
-<h2 id="8-referencies">8. Referències<a class="headerlink" href="#8-referencies" title="Permanent link">¶</a></h2>
-<ul>
-<li>Documentació oficial Apache HTTP Server\</li>
-<li>Manuals i tutorials LAMP\</li>
-<li>Curs <em>Implantació d’Aplicacions Web (IAW)</em> — José Juan Sánchez
-    Hernández</li>
-</ul>
-<h2 id="9-llicencia-i-autoria">9. Llicència i autoria<a class="headerlink" href="#9-llicencia-i-autoria" title="Permanent link">¶</a></h2>
-<p>Contingut original de <strong>José Juan Sánchez Hernández</strong>, publicat a\
-👉 <a href="https://josejuansanchez.org/iaw/practica-01-01-teoria/index.html">https://josejuansanchez.org/iaw/practica-01-01-teoria/index.html</a>\
-Sota llicència <strong>Creative Commons
-Reconeixement-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA
-4.0)</strong></p>
-<p>Adaptació i traducció al valencià: <em>ChatGPT (2025)</em>, respectant la
-llicència original.</p>
+  <h1>PHP</h1>
+
+
 
 
 

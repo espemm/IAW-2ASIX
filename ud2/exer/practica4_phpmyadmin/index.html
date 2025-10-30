@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#practica-2-servir-multiples-dominis" class="md-skip">
+        <a href="#practica-4-phpmyadmin" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -262,7 +262,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../IAW2-phpmyadmin.md" class="md-tabs__link">
+      <a href="../../IAW2-phpmyadmin/" class="md-tabs__link">
         
   
     
@@ -279,7 +279,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../IAW2-php.md" class="md-tabs__link">
+      <a href="../../IAW2-php/" class="md-tabs__link">
         
   
     
@@ -438,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IAW2-phpmyadmin.md" class="md-nav__link">
+      <a href="../../IAW2-phpmyadmin/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -458,7 +458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IAW2-php.md" class="md-nav__link">
+      <a href="../../IAW2-php/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -486,39 +486,79 @@
                   
 
 
-<h1 id="practica-2-servir-multiples-dominis">Pràctica 2: Servir múltiples dominis<a class="headerlink" href="#practica-2-servir-multiples-dominis" title="Permanent link">¶</a></h1>
+<h1 id="practica-4-phpmyadmin">Pràctica 4: phpmyadmin<a class="headerlink" href="#practica-4-phpmyadmin" title="Permanent link">¶</a></h1>
 <h2 id="objectiu">Objectiu<a class="headerlink" href="#objectiu" title="Permanent link">¶</a></h2>
 <ul>
-<li>Configurar diferents llocs per allotjar les webs corresponents a diferents dominis.</li>
+<li>Instal·lar, assegurar i configurar phpMyAdmin en un servidor Ubuntu. </li>
+<li>Protegir PhpMyAdmin contra accessos no autoritzats. </li>
+<li>Automatitzar la instal·lació i configuració de phpMyAdmin mitjançant scripts de Bash.</li>
 </ul>
-<hr>
-<h2 id="virtual-hosting-amb-nginx">Virtual hosting amb nginx<a class="headerlink" href="#virtual-hosting-amb-nginx" title="Permanent link">¶</a></h2>
-<p>Podem trobar els llocs disponibles i actius del servidor nginx, sen els directoris:</p>
-<div class="highlight"><pre><span></span><code>/etc/nginx/sites-availables/
-/etc/nginx/sites-enabled/
-</code></pre></div>
-<p>Per exemple podem crear un nou Host Virtual fent una copia del lloc virtual <code>default</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/etc/nginx/sites-availables/
-cp<span class="w"> </span>default<span class="w"> </span>exemple
-</code></pre></div>
-<p>Ara al fitxer exemple podem configurar el nou lloc virtual, tenint en compte els paràmetres següents: </p>
-<ul>
-<li><strong>server_name</strong>: El nom amb què accedirem al lloc virtual. </li>
-<li><strong>root</strong>: Directori on guardem els fitxers que se serviran. </li>
-<li><strong>index</strong>: Llista amb els noms dels fitxers que intentarà servir si no se n’indica cap a la URL. </li>
-<li>En <strong>listen 80;</strong> i en <strong>listen [::]:80</strong>: S’indica el port i les adreces des d’on s’esperen peticions. </li>
-<li>Al lloc virtual default té configurat la directiva <strong>default_server</strong> ens permet indicar que és el lloc virtual per defecte. Aquesta directiva no s’ha d’incloure als nous llocs virtuals. </li>
-<li>Al fitxer <strong>/etc/nginx/nginx.conf</strong> ens trobem les directives <code>error_log</code> i <code>access_log</code>, per indicar el fitxer de log d’errors i d’accessos respectivament. Si volem podem indicar un fitxer diferent a cada lloc virtual indicant aquestes directives.</li>
-</ul>
-<p>Per activar un lloc nou hem de crear l’enllaç directe al directori <strong>/etc/nginx/sites-enabled/</strong>:</p>
-<div class="highlight"><pre><span></span><code>ln<span class="w"> </span>-s<span class="w"> </span>/etc/nginx/sites-available/pagina1<span class="w"> </span>/etc/nginx/sites-enabled/
-</code></pre></div>
-<hr>
 <h2 id="tasques-a-fer">Tasques a fer<a class="headerlink" href="#tasques-a-fer" title="Permanent link">¶</a></h2>
-<p>Crea dos llocs diferents al <code>default</code></p>
+<p><strong>Instal·lació de PhpMyAdmin</strong></p>
 <ul>
-<li>Un dels llocs servirà una Pàgina web estàtica (amb contingut HTML + CSS)</li>
-<li>L’altre lloc servirà altra Pàgina web estàtica (amb contingut HTML + CSS + Javascript)</li>
+<li>Instal·la phpMyAdmin juntament amb les extensions PHP necessàries (php-mbstring, php-zip, php-gd, php-json, php-curl). </li>
+<li>Configura phpMyAdmin perquè funcione amb nginx. </li>
+</ul>
+<p><strong>Permetre l’Accés per Contrasenya del root de MySQL</strong></p>
+<ul>
+<li>Canvia el mètode d’autenticació de l’usuari root de MySQL d’auth_socket a caching_sha2_password o mysql_native_password. </li>
+<li>Verifica els mètodes d’autenticació utilitzats per cadascun dels usuaris.</li>
+</ul>
+<p><strong>Configuració de l’Accés per Contrasenya per a un Usuari Dedicat de MySQL</strong></p>
+<ul>
+<li>Crea un nou usuari de MySQL amb una contrasenya segura. </li>
+<li>Dona-li al usuari els privilegis apropiats per gestionar les bases de dades a través de phpMyAdmin.</li>
+</ul>
+<p><strong>Assegura la Instància de phpMyAdmin</strong></p>
+<ul>
+<li>Crea un fitxer .htpasswd per emmagatzemar les credencials d’usuari i contrasenya. </li>
+<li>Modifica la configuració del lloc per aplicar l’accés per usuari i contrassenya.</li>
+<li>Reinicieu nginx per aplicar els canvis.</li>
+</ul>
+<p>::: tip 
+  Assegureu-vos de seguir bones pràctiques de seguretat a cada pas. 
+  No inclogueu contrasenyes reals a les captures de pantalla o al document. 
+  El document ha d’estar ben organitzat i fàcil de seguir.
+:::</p>
+<p><strong>Com Lliurar</strong></p>
+<p>Hauràs de crear un repositori a GitHub amb el nom de la pràctica i la descripció de la mateixa.</p>
+<p>El repositori ha de tenir el contingut següent: </p>
+<ul>
+<li>Una <strong>documentació tècnica</strong> al vostre repositori de Github, i publicat a Github Pages amb la descripció de tots els passos que s’han dut a terme. </li>
+<li>Els passos detallats que vas seguir per completar cadascun dels requisits. </li>
+<li>Instal·lació i configuració de phpMyAdmin. </li>
+<li>Configuració d’autenticació i mètodes d’autenticació de MySQL i Nginx. </li>
+<li>Els scripts de Bash que s’han utilitzat per automatitzar la instal·lació i configuració de PhpMyAdmin. </li>
+<li>Captures de pantalla demostratives dins de la documentació.</li>
+</ul>
+<p>A més del contingut anterior pot ser necessari crear altres fitxers de configuració. A continuació es mostra un exemple de com pot ser lestructura del repositori:</p>
+<div class="highlight"><pre><span></span><code>.-¬
+  |- README.md
+  |- conf    -¬
+              |- site_phpmyadmin  
+  |- scripts -¬
+              |- .env
+              |- install_lemp.sh
+              |- install_phpmyadmin.sh
+</code></pre></div>
+<p><strong>Scripts de Bash</strong></p>
+<p>El directori scripts ha d’incloure els fitxers següents:</p>
+<ul>
+<li>
+<p><strong>.env</strong>: Aquest fitxer conté totes les variables de configuració que s’utilitzaran als scripts de Bash. </p>
+</li>
+<li>
+<p><strong>install_lemp.sh</strong>: Script de Bash amb l’automatització del procés d’instal·lació de la pila LEMP.</p>
+</li>
+<li>
+<p><strong>install_phpmyadmin.sh</strong>: Script de Bash amb l’automatització del procés de creació i configuració d’instal·lació i securització de phpMyAdmin.</p>
+</li>
+</ul>
+<h2 id="recursos">Recursos<a class="headerlink" href="#recursos" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://www.phpmyadmin.net/docs/">Documentación de phpMyAdmin</a></li>
+<li><a href="https://dev.mysql.com/doc/">Documentación de MySQL</a></li>
+<li><a href="https://nginx.org/en/docs/">Documentación de NGINX</a></li>
 </ul>
 
 

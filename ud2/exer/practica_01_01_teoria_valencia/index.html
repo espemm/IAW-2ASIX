@@ -18,7 +18,7 @@
     
     
       
-        <title>UD 02. Pràctica - 2ASIX - IAW</title>
+        <title>Pràctica 01‑01 — Teoria: LAMP Stack i configuració d’Apache - 2ASIX - IAW</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#practica-1-installacio-dun-servidor-lemp" class="md-skip">
+        <a href="#practica-0101-teoria-lamp-stack-i-configuracio-dapache" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              UD 02. Pràctica
+              Pràctica 01‑01 &mdash; Teoria: LAMP Stack i configuració d&rsquo;Apache
             
           </span>
         </div>
@@ -262,7 +262,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../IAW2-phpmyadmin.md" class="md-tabs__link">
+      <a href="../../IAW2-phpmyadmin/" class="md-tabs__link">
         
   
     
@@ -279,7 +279,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../IAW2-php.md" class="md-tabs__link">
+      <a href="../../IAW2-php/" class="md-tabs__link">
         
   
     
@@ -438,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IAW2-phpmyadmin.md" class="md-nav__link">
+      <a href="../../IAW2-phpmyadmin/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -458,7 +458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IAW2-php.md" class="md-nav__link">
+      <a href="../../IAW2-php/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -486,99 +486,130 @@
                   
 
 
-<h1 id="practica-1-installacio-dun-servidor-lemp">Pràctica 1: Instal·lació d’un servidor LEMP<a class="headerlink" href="#practica-1-installacio-dun-servidor-lemp" title="Permanent link">¶</a></h1>
-<h2 id="objectiu">Objectiu<a class="headerlink" href="#objectiu" title="Permanent link">¶</a></h2>
-<ul>
-<li>Instal·lar un servidor LEMP per desplegar diferents tipus d’aplicacions.</li>
-</ul>
+<h1 id="practica-0101-teoria-lamp-stack-i-configuracio-dapache">Pràctica 01‑01 — Teoria: LAMP Stack i configuració d’Apache<a class="headerlink" href="#practica-0101-teoria-lamp-stack-i-configuracio-dapache" title="Permanent link">¶</a></h1>
+<p><strong>Adaptació en valencià del material original de José Juan Sánchez
+Hernández (CC BY‑NC‑SA 4.0)</strong></p>
+<h2 id="index-de-continguts">Índex de continguts<a class="headerlink" href="#index-de-continguts" title="Permanent link">¶</a></h2>
+<ol>
+<li>Introducció i objectiu\</li>
+<li>Configuració de directoris en Apache\</li>
+<li>Habilitar/deshabilitar mòduls d’Apache\</li>
+<li>Directiva <code>DirectoryIndex</code>\</li>
+<li>Host virtuals (Virtual Hosts)\</li>
+<li>Protecció de directoris amb <code>.htaccess</code>\</li>
+<li>Resum i consideracions finals\</li>
+<li>Referències\</li>
+<li>Llicència i autoria</li>
+</ol>
 <hr>
-<h2 id="tasques-a-fer">Tasques a fer<a class="headerlink" href="#tasques-a-fer" title="Permanent link">¶</a></h2>
-<p>Realitza aquesta pràctica en una màquina virtual.</p>
-<p><strong>LEMP</strong> és un acrònim de les tecnologies utilitzades:</p>
-<ul>
-<li><strong>L</strong>inux — sistema operatiu\</li>
-<li><strong>E</strong> nginx — servidor web\</li>
-<li><strong>M</strong>ariaDB / MySQL — sistema de bases de dades\</li>
-<li><strong>P</strong>HP — llenguatge de programació del costat del servidor</li>
-</ul>
-<p>Configurarem un entorn LEMP en Linux.</p>
-<hr>
-<h2 id="passos-detallats">Passos detallats<a class="headerlink" href="#passos-detallats" title="Permanent link">¶</a></h2>
-<h3 id="installacio-del-servidor-de-base-de-dades">Instal·lació del servidor de base de dades<a class="headerlink" href="#installacio-del-servidor-de-base-de-dades" title="Permanent link">¶</a></h3>
-<p>Instal·la <strong>MariaDB</strong>:</p>
-<div class="highlight"><pre><span></span><code>apt<span class="w"> </span>install<span class="w"> </span>mariadb-server
-</code></pre></div>
-<p>Executa la configuració segura inicial:</p>
-<div class="highlight"><pre><span></span><code>mariadb-secure-installation
-</code></pre></div>
-<p>Crea una base de dades i un usuari nou:</p>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">-</span><span class="n">p</span>
-<span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">newdb</span><span class="p">;</span>
-<span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="s1">'username'</span><span class="o">@</span><span class="s1">'localhost'</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">'userpassword'</span><span class="p">;</span>
-<span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">newdb</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">'username'</span><span class="o">@</span><span class="s1">'localhost'</span><span class="p">;</span>
-<span class="n">FLUSH</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="p">;</span>
-<span class="n">quit</span>
-</code></pre></div>
-<hr>
-<h3 id="installacio-de-nginx-i-php">Instal·lació de Nginx i PHP<a class="headerlink" href="#installacio-de-nginx-i-php" title="Permanent link">¶</a></h3>
-<p>Instal·la els paquets necessaris:</p>
-<div class="highlight"><pre><span></span><code>apt<span class="w"> </span>install<span class="w"> </span>nginx<span class="w"> </span>php<span class="w"> </span>php-fpm<span class="w"> </span>php-mysql
+<h2 id="1-introduccio-i-objectiu">1. Introducció i objectiu<a class="headerlink" href="#1-introduccio-i-objectiu" title="Permanent link">¶</a></h2>
+<p>En aquesta pràctica es treballa amb una pila <strong>LAMP</strong> (Linux, Apache,
+MySQL, PHP) en una instància de servidor.\
+S’aprèn a configurar Apache perquè servesca continguts HTML/PHP,
+gestionar directoris i crear host virtuals, entre altres coses.</p>
+<h2 id="2-configuracio-de-directoris-a-apache">2. Configuració de directoris a Apache<a class="headerlink" href="#2-configuracio-de-directoris-a-apache" title="Permanent link">¶</a></h2>
+<p>Bloc d’exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Directory</span><span class="w"> </span><span class="s">/home/ubuntu/misitioweb</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nb">Options</span><span class="w"> </span>Indexes<span class="w"> </span>FollowSymLinks
+<span class="w">    </span><span class="nb">AllowOverride</span><span class="w"> </span><span class="k">None</span>
+<span class="w">    </span><span class="nb">Require</span><span class="w"> </span><span class="k">all</span><span class="w"> </span>granted
+<span class="nt">&lt;/Directory&gt;</span>
 </code></pre></div>
 <ul>
-<li><code>nginx</code>: servidor web</li>
-<li><code>php-fpm</code>: permet executar PHP des de nginx</li>
-<li><code>php</code>: llenguatge PHP (versió 8.2 en Debian 12)\</li>
-<li><code>php-mysql</code>: llibreria PHP per connectar-se a MariaDB/MySQL</li>
+<li><code>Options Indexes FollowSymLinks</code>: permet llistar continguts i seguir
+    enllaços.\</li>
+<li><code>AllowOverride None</code>: impedeix l’ús de <code>.htaccess</code>.\</li>
+<li><code>Require all granted</code>: dóna accés a tots els clients.\
+    Després cal reiniciar Apache:</li>
 </ul>
-<hr>
-<h3 id="verificacio-del-funcionament-de-nginx">Verificació del funcionament de nginx<a class="headerlink" href="#verificacio-del-funcionament-de-nginx" title="Permanent link">¶</a></h3>
-<p>Accedir, des del navegador, a la pàgina web d’inici del servidor:</p>
-<div class="highlight"><pre><span></span><code>http://&lt;adreça_ip&gt;
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
 </code></pre></div>
-<h3 id="verificacio-del-funcionament-de-php">Verificació del funcionament de PHP<a class="headerlink" href="#verificacio-del-funcionament-de-php" title="Permanent link">¶</a></h3>
-<p>Caldrà tindre en la configuració del lloc:</p>
-<p></p><div class="highlight"><pre><span></span><code>location<span class="w"> </span>~<span class="w"> </span><span class="se">\.</span>php$<span class="w"> </span><span class="o">{</span>
-<span class="w">    </span>include<span class="w"> </span>snippets/fastcgi-php.conf<span class="p">;</span>
-<span class="w">    </span>fastcgi_pass<span class="w"> </span>unix:/run/php/php8.1-fpm.sock<span class="p">;</span>
-<span class="o">}</span>
+<h2 id="3-habilitar-deshabilitar-moduls-dapache">3. Habilitar / deshabilitar mòduls d’Apache<a class="headerlink" href="#3-habilitar-deshabilitar-moduls-dapache" title="Permanent link">¶</a></h2>
+<p>Activar un mòdul:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>a2enmod<span class="w"> </span>nom_del_modul
+sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
 </code></pre></div>
-On s’indica que quan arribe un arxiu .php es reenvie a php-fpm per a que se processe.
-<p>Crea un fitxer <code>info.php</code> a <code>/var/www/html</code> amb el contingut:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span> <span class="nb">phpinfo</span><span class="p">();</span> <span class="cp">?&gt;</span>
+<p>Exemple:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>a2enmod<span class="w"> </span>rewrite
 </code></pre></div>
-<p>Comprova que els fitxers servits per Apache són propietat de
-<code>www-data:www-data</code>.</p>
-<p>Accedeix des del navegador:</p>
-<p></p><div class="highlight"><pre><span></span><code><span class="w">    </span>http://&lt;adreça_ip&gt;/info.php
+<p>Desactivar:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>a2dismod<span class="w"> </span>nom_del_modul
+sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
 </code></pre></div>
-I vorem la configuració del php instal·lat.
-<hr>
-<h3 id="acces-amb-nom-resolucio-de-noms">Accés amb nom (resolució de noms)<a class="headerlink" href="#acces-amb-nom-resolucio-de-noms" title="Permanent link">¶</a></h3>
-<p>Per accedir amb un nom de domini, edita <code>/etc/hosts</code>:</p>
-<pre><code>&lt;adreça_ip_servidor&gt;    www.exemple.com
-</code></pre>
-<p>Després visita:</p>
-<pre><code>http://www.exemple.com/info.php
-</code></pre>
-<hr>
-<h3 id="revisio-de-registres-logs">Revisió de registres (logs)<a class="headerlink" href="#revisio-de-registres-logs" title="Permanent link">¶</a></h3>
-<p>Si hi ha errors, revisa:</p>
+<h2 id="4-directiva-directoryindex">4. Directiva <code>DirectoryIndex</code><a class="headerlink" href="#4-directiva-directoryindex" title="Permanent link">¶</a></h2>
+<p>Defineix l’ordre de fitxers que Apache servirà per defecte:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">DirectoryIndex</span><span class="w"> </span>index.php<span class="w"> </span>index.html
+</code></pre></div>
+<p>Apareix en la configuració global o en cada virtual host.</p>
+<h2 id="5-host-virtuals-virtual-hosts">5. Host virtuals (Virtual Hosts)<a class="headerlink" href="#5-host-virtuals-virtual-hosts" title="Permanent link">¶</a></h2>
+<p>Permeten que un mateix servidor gestione diversos dominis.</p>
+<ol>
+<li>
+<p>Crear un fitxer, per exemple
+    <code>/etc/apache2/sites-available/miweb.conf</code>.\</p>
+</li>
+<li>
+<p>Definir <code>ServerName</code>, <code>DocumentRoot</code>, logs, etc.\</p>
+</li>
+<li>
+<p>Activar:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>a2ensite<span class="w"> </span>miweb.conf
+sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>apache2
+</code></pre></div>
+</li>
+<li>
+<p>Desactivar el host per defecte si cal:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>a2dissite<span class="w"> </span><span class="m">000</span>-default.conf
+sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>apache2
+</code></pre></div>
+</li>
+</ol>
+<p>També es pot editar <code>/etc/hosts</code> per fer proves locals.</p>
+<h2 id="6-proteccio-de-directoris-amb-htaccess">6. Protecció de directoris amb <code>.htaccess</code><a class="headerlink" href="#6-proteccio-de-directoris-amb-htaccess" title="Permanent link">¶</a></h2>
+<p>Exemple d’autenticació bàsica:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">AuthType</span><span class="w"> </span>Basic
+<span class="nb">AuthName</span><span class="w"> </span><span class="s2">"Accés restringit"</span>
+<span class="nb">AuthUserFile</span><span class="w"> </span><span class="s2">"/etc/apache2/.htpasswd"</span>
+<span class="nb">Require</span><span class="w"> </span>valid-user
+</code></pre></div>
+<p>Cal permetre <code>AllowOverride All</code> en la configuració del directori:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Directory</span><span class="w"> </span><span class="s">"/var/www/html/stats"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nb">AllowOverride</span><span class="w"> </span><span class="k">All</span>
+<span class="nt">&lt;/Directory&gt;</span>
+</code></pre></div>
+<p>Crear <code>.htpasswd</code> amb:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>htpasswd<span class="w"> </span>-c<span class="w"> </span>/etc/apache2/.htpasswd<span class="w"> </span>usuari
+</code></pre></div>
+<h2 id="7-resum-i-consideracions-finals">7. Resum i consideracions finals<a class="headerlink" href="#7-resum-i-consideracions-finals" title="Permanent link">¶</a></h2>
 <ul>
-<li><code>/var/log/apache/access.log</code> — registre d’accés\</li>
-<li><code>/var/log/apache/error.log</code> — registre d’errors</li>
+<li>Configura correctament directoris i permisos.\</li>
+<li>Activa només els mòduls necessaris (<code>rewrite</code>, etc.).\</li>
+<li>Usa <code>DirectoryIndex</code> per definir fitxers predeterminats.\</li>
+<li>Amb virtual hosts pots allotjar diverses webs.\</li>
+<li><code>.htaccess</code> permet personalitzar configuracions locals amb
+    precaució.</li>
 </ul>
-<p>També pots utilitzar:</p>
-<div class="highlight"><pre><span></span><code>journalctl<span class="w"> </span>-u<span class="w"> </span>apache2
-</code></pre></div>
+<h2 id="8-referencies">8. Referències<a class="headerlink" href="#8-referencies" title="Permanent link">¶</a></h2>
+<ul>
+<li>Documentació oficial Apache HTTP Server\</li>
+<li>Manuals i tutorials LAMP\</li>
+<li>Curs <em>Implantació d’Aplicacions Web (IAW)</em> — José Juan Sánchez
+    Hernández</li>
+</ul>
+<h2 id="9-llicencia-i-autoria">9. Llicència i autoria<a class="headerlink" href="#9-llicencia-i-autoria" title="Permanent link">¶</a></h2>
+<p>Contingut original de <strong>José Juan Sánchez Hernández</strong>, publicat a\
+👉 <a href="https://josejuansanchez.org/iaw/practica-01-01-teoria/index.html">https://josejuansanchez.org/iaw/practica-01-01-teoria/index.html</a>\
+Sota llicència <strong>Creative Commons
+Reconeixement-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA
+4.0)</strong></p>
+<p>Adaptació i traducció al valencià: <em>ChatGPT (2025)</em>, respectant la
+llicència original.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 
