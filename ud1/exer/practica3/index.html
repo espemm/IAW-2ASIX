@@ -126,6 +126,43 @@
     
     
     
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
     
   </nav>
   
@@ -412,7 +449,7 @@
                   
 
 
-<h1 id="practica-3-mkdocs-github-pages">Pràctica 3: Mkdocs - Github Pages<a class="headerlink" href="#practica-3-mkdocs-github-pages" title="Permanent link">&para;</a></h1>
+<h1 id="practica-3-mkdocs-github-pages">Pràctica 3: Mkdocs - Github Pages<a class="headerlink" href="#practica-3-mkdocs-github-pages" title="Permanent link">¶</a></h1>
 <p>::: important </p>
 <p>Objectius</p>
 <p>En aquesta pràctica desplegarem una pàgina web estàtica amb MkDocs a GitHub Pages. </p>
@@ -424,66 +461,66 @@
 <li>Desplegar una pàgina web estàtica</li>
 </ul>
 <p>:::</p>
-<h2 id="generadors-de-pagines-estatiques">Generadors de pàgines estàtiques<a class="headerlink" href="#generadors-de-pagines-estatiques" title="Permanent link">&para;</a></h2>
-<p>En els darrers anys s&rsquo;han desenvolupat programes d&rsquo;ordinador que ens permeten de manera senzilla generar llocs web estàtics. </p>
+<h2 id="generadors-de-pagines-estatiques">Generadors de pàgines estàtiques<a class="headerlink" href="#generadors-de-pagines-estatiques" title="Permanent link">¶</a></h2>
+<p>En els darrers anys s’han desenvolupat programes d’ordinador que ens permeten de manera senzilla generar llocs web estàtics. </p>
 <p>Estan programats en diferents llenguatges que inclouen un motor de <code>plantilles</code> per facilitar la generació del codi HTML.</p>
-<p>És fàcil trobar diferents <code>temes</code> (fitxers de fulls d&rsquo;estil) per canviar l&rsquo;aspecte de les pàgines generades . L&rsquo;usuari final només s&rsquo;ha de preocupar del contingut.</p>
-<p>Normalment el <code>contingut</code> s&rsquo;escriu en un llenguatge de marques senzill com Markdown.</p>
+<p>És fàcil trobar diferents <code>temes</code> (fitxers de fulls d’estil) per canviar l’aspecte de les pàgines generades . L’usuari final només s’ha de preocupar del contingut.</p>
+<p>Normalment el <code>contingut</code> s’escriu en un llenguatge de marques senzill com Markdown.</p>
 <p>Una vegada generat el lloc estàtic només hem de desplegar el lloc al nostre servidor en producció. Tenim molts generadors de pàgines estàtiques: Jekyll, Hugo, Pelican, etc. Pots trobar una llista completa a: <a href="https://jamstack.org/generators/">\textcolor{cerulean}{Site Generators}</a>.</p>
 <p>Nosaltres farem servir <code>MkDocs</code>.</p>
-<h2 id="desplegament-del-nostre-lloc-web">Desplegament del nostre lloc web<a class="headerlink" href="#desplegament-del-nostre-lloc-web" title="Permanent link">&para;</a></h2>
+<h2 id="desplegament-del-nostre-lloc-web">Desplegament del nostre lloc web<a class="headerlink" href="#desplegament-del-nostre-lloc-web" title="Permanent link">¶</a></h2>
 <p>Una vegada generada la nostra pàgina podem desplegar-la al nostre servidor en producció.</p>
 <p>Podem tenir un servidor web propi (que administrem nosaltres), o utilitzar serveis de <code>hosting</code> per implantar les nostres pàgines. En aquest cas farem servir un hosting extern per desplegar la nostra pàgina.</p>
-<p>Els serveis moderns per allotjar pàgines estàtiques poden proporcionar mètodes de desplegaments automàtics o semiautomàtics, i solen utilitzar repositoris git (<em>l&rsquo;ús de servidors FTP està desapareixent</em>).</p>
+<p>Els serveis moderns per allotjar pàgines estàtiques poden proporcionar mètodes de desplegaments automàtics o semiautomàtics, i solen utilitzar repositoris git (<em>l’ús de servidors FTP està desapareixent</em>).</p>
 <p>Els hostings que podem fer servir: Netlify, Sorgeix, GitHub Pages, GitLab Pages, render, Firebase, Vercel, Neocities, quantcdn, etc. Nosaltres utilitzarem <strong>GitHub Pages</strong>.</p>
-<p>Alguns d&rsquo;aquests serveis et permeten de manera automàtica generar-hi la pàgina estàtica (<strong>Integració Contínua</strong>). A la nostra pràctica no farem servir aquesta característica. La pàgina es genera al nostre ordinador i posteriorment es desplega al hosting extern.</p>
-<p>Si ens permet diverses maneres de pujar la pàgina al hosting sempre triarem l&rsquo;ús de <code>repositori git</code>.</p>
-<h2 id="mkdocs">MkDocs<a class="headerlink" href="#mkdocs" title="Permanent link">&para;</a></h2>
+<p>Alguns d’aquests serveis et permeten de manera automàtica generar-hi la pàgina estàtica (<strong>Integració Contínua</strong>). A la nostra pràctica no farem servir aquesta característica. La pàgina es genera al nostre ordinador i posteriorment es desplega al hosting extern.</p>
+<p>Si ens permet diverses maneres de pujar la pàgina al hosting sempre triarem l’ús de <code>repositori git</code>.</p>
+<h2 id="mkdocs">MkDocs<a class="headerlink" href="#mkdocs" title="Permanent link">¶</a></h2>
 <p><strong>MkDocs</strong> és un generador de llocs web estàtics que ens permet crear de manera senzilla un lloc web per documentar un projecte.</p>
 <p>El contingut del lloc web està escrit en text pla en format Markdown i es configura amb un únic fitxer de configuració en <strong>format YAML</strong>.</p>
-<h3 id="themes-fulls-destil-per-a-mkdocs">Themes (fulls d&rsquo;estil) per a MkDocs<a class="headerlink" href="#themes-fulls-destil-per-a-mkdocs" title="Permanent link">&para;</a></h3>
-<p>Els temes que s&rsquo;inclouen per defecte a MkDocs són: </p>
+<h3 id="themes-fulls-destil-per-a-mkdocs">Themes (fulls d’estil) per a MkDocs<a class="headerlink" href="#themes-fulls-destil-per-a-mkdocs" title="Permanent link">¶</a></h3>
+<p>Els temes que s’inclouen per defecte a MkDocs són: </p>
 <ul>
 <li>mkdocs </li>
 <li>readthedocs</li>
 </ul>
 <p>És possible utilitzar altres temes desenvolupats per tercers o desenvolupar el nostre propi tema. A la wiki del projecte MkDocs podeu trobar un llistat de tots els themes que hi ha disponibles actualment.</p>
 <p>En aquesta pràctica farem servir el <strong>theme Material</strong> que ha estat desenvolupat per Martin Donath. A la web oficial de Material for MkDocs trobem una guia de referència sobre com utilitzar i configurar el tema.</p>
-<h3 id="comandaments-mes-importants-de-mkdocs">Comandaments més importants de MkDocs<a class="headerlink" href="#comandaments-mes-importants-de-mkdocs" title="Permanent link">&para;</a></h3>
+<h3 id="comandaments-mes-importants-de-mkdocs">Comandaments més importants de MkDocs<a class="headerlink" href="#comandaments-mes-importants-de-mkdocs" title="Permanent link">¶</a></h3>
 <ul>
 <li>
 <p>Crear un nou projecte (Comanda: new) </p>
-<p><div class="highlight"><pre><span></span><code><span class="c1"># crearà la carpeta &#39;nom_projecte&#39;</span>
+<p></p><div class="highlight"><pre><span></span><code><span class="c1"># crearà la carpeta 'nom_projecte'</span>
 
 mkdocs<span class="w"> </span>new<span class="w"> </span>prova
 INFO<span class="w">    </span>-<span class="w">  </span>Creating<span class="w"> </span>project<span class="w"> </span>directory:<span class="w"> </span>prova
 INFO<span class="w">    </span>-<span class="w">  </span>Writing<span class="w"> </span>config<span class="w"> </span>file:<span class="w"> </span>prova<span class="se">\m</span>kdocs.yml
 INFO<span class="w">    </span>-<span class="w">  </span>Writing<span class="w"> </span>initial<span class="w"> </span>docs:<span class="w"> </span>prova<span class="se">\d</span>ocs<span class="se">\i</span>ndex.md
 </code></pre></div>
-<a class="glightbox" href="../../img/mkp.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="contingut de la carpeta" src="../../img/mkp.png" /></a></p>
+<a class="glightbox" href="../../img/mkp.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="contingut de la carpeta" src="../../img/mkp.png"></a>
 </li>
 <li>
 <p>Crear la pàgina web (Comanda: build) </p>
-<p><div class="highlight"><pre><span></span><code><span class="c1"># des de la carpeta nom_projecte crearà el lloc web a partir dels arxius .md ubicats en el directori &#39;docs&#39;</span>
+<p></p><div class="highlight"><pre><span></span><code><span class="c1"># des de la carpeta nom_projecte crearà el lloc web a partir dels arxius .md ubicats en el directori 'docs'</span>
 
 mkdocs<span class="w"> </span>build
 INFO<span class="w">    </span>-<span class="w">  </span>Cleaning<span class="w"> </span>site<span class="w"> </span>directory
 INFO<span class="w">    </span>-<span class="w">  </span>Building<span class="w"> </span>documentation<span class="w"> </span>to<span class="w"> </span>directory:<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\e</span>spem<span class="se">\p</span>rova<span class="se">\s</span>ite
 INFO<span class="w">    </span>-<span class="w">  </span>Documentation<span class="w"> </span>built<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.08<span class="w"> </span>seconds
 </code></pre></div>
-  - Llançar un servidor web local per comprovar com quedarà la pàgina web abans de publicar-la (Comanda: serve)</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Per defecte se servirà en &#39;http://127.0.0.1:8000&#39;</span>
+  - Llançar un servidor web local per comprovar com quedarà la pàgina web abans de publicar-la (Comanda: serve)
+<div class="highlight"><pre><span></span><code><span class="c1"># Per defecte se servirà en 'http://127.0.0.1:8000'</span>
 
 mkdocs<span class="w"> </span>serve
 INFO<span class="w">    </span>-<span class="w">  </span>Building<span class="w"> </span>documentation...
 INFO<span class="w">    </span>-<span class="w">  </span>Cleaning<span class="w"> </span>site<span class="w"> </span>directory
 INFO<span class="w">    </span>-<span class="w">  </span>Documentation<span class="w"> </span>built<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.97<span class="w"> </span>seconds
-INFO<span class="w">    </span>-<span class="w">  </span><span class="o">[</span><span class="m">20</span>:01:45<span class="o">]</span><span class="w"> </span>Watching<span class="w"> </span>paths<span class="w"> </span><span class="k">for</span><span class="w"> </span>changes:<span class="w"> </span><span class="s1">&#39;docs&#39;</span>,<span class="w"> </span><span class="s1">&#39;mkdocs.yml&#39;</span>
+INFO<span class="w">    </span>-<span class="w">  </span><span class="o">[</span><span class="m">20</span>:01:45<span class="o">]</span><span class="w"> </span>Watching<span class="w"> </span>paths<span class="w"> </span><span class="k">for</span><span class="w"> </span>changes:<span class="w"> </span><span class="s1">'docs'</span>,<span class="w"> </span><span class="s1">'mkdocs.yml'</span>
 INFO<span class="w">    </span>-<span class="w">  </span><span class="o">[</span><span class="m">20</span>:01:45<span class="o">]</span><span class="w"> </span>Serving<span class="w"> </span>on<span class="w"> </span>http://127.0.0.1:8000/
 </code></pre></div>
 </li>
 </ul>
-<p><a class="glightbox" href="../../img/mks.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Visualització en el navegador" src="../../img/mks.png" width="60%" /></a></p>
+<p><figure id="_figure-1"><a class="glightbox" href="../../img/mks.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Visualització en el navegador" src="../../img/mks.png" width="60%"></a><figcaption>Figure 1: Visualització en el navegador</figcaption></figure></p>
 <ul>
 <li>
 <p>Publicar la documentació a GitHub Pages (Comanda: gh-deploy)</p>
@@ -491,11 +528,11 @@ INFO<span class="w">    </span>-<span class="w">  </span><span class="o">[</span
 <li><strong>Activa Pages</strong> en Github</li>
 </ul>
 <p><a href="https://docs.github.com/es/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site">\textcolor{cerulean}{Publicant el site en Github Pages}</a></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Quan estiga activat &#39;Pages&#39; en Github</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Quan estiga activat 'Pages' en Github</span>
 mkdocs<span class="w"> </span>gh-deploy
 </code></pre></div>
 <p>::: warning
-La primera vegada que faces el desplegament caldrà modificar la branca del desplegament en Pages a la que s&rsquo;ha creat com a gh-pages
+La primera vegada que faces el desplegament caldrà modificar la branca del desplegament en Pages a la que s’ha creat com a gh-pages
 :::</p>
 </li>
 <li>
@@ -504,7 +541,7 @@ La primera vegada que faces el desplegament caldrà modificar la branca del desp
 </code></pre></div>
 </li>
 </ul>
-<h2 id="que-has-de-fer">Què has de fer?<a class="headerlink" href="#que-has-de-fer" title="Permanent link">&para;</a></h2>
+<h2 id="que-has-de-fer">Què has de fer?<a class="headerlink" href="#que-has-de-fer" title="Permanent link">¶</a></h2>
 <p>En aquesta pràctica desplegarem una pàgina web estàtica amb <strong>MkDocs</strong> i <strong>GitHub Pages</strong>. </p>
 <p>Per això, segueix els passos següents: </p>
 <ul>
@@ -515,7 +552,7 @@ La primera vegada que faces el desplegament caldrà modificar la branca del desp
 <li>Puja la pàgina web a GitHub Pages. </li>
 <li>Comprova que la URL de la teua pàgina web a GitHub Pages funciona correctament.</li>
 </ul>
-<h2 id="que-has-de-lliurar">Què has de lliurar?<a class="headerlink" href="#que-has-de-lliurar" title="Permanent link">&para;</a></h2>
+<h2 id="que-has-de-lliurar">Què has de lliurar?<a class="headerlink" href="#que-has-de-lliurar" title="Permanent link">¶</a></h2>
 <p>Com has desplegat la teua pàgina web a GitHub Pages?
 La pàgina web es visualitza correctament?</p>
 <p>::: note</p>
@@ -523,7 +560,7 @@ La pàgina web es visualitza correctament?</p>
 <p>Lliurar la documentació de les passes fetes.
 Incloure la url a la teua pàgina de github.</p>
 <p>:::</p>
-<h2 id="referencies">Referències<a class="headerlink" href="#referencies" title="Permanent link">&para;</a></h2>
+<h2 id="referencies">Referències<a class="headerlink" href="#referencies" title="Permanent link">¶</a></h2>
 <p><a href="https://www.mkdocs.org/user-guide/deploying-your-docs/">\textcolor{cerulean}{Desplegant des de mkdocs}</a></p>
 
 

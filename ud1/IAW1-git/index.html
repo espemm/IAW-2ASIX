@@ -130,6 +130,43 @@
     
     
     
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
     
   </nav>
   
@@ -578,40 +615,40 @@
                   
 
 
-<h1 id="introduccion-a-git-y-github">Introducción a Git y GitHub<a class="headerlink" href="#introduccion-a-git-y-github" title="Permanent link">&para;</a></h1>
-<p>En aquest taller d&rsquo;introducció a git i GitHub repasarem/aprendrem les ordres bàsiques per començar a treballar amb repositoris de manera local i remota.</p>
-<p>Material basat en el taller d&rsquo;introducció a Git i GitHub de José Juan Sánchez i al llibre “Pro Git” de Scott Chacon and Ben Straub Pots accedir a aquest taller al següent enllaç: </p>
+<h1 id="introduccion-a-git-y-github">Introducción a Git y GitHub<a class="headerlink" href="#introduccion-a-git-y-github" title="Permanent link">¶</a></h1>
+<p>En aquest taller d’introducció a git i GitHub repasarem/aprendrem les ordres bàsiques per començar a treballar amb repositoris de manera local i remota.</p>
+<p>Material basat en el taller d’introducció a Git i GitHub de José Juan Sánchez i al llibre “Pro Git” de Scott Chacon and Ben Straub Pots accedir a aquest taller al següent enllaç: </p>
 <ul>
 <li><a href="https://git-scm.com/book/en/v2">Pro Git book</a></li>
 <li><a href="https://github.com/josejuansanchez/taller-git-github">Taller d´introducció a git i GitHub</a></li>
 </ul>
 <p><strong><em>Git / GitHub</em></strong></p>
-<p><strong>Git</strong> és un programari de control de versions dissenyat per Linus Torvalds. Ens ajuda a portar el registre dels canvis dels fitxers d&rsquo;un repositori (directori). </p>
+<p><strong>Git</strong> és un programari de control de versions dissenyat per Linus Torvalds. Ens ajuda a portar el registre dels canvis dels fitxers d’un repositori (directori). </p>
 <p><strong>GitHub</strong> és un servei que ens permet guardar repositoris Git a un servidor remot.</p>
-<h2 id="git">GIT<a class="headerlink" href="#git" title="Permanent link">&para;</a></h2>
-<h3 id="installacio-de-git">Instal·lació de git<a class="headerlink" href="#installacio-de-git" title="Permanent link">&para;</a></h3>
+<h2 id="git">GIT<a class="headerlink" href="#git" title="Permanent link">¶</a></h2>
+<h3 id="installacio-de-git">Instal·lació de git<a class="headerlink" href="#installacio-de-git" title="Permanent link">¶</a></h3>
 <p><strong>Linux</strong></p>
-<p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git
+<p></p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git
 </code></pre></div>
 <strong>Windows</strong>
-Descarregar des de la web oficial: http://git-scm.com/downloads.</p>
-<h3 id="configuracio-de-git">Configuració de git.<a class="headerlink" href="#configuracio-de-git" title="Permanent link">&para;</a></h3>
-<p>Configurem el nom i l&rsquo;email que apareixeran als commits que fem sobre els repositoris.</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Nom Cognoms&quot;</span>
+Descarregar des de la web oficial: http://git-scm.com/downloads.
+<h3 id="configuracio-de-git">Configuració de git.<a class="headerlink" href="#configuracio-de-git" title="Permanent link">¶</a></h3>
+<p>Configurem el nom i l’email que apareixeran als commits que fem sobre els repositoris.</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"Nom Cognoms"</span>
 git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span>us@domini
 </code></pre></div>
-<p>Comprovar si s&rsquo;han aplicat els canvis:</p>
+<p>Comprovar si s’han aplicat els canvis:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--list
 </code></pre></div>
-<h3 id="seccions-principals-dun-repositori-git">Seccions principals d&rsquo;un repositori git<a class="headerlink" href="#seccions-principals-dun-repositori-git" title="Permanent link">&para;</a></h3>
+<h3 id="seccions-principals-dun-repositori-git">Seccions principals d’un repositori git<a class="headerlink" href="#seccions-principals-dun-repositori-git" title="Permanent link">¶</a></h3>
 <ul>
 <li>Workspace</li>
 <li>Staging area (Index)</li>
 <li>Local repository</li>
 <li>Remote repository</li>
 </ul>
-<p><a class="glightbox" href="../img/git.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="author:Oliver Steele" src="../img/git.png" /></a></p>
-<h3 id="estats-dun-fitxer-en-git">Estats d&rsquo;un fitxer en git<a class="headerlink" href="#estats-dun-fitxer-en-git" title="Permanent link">&para;</a></h3>
+<p><figure id="_figure-1"><a class="glightbox" href="../img/git.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="author:Oliver Steele" src="../img/git.png"></a><figcaption>Figure 1: author:Oliver Steele</figcaption></figure></p>
+<h3 id="estats-dun-fitxer-en-git">Estats d’un fitxer en git<a class="headerlink" href="#estats-dun-fitxer-en-git" title="Permanent link">¶</a></h3>
 <p>Un fitxer pot estar en algun dels estats següents: </p>
 <ul>
 <li>Sense seguiment (untracked) </li>
@@ -620,8 +657,8 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 <li>Confirmat (commited)</li>
 </ul>
 <p>El diagrama següent mostra a quina secció es pot trobar cada fitxer en funció del seu estat:</p>
-<p><a class="glightbox" href="../img/estat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="estats" src="../img/estat.png" /></a></p>
-<h3 id="us-basic-de-git">Ús bàsic de git<a class="headerlink" href="#us-basic-de-git" title="Permanent link">&para;</a></h3>
+<p><figure id="_figure-2"><a class="glightbox" href="../img/estat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="estats" src="../img/estat.png"></a><figcaption>Figure 2: estats</figcaption></figure></p>
+<h3 id="us-basic-de-git">Ús bàsic de git<a class="headerlink" href="#us-basic-de-git" title="Permanent link">¶</a></h3>
 <ul>
 <li>
 <p>Crear un directori</p>
@@ -642,18 +679,18 @@ Inicializado<span class="w"> </span>repositorio<span class="w"> </span>Git<span 
 <li>
 <p>Afegir fitxers</p>
 <p>Afegim un nou fitxer al repositori:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Estem fent una prova&quot;</span>&gt;exemple.txt
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"Estem fent una prova"</span>&gt;exemple.txt
 git<span class="w"> </span>add<span class="w"> </span>ejemplo.txt
 </code></pre></div>
 <p>I confirmem els canvis:</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;He creat el fitxer exemple.txt&quot;</span>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"He creat el fitxer exemple.txt"</span>
 </code></pre></div>
 </li>
 <li>
 <p>Modificar un fitxer</p>
 <p>Al modificar un fichero, podemos confirmar el cambio pero tenemos que usar la opción a:</p>
 <div class="highlight"><pre><span></span><code>nano<span class="w"> </span>exemple.txt
-git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">&quot;He modificat el fitxer exemple.txt&quot;</span><span class="w"> </span>
+git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">"He modificat el fitxer exemple.txt"</span><span class="w"> </span>
 </code></pre></div>
 </li>
 <li>
@@ -672,23 +709,23 @@ git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </s
 <li>
 <p>Canviar el nom al fitxer:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>mv<span class="w"> </span>exemple.txt<span class="w"> </span>exemple2.txt
-git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">&quot;He canviat el nom del fitxer&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">"He canviat el nom del fitxer"</span>
 </code></pre></div>
 </li>
 <li>
 <p>Eliminar un fitxer</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>rm<span class="w"> </span>ejemplo2.txt
-git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">&quot;He borrado el fichero ejemplo2&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">"He borrado el fichero ejemplo2"</span>
 </code></pre></div>
 </li>
 <li>
 <p>Tornant a versions anteriors</p>
-<p>Podem tornar a l&rsquo;estat anterior. Si volem tornar a un commit anterior sense perdre les modificacions posteriors:</p>
+<p>Podem tornar a l’estat anterior. Si volem tornar a un commit anterior sense perdre les modificacions posteriors:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>&lt;id<span class="w"> </span>del<span class="w"> </span>commit&gt;
 </code></pre></div>
 </li>
 <li>
-<p>Per a tornar a l&rsquo;última versió:</p>
+<p>Per a tornar a l’última versió:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>switch<span class="w"> </span>-
 </code></pre></div>
 </li>
@@ -700,18 +737,18 @@ git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </s
 </ul>
 </li>
 </ul>
-<h2 id="github">GitHub<a class="headerlink" href="#github" title="Permanent link">&para;</a></h2>
+<h2 id="github">GitHub<a class="headerlink" href="#github" title="Permanent link">¶</a></h2>
 <p><strong><em>GitHub</em></strong> és un servei web que permet tenir repositoris git remots en un servidor.</p>
 <p>Ens permet tenir sincronitzat el nostre repositori local, amb un repositori remot.</p>
 <p>Per connectar-nos al servidor remot de GitHub utilitzarem una connexió SSH o TOKEN.</p>
 <p>Necessitem que en la connexió SSH no ens demane la contrasenya, per tant cal configurar en el servei la nostra clau pública (apartat “SSH keys” del teu perfil en GitHub).</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Tasca d&rsquo;investigació:
+<p>Tasca d’investigació:
   - Qué és GitLab
   - Diferències entre Github i Gitlab</p>
 </div>
-<h3 id="creacio-de-repositoris">Creació de repositoris<a class="headerlink" href="#creacio-de-repositoris" title="Permanent link">&para;</a></h3>
+<h3 id="creacio-de-repositoris">Creació de repositoris<a class="headerlink" href="#creacio-de-repositoris" title="Permanent link">¶</a></h3>
 <p>El més senzill és crear un repositori a GitHub i després clonar-lo en el teu ordinador.</p>
 <p>Utilitzarem la URL ssh per a realitzar la clonació. </p>
 <p>Utilitzarem la URL https per a clonar repositoris que no són nostres. En aquests repositoris no podem fer modificacions.</p>
@@ -721,7 +758,7 @@ git clone git@github.com:xxxxxxx/xxxxxxx.git
 ```
 </code></pre>
 <p>Per a comprovar que tens configurat el repositori usant la url SSH pots vore el fitxer de configuració en <strong>.git/config</strong>.</p>
-<h3 id="sincronitzant-repositori-local-i-remot">Sincronitzant repositori local i remot<a class="headerlink" href="#sincronitzant-repositori-local-i-remot" title="Permanent link">&para;</a></h3>
+<h3 id="sincronitzant-repositori-local-i-remot">Sincronitzant repositori local i remot<a class="headerlink" href="#sincronitzant-repositori-local-i-remot" title="Permanent link">¶</a></h3>
 <p>Per pujar els canvis des del nostre repositori local al remot fem servir:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>push
 </code></pre></div>
@@ -739,17 +776,17 @@ git clone git@github.com:xxxxxxx/xxxxxxx.git
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:espemm/prova.git
 git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div>
-<h3 id="treballem-amb-rames-i-unions">Treballem amb rames i unions<a class="headerlink" href="#treballem-amb-rames-i-unions" title="Permanent link">&para;</a></h3>
+<h3 id="treballem-amb-rames-i-unions">Treballem amb rames i unions<a class="headerlink" href="#treballem-amb-rames-i-unions" title="Permanent link">¶</a></h3>
 <p><strong>Rames</strong></p>
 <p>Una branca representa una línia independent de desenvolupament, és com crear una nova àrea de treball que tindrà el seu historial propi de commits. 
 Per llistar les branques locals executa:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>branch
 *<span class="w"> </span>main
 </code></pre></div>
-<p>La branca en què estàs treballant actualment s&rsquo;assenyala amb un asterisc*. 
-GitHub crida a la branca principal main. En repositoris antics s&rsquo;anomena màster. A la branca principal és on sol trobar-se la darrera versió del repositori</p>
+<p>La branca en què estàs treballant actualment s’assenyala amb un asterisc*. 
+GitHub crida a la branca principal main. En repositoris antics s’anomena màster. A la branca principal és on sol trobar-se la darrera versió del repositori</p>
 <p><strong>Ramificar</strong></p>
-<p>Creem una nova branca, per fer canvis al repositori (sense tocar l&rsquo;estat de la branca principal). 
+<p>Creem una nova branca, per fer canvis al repositori (sense tocar l’estat de la branca principal). 
 Si els canvis són correctes, hem de fusionar la branca creada amb la branca principal. Per crear una nova branca:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>branch<span class="w"> </span><span class="o">[</span>rama<span class="o">]</span>
 </code></pre></div>
@@ -758,25 +795,25 @@ Si els canvis són correctes, hem de fusionar la branca creada amb la branca pri
 </code></pre></div>
 <p>La nova branca té els mateixos fitxers que a la branca principal. 
 Tots els canvis que facis als fitxers en aquesta branca no es veuran a la branca principal. 
-Truc: amb l&rsquo;ordre git checkout -b [branca] es crea una nova branca i t&rsquo;hi posiciones. 
-Amb l&rsquo;ordre git branch -v es veu el darrer commit de cada branca. Comproveu que coincideixen l&rsquo;últim commit a les dues branques. 
+Truc: amb l’ordre git checkout -b [branca] es crea una nova branca i t’hi posiciones. 
+Amb l’ordre git branch -v es veu el darrer commit de cada branca. Comproveu que coincideixen l’últim commit a les dues branques. 
 Truc: Pots fer servir una extensió del teu shell (bash, zsh,. . . ) perquè et mostri en el prompt la branca en què estàs treballant.</p>
 <p><strong>Sincronitzar rames amb el repositori remot</strong></p>
-<p>Les branques no es creen automàticament a GitHub, cal fer un push per crear-les en remot. Nota: &lsquo;origin&rsquo; és el nom del dipòsit remot.</p>
+<p>Les branques no es creen automàticament a GitHub, cal fer un push per crear-les en remot. Nota: ‘origin’ és el nom del dipòsit remot.</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span><span class="o">[</span>rama<span class="o">]</span>
 </code></pre></div>
 <p><strong>Eliminar i fusionar rames</strong></p>
-<p>És força freqüent crear una branca, fer els canvis que siguin necessaris, unir-la a una branca principal i després eliminar la branca que s&rsquo;havia creat.</p>
+<p>És força freqüent crear una branca, fer els canvis que siguin necessaris, unir-la a una branca principal i després eliminar la branca que s’havia creat.</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span><span class="o">[</span>rama<span class="o">]</span>
 </code></pre></div>
 <p>Quan has treballat en una branca, el normal és voler incorporar els canvis a la branca principal. Per **unir/fusionar una branca a la principal:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>main
 git<span class="w"> </span>merge<span class="w"> </span><span class="o">[</span>rama<span class="o">]</span>
 </code></pre></div>
-<h3 id="conflictes">Conflictes<a class="headerlink" href="#conflictes" title="Permanent link">&para;</a></h3>
-<p>Quan només s&rsquo;han afegit o eliminat fitxers en una branca, és fàcil unir-la a la principal.
+<h3 id="conflictes">Conflictes<a class="headerlink" href="#conflictes" title="Permanent link">¶</a></h3>
+<p>Quan només s’han afegit o eliminat fitxers en una branca, és fàcil unir-la a la principal.
 Quan es fan modificacions en fitxers, incloent canvis en els noms dels fitxers, git detecta aquests canvis i els adapta automàticament, però de vegades sorgeixen conflictes.
-Els conflictes apareixen quan la mateixa part del codi s&rsquo;ha modificat en dues branques diferents.</p>
+Els conflictes apareixen quan la mateixa part del codi s’ha modificat en dues branques diferents.</p>
 <div class="highlight"><pre><span></span><code>cat<span class="w"> </span>prova.txt
 <span class="o">&lt;&lt;&lt;&lt;&lt;&lt;</span>&lt;<span class="w"> </span>HEAD
 Hola<span class="w"> </span>com<span class="w"> </span><span class="nv">estàs</span>
@@ -784,16 +821,16 @@ Hola<span class="w"> </span>com<span class="w"> </span><span class="nv">estàs</
 hola<span class="w"> </span>que<span class="w"> </span>tal
 &gt;&gt;&gt;&gt;&gt;&gt;&gt;<span class="w"> </span>nuevo
 </code></pre></div>
-<h2 id="pull-request">Pull Request<a class="headerlink" href="#pull-request" title="Permanent link">&para;</a></h2>
+<h2 id="pull-request">Pull Request<a class="headerlink" href="#pull-request" title="Permanent link">¶</a></h2>
 <p><strong>Què és un Pull Request?</strong> </p>
 <ul>
-<li>Un Pull Request és una petició que es fa al propietari d&rsquo;un repositori original perquè aquest darrer incorpori els canvis que se suggereixen. </li>
+<li>Un Pull Request és una petició que es fa al propietari d’un repositori original perquè aquest darrer incorpori els canvis que se suggereixen. </li>
 <li>Els Pull Requests han esdevingut la forma més habitual de col·laborar en projectes de programari lliure. </li>
 <li>Com col·laborar en un projecte de programari lliure? Què és un Pull Request?</li>
 </ul>
 <p><strong>Passos per fer un PR</strong></p>
 <ul>
-<li>L&rsquo;usuari ha de fer un fork del dipòsit al qual vol contribuir.</li>
+<li>L’usuari ha de fer un fork del dipòsit al qual vol contribuir.</li>
 <li>Clonar el repositori.</li>
 <li>Crear una nova branca, on realitzarem els canvis que posteriorment proposarem com a canvis.</li>
 <li>Pugem els canvis al nostre repositori, creant una branca al repositori remot.</li>
@@ -808,9 +845,9 @@ Aquests canvis no es veuran reflectits al nostre fork de forma automàtica. </p>
 <p>Ens posicionem a la branca principal del fork. 
 Afegim un repositori remot apuntant al repositori original (upstream). 
 Busquem els possibles canvis que ha tingut el repositori original:</p>
-<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>fetch<span class="w"> </span>upstream
+<p></p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>fetch<span class="w"> </span>upstream
 </code></pre></div>
-fusionem els canvis del repositori original que estan a la branca principal.</p>
+fusionem els canvis del repositori original que estan a la branca principal.
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>merge<span class="w"> </span>upstream/main
 </code></pre></div>
 

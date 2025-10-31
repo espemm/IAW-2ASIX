@@ -130,6 +130,43 @@
     
     
     
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
     
   </nav>
   
@@ -485,23 +522,23 @@
                   
 
 
-<h1 id="implantacio-o-desplegament-web">Implantació o Desplegament Web<a class="headerlink" href="#implantacio-o-desplegament-web" title="Permanent link">&para;</a></h1>
-<p>La <strong>Implantació</strong> o <strong>Desplegament</strong> d&rsquo;aplicacions web és el conjunt de tasques que cal realitzar per posar en un servidor web (<strong>Entorn de Producció</strong>) per part dels <strong>Administradors de Sistemes</strong>, una <strong>versió</strong> d&rsquo;una aplicació web que han desenvolupat els <strong>Desenvolupadors</strong> (<strong>Entorn de Desenvolupament</strong>) després de provar que funciona correctament (<strong>Entorn de Proves</strong>).</p>
-<p>Hem de tenir en compte que el procés dimplantar una aplicació web és crític, ja que normalment se li dóna suport a molts clients i la decisió de l&rsquo;aplicació en lentorn de producció pot causar una pèrdua de diners molt important per a lempresa.</p>
-<h2 id="equips-de-treball">Equips de treball<a class="headerlink" href="#equips-de-treball" title="Permanent link">&para;</a></h2>
+<h1 id="implantacio-o-desplegament-web">Implantació o Desplegament Web<a class="headerlink" href="#implantacio-o-desplegament-web" title="Permanent link">¶</a></h1>
+<p>La <strong>Implantació</strong> o <strong>Desplegament</strong> d’aplicacions web és el conjunt de tasques que cal realitzar per posar en un servidor web (<strong>Entorn de Producció</strong>) per part dels <strong>Administradors de Sistemes</strong>, una <strong>versió</strong> d’una aplicació web que han desenvolupat els <strong>Desenvolupadors</strong> (<strong>Entorn de Desenvolupament</strong>) després de provar que funciona correctament (<strong>Entorn de Proves</strong>).</p>
+<p>Hem de tenir en compte que el procés dimplantar una aplicació web és crític, ja que normalment se li dóna suport a molts clients i la decisió de l’aplicació en lentorn de producció pot causar una pèrdua de diners molt important per a lempresa.</p>
+<h2 id="equips-de-treball">Equips de treball<a class="headerlink" href="#equips-de-treball" title="Permanent link">¶</a></h2>
 <p>Com veiem a la definició anterior tenim almenys dos equips de treball: </p>
 <ul>
 <li>
-<p><strong>Administradors de sistemes (ops)</strong>: Són els encarregats que l&rsquo;entorn de producció funcioni de manera adequada. Coneixen el maquinari i els sistemes operatius instal·ladors als servidors. Reben l&rsquo;aplicació de l&rsquo;equip de desenvolupament i són els responsables de fer-la funcionar als servidors. </p>
+<p><strong>Administradors de sistemes (ops)</strong>: Són els encarregats que l’entorn de producció funcioni de manera adequada. Coneixen el maquinari i els sistemes operatius instal·ladors als servidors. Reben l’aplicació de l’equip de desenvolupament i són els responsables de fer-la funcionar als servidors. </p>
 </li>
 <li>
-<p><strong>Desenvolupadors (devs)</strong>: Són els encarregats de crear i afegir noves funcionalitats a l&rsquo;aplicació. No accedeixen als servidors, solen desenvolupar en els seus propis equips (entorn de desenvolupament), també solen provar l&rsquo;aplicació abans del desplegament. El seu objectiu principal és oferir noves funcionalitats als clients desenvolupant noves versions de l&rsquo;aplicació que s&rsquo;hauran de desplegar.</p>
+<p><strong>Desenvolupadors (devs)</strong>: Són els encarregats de crear i afegir noves funcionalitats a l’aplicació. No accedeixen als servidors, solen desenvolupar en els seus propis equips (entorn de desenvolupament), també solen provar l’aplicació abans del desplegament. El seu objectiu principal és oferir noves funcionalitats als clients desenvolupant noves versions de l’aplicació que s’hauran de desplegar.</p>
 </li>
 </ul>
 <p>Poden existir altres equips: </p>
 <ul>
 <li>
-<p><strong>Equip de qualitat</strong>: S&rsquo;asseguren que les noves versions de l&rsquo;aplicació funcionen correctament (entorn de proves). </p>
+<p><strong>Equip de qualitat</strong>: S’asseguren que les noves versions de l’aplicació funcionen correctament (entorn de proves). </p>
 </li>
 <li>
 <p><strong>Equip de disseny</strong>. </p>
@@ -510,28 +547,28 @@
 <p><strong>Equip de suport</strong>.</p>
 </li>
 </ul>
-<h2 id="entorns-de-treball">Entorns de treball<a class="headerlink" href="#entorns-de-treball" title="Permanent link">&para;</a></h2>
+<h2 id="entorns-de-treball">Entorns de treball<a class="headerlink" href="#entorns-de-treball" title="Permanent link">¶</a></h2>
 <ul>
 <li>
-<p><strong>Desenvolupament</strong>: entorn on l&rsquo;equip de desenvolupament crea el programari, normalment és el seu propi PC, que solen anomenar “local”. Se solen fer molts canvis al dia, de l&rsquo;ordre de desenes o fins i tot centenars. També és habitual veure entorns de desenvolupament compartits entre membres de l&rsquo;equip de desenvolupament. </p>
+<p><strong>Desenvolupament</strong>: entorn on l’equip de desenvolupament crea el programari, normalment és el seu propi PC, que solen anomenar “local”. Se solen fer molts canvis al dia, de l’ordre de desenes o fins i tot centenars. També és habitual veure entorns de desenvolupament compartits entre membres de l’equip de desenvolupament. </p>
 </li>
 <li>
 <p><strong>Proves</strong>: Es configura pràcticament igual al de producció i serveix per validar canvis i intentar reproduir els errors de producció. </p>
 </li>
 <li>
-<p><strong>Producció</strong>: és l&rsquo;entorn on s&rsquo;executen les aplicacions i les poden fer servir els clients finals. Normalment aquest entorn sol ser, almenys, un servidor dedicat, sinó un clúster, i el normal és que tinga un sistema operatiu diferent de l&rsquo;entorn de desenvolupament i fins i tot una arquitectura diferent. Ha de romandre estable. Sol estar gestionat per l&rsquo;equip de sistemes.</p>
+<p><strong>Producció</strong>: és l’entorn on s’executen les aplicacions i les poden fer servir els clients finals. Normalment aquest entorn sol ser, almenys, un servidor dedicat, sinó un clúster, i el normal és que tinga un sistema operatiu diferent de l’entorn de desenvolupament i fins i tot una arquitectura diferent. Ha de romandre estable. Sol estar gestionat per l’equip de sistemes.</p>
 </li>
 </ul>
-<h2 id="com-es-fa-el-desplegament-daplicacions-web">Com es fa el desplegament d&rsquo;aplicacions web?<a class="headerlink" href="#com-es-fa-el-desplegament-daplicacions-web" title="Permanent link">&para;</a></h2>
+<h2 id="com-es-fa-el-desplegament-daplicacions-web">Com es fa el desplegament d’aplicacions web?<a class="headerlink" href="#com-es-fa-el-desplegament-daplicacions-web" title="Permanent link">¶</a></h2>
 <p>Podem tenir diferents fluxos de treball o ___metodologies__:</p>
 <ul>
 <li>
 <p><strong>Tradicional</strong>: </p>
 <ul>
 <li>No hi ha equips de treball diferenciats, ni entorns separats. </li>
-<li>Els mateixos desenvolupadors s&rsquo;encarreguen de desplegar els canvis als servidors de producció. </li>
-<li>Cada cop que s&rsquo;aplica un canvi és possible que hi hagi nerviosisme i apareguen nous canvis precipitats per corregir algun bug. </li>
-<li>No se sol actualitzar el servidor de producció per a que no es produeisquen errors en l&rsquo;aplicació. </li>
+<li>Els mateixos desenvolupadors s’encarreguen de desplegar els canvis als servidors de producció. </li>
+<li>Cada cop que s’aplica un canvi és possible que hi hagi nerviosisme i apareguen nous canvis precipitats per corregir algun bug. </li>
+<li>No se sol actualitzar el servidor de producció per a que no es produeisquen errors en l’aplicació. </li>
 </ul>
 </li>
 <li>
@@ -542,9 +579,9 @@
 <p><strong>Burocràtica</strong>: </p>
 <ul>
 <li>En aquest flux de treball, els equips i els entorns estan diferenciats. </li>
-<li>El problema és que és molt poc flexible, els terminis per al desplegament estan prefixats i cal l&rsquo;autorització d&rsquo;alguna persona per desplegar un possible canvi.</li>
+<li>El problema és que és molt poc flexible, els terminis per al desplegament estan prefixats i cal l’autorització d’alguna persona per desplegar un possible canvi.</li>
 <li>
-<p>Per exemple: està fixat que una volta per setmana, sempre el mateix dia i a la mateixa hora, es realitze el desplegament a producció. Sempre es fa el desplegament per una persona autoritzada i exigeix ​​que el programari haja passat pels entorns de desenvolupament i proves. Per tant, els canvis tarden a arribar a l&rsquo;usuari final prop d&rsquo;una setmana. </p>
+<p>Per exemple: està fixat que una volta per setmana, sempre el mateix dia i a la mateixa hora, es realitze el desplegament a producció. Sempre es fa el desplegament per una persona autoritzada i exigeix ​​que el programari haja passat pels entorns de desenvolupament i proves. Per tant, els canvis tarden a arribar a l’usuari final prop d’una setmana. </p>
 </li>
 <li>
 <p>Exemple: </p>
@@ -553,38 +590,38 @@
 </ul>
 </li>
 </ul>
-<p>Posar un projecte de programari en marxa comprèn més coses que desenvolupar codi. El programari és una cosa viva, normalment una vegada es posa en línia o es lliura al client se segueix desenvolupant i generant noves versions. A la major part de les empreses, la posada en producció d&rsquo;una nova versió és un moment crític per les incerteses que genera.</p>
-<p>L&rsquo;objectiu dels desenvolupadors és <strong>afegir noves funcionalitats</strong> al programa per donar més valor al producte que s&rsquo;està oferint al client.</p>
-<p>L&rsquo;objectiu dels “de sistemes” és que els servidors oferisquen de manera òptima l&rsquo;aplicació, també donen valor al producte perquè l&rsquo;experiència del client en l&rsquo;ús del programa és bo.</p>
+<p>Posar un projecte de programari en marxa comprèn més coses que desenvolupar codi. El programari és una cosa viva, normalment una vegada es posa en línia o es lliura al client se segueix desenvolupant i generant noves versions. A la major part de les empreses, la posada en producció d’una nova versió és un moment crític per les incerteses que genera.</p>
+<p>L’objectiu dels desenvolupadors és <strong>afegir noves funcionalitats</strong> al programa per donar més valor al producte que s’està oferint al client.</p>
+<p>L’objectiu dels “de sistemes” és que els servidors oferisquen de manera òptima l’aplicació, també donen valor al producte perquè l’experiència del client en l’ús del programa és bo.</p>
 <p>Moltes vegades aquests objectius no són compartits pels dos equips i es poden produir “mals rotllos”.</p>
 <p>Per exemple:</p>
-<p><strong><em>Al flux de treball tradicional</em></strong>: Com que no hi ha equip de sistemes especialitzats, no hi ha separació d&rsquo;entorns, el desplegament pot produir que l&rsquo;experiència del client no sigui positiva en fer servir el programa (es poden produir errors, el rendiment no és adequat, …).</p>
-<p><strong><em>Al flux de treball burocràtic</em></strong>: Al contrari: l&rsquo;equip de desenvolupament té noves funcionalitats, però la rigidesa del procés comporta que el canvi el rebrà molt més tard el client final.</p>
+<p><strong><em>Al flux de treball tradicional</em></strong>: Com que no hi ha equip de sistemes especialitzats, no hi ha separació d’entorns, el desplegament pot produir que l’experiència del client no sigui positiva en fer servir el programa (es poden produir errors, el rendiment no és adequat, …).</p>
+<p><strong><em>Al flux de treball burocràtic</em></strong>: Al contrari: l’equip de desenvolupament té noves funcionalitats, però la rigidesa del procés comporta que el canvi el rebrà molt més tard el client final.</p>
 <p><em>En tots dos casos no estem aportant valor al nostre producte. Necessitem una altra metodologia que ens permeti traslladar valor als clients de manera freqüent, senzilla i segura.</em></p>
-<p>Els cicles de desenvolupament de programari actuals són àgils i ràpids, de manera que contínuament s&rsquo;estan arreglant errors, programant noves característiques i desplegant-les en producció.</p>
+<p>Els cicles de desenvolupament de programari actuals són àgils i ràpids, de manera que contínuament s’estan arreglant errors, programant noves característiques i desplegant-les en producció.</p>
 <p>Necessitem una forma de desplegament que permeti de manera ràpida, senzilla i segura passar les noves versions de programari a producció.</p>
-<p>A aquesta manera de desplegament se&rsquo;l sol anomenar <strong>àgil</strong>.</p>
+<p>A aquesta manera de desplegament se’l sol anomenar <strong>àgil</strong>.</p>
 <p>Per això cal canviar la mentalitat dels equips de desenvolupament i sistemes (tenim objectius comuns: <em>oferir valor al producte</em>). </p>
-<p><strong>DevOps</strong> és un acrònim anglès de development (desenvolupament) i operations (operacions o sistemes), que fa referència a una metodologia de treball que se centra en la comunicació, col·laboració i integració entre desenvolupadors de programari i els professionals d&rsquo;operacions en les tecnologies de la informació (IT).</p>
-<p><a class="glightbox" href="../img/devops.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Devops - Wikimedia Commons" src="../img/devops.png" /></a></p>
-<p><a href="https://es.slideshare.net/therobot/que-demonios-es-eso-de-devops-y-porquedebera-interesarme">Qué és això de Devops (i perquè m&rsquo;hauria d&rsquo;interessar)</a></p>
+<p><strong>DevOps</strong> és un acrònim anglès de development (desenvolupament) i operations (operacions o sistemes), que fa referència a una metodologia de treball que se centra en la comunicació, col·laboració i integració entre desenvolupadors de programari i els professionals d’operacions en les tecnologies de la informació (IT).</p>
+<p><figure id="_figure-1"><a class="glightbox" href="../img/devops.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Devops - Wikimedia Commons" src="../img/devops.png"></a><figcaption>Figure 1: Devops - Wikimedia Commons</figcaption></figure></p>
+<p><a href="https://es.slideshare.net/therobot/que-demonios-es-eso-de-devops-y-porquedebera-interesarme">Qué és això de Devops (i perquè m’hauria d’interessar)</a></p>
 <p>Les metodologies i eines que se solen fer servir en aquest model de desplegament són:</p>
-<p>Entorns de producció, proves i desenvolupament comparables. És a dir, fer que s&rsquo;assemblen al màxim possible els diferents entorns, per això podem utilitzar: </p>
+<p>Entorns de producció, proves i desenvolupament comparables. És a dir, fer que s’assemblen al màxim possible els diferents entorns, per això podem utilitzar: </p>
 <ul>
 <li>
-<p>Eines de construcció d&rsquo;infraestructura, <em>per exemple vagrant</em>. Podem aconseguir que tots els desenvolupadors treballen al mateix escenari, que serà semblant on després es desplegarà l&rsquo;aplicació. </p>
+<p>Eines de construcció d’infraestructura, <em>per exemple vagrant</em>. Podem aconseguir que tots els desenvolupadors treballen al mateix escenari, que serà semblant on després es desplegarà l’aplicació. </p>
 </li>
 <li>
-<p>Entorns virtuals de prova: Normalment els diferents entorns tenen diferents sistemes operatius i, per tant, diferents versions de les llibreries usades en el desenvolupament de l&rsquo;aplicació. L&rsquo;ús d&rsquo;entorns virtuals solucionar els problemes amb les versions dels intèrprets i llibreries. <em>Per exemple: venv per a Python</em>. </p>
+<p>Entorns virtuals de prova: Normalment els diferents entorns tenen diferents sistemes operatius i, per tant, diferents versions de les llibreries usades en el desenvolupament de l’aplicació. L’ús d’entorns virtuals solucionar els problemes amb les versions dels intèrprets i llibreries. <em>Per exemple: venv per a Python</em>. </p>
 </li>
 <li>
-<p>Infraestructura com a codi: Automatització de la configuració. Tot i que actualment s&rsquo;automatitzen totes les parts possibles del cicle de desenvolupament de programari, no es fa el mateix amb l&rsquo;administració de sistemes. El concepte d&rsquo;infraestructura com a codi fa referència a intentar gestionar la infraestructura com si es tractés d&rsquo;un desenvolupament programari. <em>Per exemple, amb eines com Puppet, xef, ansible, podem automatitzar els processos d&rsquo;instal·lació i configuració</em>. </p>
+<p>Infraestructura com a codi: Automatització de la configuració. Tot i que actualment s’automatitzen totes les parts possibles del cicle de desenvolupament de programari, no es fa el mateix amb l’administració de sistemes. El concepte d’infraestructura com a codi fa referència a intentar gestionar la infraestructura com si es tractés d’un desenvolupament programari. <em>Per exemple, amb eines com Puppet, xef, ansible, podem automatitzar els processos d’instal·lació i configuració</em>. </p>
 </li>
 <li>
-<p>Ús de sistema de control de versions. Tant pel departament de desenvolupament com pel de sistema és imprescindible l&rsquo;ús d&rsquo;un sistema de control de versions. A Sistemes, en gestionar la infraestructura com a codi és necessari gestionar els diferents fitxers de configuració amb un sistema de control de versions. <em>Exemple: git,…</em></p>
+<p>Ús de sistema de control de versions. Tant pel departament de desenvolupament com pel de sistema és imprescindible l’ús d’un sistema de control de versions. A Sistemes, en gestionar la infraestructura com a codi és necessari gestionar els diferents fitxers de configuració amb un sistema de control de versions. <em>Exemple: git,…</em></p>
 </li>
 <li>
-<p>Eines d&rsquo;integració i desplegament continu: Eines que ens permet automatitzar el cicle de vida de desenvolupament de programari: compilació, testeig, control de codi, documentació, desplegament, … <em>Exemple: Jenkins,…</em></p>
+<p>Eines d’integració i desplegament continu: Eines que ens permet automatitzar el cicle de vida de desenvolupament de programari: compilació, testeig, control de codi, documentació, desplegament, … <em>Exemple: Jenkins,…</em></p>
 </li>
 </ul>
 <p><strong>Tradicional</strong></p>
@@ -598,15 +635,15 @@
 <p><strong>IaaS</strong>: Infraestructura com a servei al núvol. Ens proporciona principalment capacitat de còmput, xarxes i diversos modes demmagatzematge. Elasticitat i pagament per ús. <em>Exemples: AWS, Azure, GCE, OpenStack</em></p>
 </li>
 <li>
-<p><strong>PaaS</strong>: Plataforma de desenvolupament web al núvol. Ens proporciona tota la plataforma de desenvolupament i desplegament d&rsquo;una aplicació al desenvolupador. Elasticitat i pagament per ús. <em>Exemples: Openshift, Azure, Heroku, Google App Engine, …</em></p>
+<p><strong>PaaS</strong>: Plataforma de desenvolupament web al núvol. Ens proporciona tota la plataforma de desenvolupament i desplegament d’una aplicació al desenvolupador. Elasticitat i pagament per ús. <em>Exemples: Openshift, Azure, Heroku, Google App Engine, …</em></p>
 </li>
 </ul>
-<p><a class="glightbox" href="../img/Cloud.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Cloud-Wikimedia Commons" src="../img/Cloud.png" /></a></p>
+<p><figure id="_figure-2"><a class="glightbox" href="../img/Cloud.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Cloud-Wikimedia Commons" src="../img/Cloud.png"></a><figcaption>Figure 2: Cloud-Wikimedia Commons</figcaption></figure></p>
 <p><strong>Contenidors</strong></p>
 <ul>
 <li>Virtualització lleugera. Semblades a MV, però molt més lleugeres i transportables.</li>
 </ul>
-<p><a class="glightbox" href="../img/docker.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Docker-Wikimedia Commons" src="../img/docker.png" /></a></p>
+<p><figure id="_figure-3"><a class="glightbox" href="../img/docker.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Docker-Wikimedia Commons" src="../img/docker.png"></a><figcaption>Figure 3: Docker-Wikimedia Commons</figcaption></figure></p>
 
 
 

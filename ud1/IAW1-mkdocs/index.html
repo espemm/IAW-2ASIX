@@ -128,6 +128,43 @@
     
     
     
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
     
   </nav>
   
@@ -483,19 +520,19 @@
                   
 
 
-<h1 id="que-es-mkdocs">Què és Mkdocs?<a class="headerlink" href="#que-es-mkdocs" title="Permanent link">&para;</a></h1>
+<h1 id="que-es-mkdocs">Què és Mkdocs?<a class="headerlink" href="#que-es-mkdocs" title="Permanent link">¶</a></h1>
 <p>Mkdocs és un generador de llocs estàtics que ens permet crear documentació de manera senzilla i ràpida. </p>
-<h2 id="per-que-utilitzar-mkdocs">Per què utilitzar Mkdocs?<a class="headerlink" href="#per-que-utilitzar-mkdocs" title="Permanent link">&para;</a></h2>
+<h2 id="per-que-utilitzar-mkdocs">Per què utilitzar Mkdocs?<a class="headerlink" href="#per-que-utilitzar-mkdocs" title="Permanent link">¶</a></h2>
 <p>Mkdocs és una eina popular per crear documentació de projectes en format de lloc web. Hi ha diverses raons per les quals podries considerar utilitzar Mkdocs: </p>
 <ul>
 <li>
-<p><strong>Facilitat d&rsquo;ús</strong>: Mkdocs utilitza un format de fitxer simple i fàcil d&rsquo;entendre anomenat Markdown per escriure la documentació. Això fa que siga molt accessible per a aquells que no tenen experiència en desenvolupament web. </p>
+<p><strong>Facilitat d’ús</strong>: Mkdocs utilitza un format de fitxer simple i fàcil d’entendre anomenat Markdown per escriure la documentació. Això fa que siga molt accessible per a aquells que no tenen experiència en desenvolupament web. </p>
 </li>
 <li>
 <p><strong>Generació de llocs estàtics</strong>: Mkdocs genera llocs web estàtics, cosa que significa que no es requereix un servidor en temps real per mostrar la documentació. Això fa que siga fàcil de distribuir i allotjar a qualsevol servidor web estàndard. </p>
 </li>
 <li>
-<p><strong>Personalització i temes</strong>: Mkdocs ofereix una àmplia gamma de temes i opcions de personalització perquè pugues adaptar l&rsquo;aparença de la documentació segons les teues necessitats i preferències. </p>
+<p><strong>Personalització i temes</strong>: Mkdocs ofereix una àmplia gamma de temes i opcions de personalització perquè pugues adaptar l’aparença de la documentació segons les teues necessitats i preferències. </p>
 </li>
 <li>
 <p><strong>Suport per a múltiples idiomes</strong>: Mkdocs permet crear documentació en diversos idiomes, cosa que és especialment útil si tens una audiència internacional. </p>
@@ -508,24 +545,24 @@
 </li>
 </ul>
 <p>En resum, Mkdocs és una eina poderosa i fàcil de fer servir per crear documentació de projectes. Proporciona una manera senzilla de generar llocs web estàtics amb una aparença personalitzada i ofereix característiques útils com a cerca i navegació intuïtiva. Si cerques una forma eficient de documentar el teu projecte, Mkdocs pot ser una excel·lent opció.</p>
-<h2 id="com-installeu-mkdocs">Com instal·leu Mkdocs?<a class="headerlink" href="#com-installeu-mkdocs" title="Permanent link">&para;</a></h2>
+<h2 id="com-installeu-mkdocs">Com instal·leu Mkdocs?<a class="headerlink" href="#com-installeu-mkdocs" title="Permanent link">¶</a></h2>
 <p>Per a instal·lar Mkdocs, necessites tenir <strong>Python</strong> i <strong>pip</strong> (el gestor de paquets de Python) instal·lats al sistema. Quan els tingues, pots instal·lar Mkdocs.</p>
 <p>En <strong>linux</strong> amb la següent ordre:</p>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>mkdocs
 </code></pre></div>
-<p>En <strong>windows</strong> (si no funciona l&rsquo;ordre anterior):</p>
+<p>En <strong>windows</strong> (si no funciona l’ordre anterior):</p>
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs
 </code></pre></div>
-<h2 id="installacio-dun-tema">Instal·lació d&rsquo;un tema<a class="headerlink" href="#installacio-dun-tema" title="Permanent link">&para;</a></h2>
-<p>Opcionalment, podeu instal·lar un tema popular com a <strong>mkdocs-material</strong> per millorar l&rsquo;aparença de la vostra documentació. Per fer-ho, fes servir la següent ordre:</p>
-<p><div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material
+<h2 id="installacio-dun-tema">Instal·lació d’un tema<a class="headerlink" href="#installacio-dun-tema" title="Permanent link">¶</a></h2>
+<p>Opcionalment, podeu instal·lar un tema popular com a <strong>mkdocs-material</strong> per millorar l’aparença de la vostra documentació. Per fer-ho, fes servir la següent ordre:</p>
+<p></p><div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material
 </code></pre></div>
-Quan estiga instal·lat, pots iniciar un nou projecte de Mkdocs amb:</p>
+Quan estiga instal·lat, pots iniciar un nou projecte de Mkdocs amb:
 <div class="highlight"><pre><span></span><code>mkdocs<span class="w"> </span>new<span class="w"> </span>nom-projecte
 <span class="nb">cd</span><span class="w"> </span>nom-projecte
 mkdocs<span class="w"> </span>serve
 </code></pre></div>
-<p>Açò iniciarà un servidor local on podràs veure la teua documentació en l&rsquo;adreça local i port per defecte:</p>
+<p>Açò iniciarà un servidor local on podràs veure la teua documentació en l’adreça local i port per defecte:</p>
 <div class="highlight"><pre><span></span><code>http://127.0.0.1:8000
 </code></pre></div>
 <div class="admonition note">
@@ -538,7 +575,7 @@ mkdocs<span class="w"> </span>serve
 <p><a href="https://www.mkdocs.org/user-guide/writing-your-docs/">Escriure documentació amb MkDocs</a></p>
 </li>
 <li>
-<p><a href="https://www.mkdocs.org/user-guide/">Guia d&rsquo;usuari</a></p>
+<p><a href="https://www.mkdocs.org/user-guide/">Guia d’usuari</a></p>
 </li>
 </ul>
 </div>
