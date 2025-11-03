@@ -80,6 +80,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#php" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -463,6 +468,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    PHP
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -473,6 +491,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#llocs-web-que-utilitzen-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      Llocs web que utilitzen PHP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxix-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sintaxix bàsica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentació
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formularis-en-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formularis en PHP
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -493,9 +566,133 @@
                   
 
 
-  <h1>PHP</h1>
+<h1 id="php">PHP<a class="headerlink" href="#php" title="Permanent link">¶</a></h1>
+<p><strong>PHP</strong> és un llenguatge de programació d’ús general utilitzat en el desenvolupament web.</p>
+<p>Veurem una xicoteta pinzellada centrada en l’ús de formularis.</p>
+<h2 id="llocs-web-que-utilitzen-php">Llocs web que utilitzen PHP<a class="headerlink" href="#llocs-web-que-utilitzen-php" title="Permanent link">¶</a></h2>
+<p>Molts llocs web utiilitzen PHP. Entre ells tenim:</p>
+<ul>
+<li><a href="https://wordpress.org/">WordPress</a></li>
+<li><a href="https://www.prestashop.com/">PrestaShop</a></li>
+<li><a href="https://www.joomla.org/">Joomla</a></li>
+</ul>
+<h2 id="sintaxix-basica">Sintaxix bàsica<a class="headerlink" href="#sintaxix-basica" title="Permanent link">¶</a></h2>
+<p><strong>Etiquetes d’obertura i tancament</strong></p>
+<p>Inici amb <code>&lt;?php</code>i final amb <code>?&gt;</code></p>
+<p>Les instruccions finalitzen amb <code>;</code> al final de la línia</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+    <span class="k">echo</span> <span class="s2">"Mostra per pantalla 1"</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">"Mostra per pantalla 2"</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<p><strong>Comentaris</strong></p>
+<p>Comentar una linea amb <code>//</code> o <code>#</code>
+Comentar més d’una línia utilitzant <code>/*</code> al inici i <code>*/</code> al final</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+    <span class="c1">// Comentari d'una línia</span>
+    <span class="c1"># Altre comentari d'una línia</span>
+    <span class="k">echo</span> <span class="s2">"Mostrar en php"</span><span class="p">;</span>
 
+    <span class="cm">/* Comentari de</span>
+<span class="cm">     múltiples línias */</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<p><strong>Variables</strong></p>
+<p>Poden modificar el seu contingut durant l’execució.
+El nom de les variables comencen amb <code>$</code> i és sensible a majúscules i minúscules.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+    <span class="nv">$nom</span> <span class="o">=</span> <span class="s2">"Adelaida"</span><span class="p">;</span>
+    <span class="nv">$curs</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<p><strong>Constants</strong></p>
+<p>No poden modificar el seu contingut durant l’execució.
+El nom de les constants no han de començar amb <code>$</code> i és sensible a majúscules i minúscules.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+    <span class="nb">define</span><span class="p">(</span><span class="s2">"PI"</span><span class="p">,</span> <span class="mf">3.1416</span><span class="p">);</span>
+    <span class="k">echo</span> <span class="s2">"El meu número PI és: "</span><span class="o">.</span> <span class="nx">PI</span><span class="p">;</span>
+    <span class="c1">// El punt serveix per a concatenar la informació</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<p><strong>echo</strong></p>
+<p>Permet mostrar cadenes de text i contingut de variables i constants.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+    <span class="k">echo</span> <span class="s2">"Missatge de text"</span><span class="p">;</span>
+    <span class="nv">$num</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">"Número: </span><span class="si">$num</span><span class="s2">"</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<p><strong>var_dump</strong></p>
+<p>Permet mostrar el tipus i contingut d’una variable.</p>
+<p></p><div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
+<span class="nv">$nom</span> <span class="o">=</span> <span class="s2">"Eduard"</span><span class="p">;</span>
+<span class="nv">$edat</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="nv">$nota</span> <span class="o">=</span> <span class="mf">8.5</span><span class="p">;</span>
+
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$nom</span><span class="p">);</span>  <span class="c1">// string(6) "Eduard"</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$edat</span><span class="p">);</span> <span class="c1">// int(20)</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$nota</span><span class="p">);</span> <span class="c1">// float(8.5)</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<strong>print_r</strong>
+<p>Mostra el contingut de una variable de forma legible.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$llista = array("Sam", "Mary", "Tom");</span>
+
+<span class="x">print_r($llista);</span>
+
+<span class="x">//Array</span>
+<span class="x">//(</span>
+<span class="x">//    [0] =&gt; Sam</span>
+<span class="x">//    [1] =&gt; Mary</span>
+<span class="x">//    [2] =&gt; Tom</span>
+<span class="x">//)</span>
+</code></pre></div>
+<h2 id="documentacio">Documentació<a class="headerlink" href="#documentacio" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://www.php.net/manual/es/index.php">Manual de PHP oficial</a></li>
+<li><a href="https://www.php.net/manual/es/language.operators.php">Operadors</a></li>
+<li><a href="https://www.php.net/manual/es/language.control-structures.php">Estructures de control</a></li>
+<li><a href="https://www.php.net/manual/es/reserved.variables.server.php">$_SERVER</a></li>
+<li><a href="https://www.php.net/manual/es/function.isset.php">funció isset</a></li>
+<li>…</li>
+</ul>
+<h2 id="formularis-en-php">Formularis en PHP<a class="headerlink" href="#formularis-en-php" title="Permanent link">¶</a></h2>
+<p>Una forma d’enviar informació al servidor és mitjançant l’ús de formularis.</p>
+<p><strong>Exemple senzill de formulari</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">"post"</span> <span class="na">action</span><span class="o">=</span><span class="s">"desti.php"</span><span class="p">&gt;</span>
+    Nom<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">name</span><span class="o">=</span><span class="s">"nom"</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    Cognoms<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">name</span><span class="o">=</span><span class="s">"cogns"</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>La informació emplenada, si no s’indica el contrari, s’enviarà a la mateixa pàgina on estem. Amb <strong>action</strong> podrem dir-li al formulari que porte les dades a una altra URL.</p>
+<p>En l’exemple, al polsar <code>Enviar</code> s’executarà l’script <code>desti.php</code> en el servidor.</p>
+<p>L’script rebrà dos variables HTML anomenades <code>nom</code> i <code>cogns</code> amb les dades que haja teclejat l’usuari en el formulari.</p>
+<p>Si no s’indica mètode en <code>method</code> s’utilitzaria GET.</p>
+<p>En l’example, el mètode utilitzat per enviar les dades és <code>POST</code>, les dades s’hauran guardat en la variable global de PHP anomenada <strong>$_POST</strong>
+Aquesta variable és un array que s’indexarà amb el nom de les variables.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span> 
+<span class="c1"># Contingut del arxiu desti.php</span>
+    <span class="k">echo</span> <span class="s2">"El nom és "</span><span class="o">.</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'nom'</span><span class="p">]</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span> 
+    <span class="k">echo</span> <span class="s2">"Els cognoms son "</span><span class="o">.</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'cogns'</span><span class="p">]</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<p><em>Si s’utilitza el mètode GET, en l’enviament del formulari, la variable que guardarà les dades del formulari sesrà <strong>$_GET</strong></em></p>
+<p><strong>Referències</strong></p>
+<ul>
+<li><a href="https://www.php.net/manual/es/reserved.variables.post.php">$_POST</a></li>
+<li><a href="https://www.php.net/manual/es/reserved.variables.get.php">$_GET</a></li>
+<li><a href="https://www.php.net/manual/es/reserved.variables.request.php">$_REQUEST</a></li>
+<li><a href="https://www.php.net/manual/es/function.empty.php">funció empty</a></li>
+<li><a href="https://www.php.net/manual/es/features.file-upload.php">Gestió de càrrega de fitxers</a></li>
+</ul>
+<p><em>La variable <strong>$_REQUEST</strong> té el contingut de <strong>$_GET</strong>, <strong>$_POST</strong> i <strong>$_COOKIE</strong></em></p>
 
 
 
