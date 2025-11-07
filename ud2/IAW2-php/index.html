@@ -684,6 +684,62 @@ Aquesta variable és un array que s’indexarà amb el nom de les variables.</p>
 <span class="cp">?&gt;</span>
 </code></pre></div>
 <p><em>Si s’utilitza el mètode GET, en l’enviament del formulari, la variable que guardarà les dades del formulari sesrà <strong>$_GET</strong></em></p>
+<p><strong>Exemple Formulari - Enviament POST</strong></p>
+<p>Codi html:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">"./respF.php"</span> <span class="na">method</span><span class="o">=</span><span class="s">"POST"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="cm">&lt;!-- Camp nom --&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">name</span><span class="o">=</span><span class="s">"nom"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Nom"</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="cm">&lt;!-- Camp edat --&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">name</span><span class="o">=</span><span class="s">"edat"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Edat"</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="cm">&lt;!-- Camp email --&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">name</span><span class="o">=</span><span class="s">"email"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Email"</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="cm">&lt;!-- Botó submit --&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span> <span class="na">name</span><span class="o">=</span><span class="s">"enviar"</span> <span class="na">value</span><span class="o">=</span><span class="s">"Enviar"</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Codi php:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">"REQUEST_METHOD"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"POST"</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// Limpiar datos</span>
+    <span class="nv">$nom</span> <span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'nom'</span><span class="p">]));</span>
+    <span class="nv">$edat</span>   <span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'edat'</span><span class="p">]));</span>
+    <span class="nv">$email</span>  <span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'email'</span><span class="p">]));</span>
+
+
+    <span class="c1">// Validar edat</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$edat</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">"El camp 'edat' és obligatorio."</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="o">!</span><span class="nb">filter_var</span><span class="p">(</span><span class="nv">$edat</span><span class="p">,</span> <span class="nx">FILTER_VALIDATE_INT</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">"L'edat ha de ser un número enter."</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Validar email</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$email</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">"El camp 'email' és obligatori."</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="o">!</span><span class="nb">filter_var</span><span class="p">(</span><span class="nv">$email</span><span class="p">,</span> <span class="nx">FILTER_VALIDATE_EMAIL</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">"El email no té un format vàlid."</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Mostrar resultats</span>
+
+    <span class="k">echo</span> <span class="s2">"&lt;h3&gt;Dades rebudes:&lt;/h3&gt;"</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">"&lt;p&gt;&lt;strong&gt;Nom:&lt;/strong&gt; </span><span class="si">$nom</span><span class="s2">&lt;/p&gt;"</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">"&lt;p&gt;&lt;strong&gt;Edat:&lt;/strong&gt; </span><span class="si">$edat</span><span class="s2">&lt;/p&gt;"</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">"&lt;p&gt;&lt;strong&gt;Email:&lt;/strong&gt; </span><span class="si">$email</span><span class="s2">&lt;/p&gt;"</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
 <p><strong>Referències</strong></p>
 <ul>
 <li><a href="https://www.php.net/manual/es/reserved.variables.post.php">$_POST</a></li>
