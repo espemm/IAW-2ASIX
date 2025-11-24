@@ -1,0 +1,561 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentació del mòdul IAW">
+      
+      
+      
+      
+        <link rel="prev" href="../IAW3-CMS/">
+      
+      
+      
+      <link rel="icon" href="../img/logo.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+    
+    
+      
+        <title>WordPress - 2ASIX - IAW - UD03</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/elmeuestil.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#wordpress" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="2ASIX - IAW - UD03" class="md-header__button md-logo" aria-label="2ASIX - IAW - UD03" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            2ASIX - IAW - UD03
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              WordPress
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://espemm.github.io/IAW-2ASIX/" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW3-CMS/" class="md-tabs__link">
+        
+  
+    
+  
+  Sistemes de Gestió de Continguts
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  WordPress
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="2ASIX - IAW - UD03" class="md-nav__button md-logo" aria-label="2ASIX - IAW - UD03" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    2ASIX - IAW - UD03
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://espemm.github.io/IAW-2ASIX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW3-CMS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sistemes de Gestió de Continguts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    WordPress
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    WordPress
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requisits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisits
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elements-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elements bàsics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="wordpress">WordPress<a class="headerlink" href="#wordpress" title="Permanent link">¶</a></h1>
+<p>WordPress és el CMS i sistema de blocs, de codi obert, més popular a la web. Està basat en PHP i MySQL. Les seues característiques es poden ampliar amb milers de plugins i temes gratuïts.</p>
+<h2 id="requisits">Requisits<a class="headerlink" href="#requisits" title="Permanent link">¶</a></h2>
+<p>Requisits del costat del servidor, per a la versió <strong>WordPress 6.8.3</strong>:</p>
+<ul>
+<li><strong>PHP 7.4</strong> o superior</li>
+<li><strong>MySQL 5.7</strong> o <strong>MariaDB 10.3</strong> o superior</li>
+<li>Compatibilitat amb <strong>HTTPS</strong></li>
+</ul>
+<h2 id="installacio">Instal·lació<a class="headerlink" href="#installacio" title="Permanent link">¶</a></h2>
+<p>Una vegada comprovat que el nostre sistema compleix amb tots els requisits, començarem el procés d’instal·lació en un S.O. Libux. Així doncs, els passos a seguir seran els següents:</p>
+<ol>
+<li>Hem d’accedir a la pàgina de descàrregues https://es.wordpress.org/download/ i descarregar l’arxiu d’instal·lació.</li>
+<li>
+<p>Una vegada descarregat i tractant-se d’una aplicació web desenvolupada en PHP, l’hem de guardar en el servidor web del nostre ordinador, en aquest cas Nginx amb php-fpm, per tant, el que fem és descomprimir l’arxiu descarregat a partir de <strong>/var/www/</strong></p>
+</li>
+<li>
+<p>Canviem el propietari del directori on s’ha guardat WordPress, per l’usuari amb el qual corre el servei web (<strong>www-data</strong>) perquè WordPress puga escriure i modificar els seus propis arxius.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/www/html/wordpress
+</code></pre></div>
+<ol start="4">
+<li>
+<p>Configurar la base de dades per treballar amb WordPress, és a dir, en aquest cas connectem amb el gestor mysql i creem la base de dades per WordPress, per exemple amb el nom wordpress.</p>
+</li>
+<li>
+<p>És recomanable crear un usuari específic per a gestionar i administrar la Base de dades de WordPress.</p>
+</li>
+<li>
+<p>Comprovar que l’extensió de MySql per a PHP està instal·lada.</p>
+</li>
+<li>
+<p>Accedir a la url d’inici del WordPress per a la seua instal·lació.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>http://IP_server/wordpress
+</code></pre></div>
+<ol start="8">
+<li>
+<p>Se’ns demanaran les dades de connexió a la Base de dades</p>
+</li>
+<li>
+<p>Es crearà l’arxiu de configuració</p>
+</li>
+<li>
+<p>Al finalitzar la instal·lació es visualitzará la pàgina d’inici.</p>
+</li>
+</ol>
+<p><a href="https://developer.wordpress.org/advanced-administration/before-install/howto-install/#detailed-instructions">Feu clic per accedir al manual</a></p>
+<h2 id="elements-basics">Elements bàsics<a class="headerlink" href="#elements-basics" title="Permanent link">¶</a></h2>
+<p>Un lloc web o blog creat amb WordPress està format per diferents elements. De tots ells, l’element més bàsic i comú és l’entrada o post; on normalment trobem tres elements:</p>
+<ul>
+<li>Un títol.</li>
+<li>La data de la seua publicació.</li>
+<li>El seu contingut, que pot ser text o qualsevol element multimèdia.</li>
+</ul>
+<p>Una entrada o post és una publicació del lloc web o blog creat amb WordPress que s’utilitza per afegir contingut que normalment s’actualitza amb freqüència, com poden ser les notícies o les novetats.</p>
+<p>Si seleccionem l’opció entrades del menú de WordPress, veurem un llistat amb les entrades.</p>
+<p>En aquest llistat, per cada entrada es mostrarà el seu títol, el nom de l’autor que l’ha creat, la categoria a la qual pertany, l’etiqueta que té associada, els comentaris que han fet els usuaris sobre aquesta entrada i la data de la seua publicació.</p>
+<p>Totes les entrades han de pertànyer com a mínim a una categoria que li assignarem nosaltres, si no li assignem, el sistema per defecte li assignarà la categoria “Sense categoria”.</p>
+<p>Les <strong>categories</strong> serveixen per classificar o agrupar les entrades, d’aquesta manera podem estructurar molt millor un lloc web o blog aconseguint que l’usuari tinga una millor experiència de navegació.</p>
+<p>Les <strong>etiquetes</strong> permeten etiquetar una entrada per destacar un dels seus aspectes, d’aquesta manera aconseguim organitzar per temàtiques similars totes les entrades o posts.</p>
+<p>La diferència entre les categories i etiquetes, és que les primeres són jeràrquiques, així doncs una categoria pot tenir subcategories, mentre que les etiquetes van per lliure, són totalment independents unes d’altres. </p>
+<p><strong>Estructuració de les entrades en categories i etiquetes</strong></p>
+<p>Amb un exemple és més fàcil veure com s’estructuren les entrades en categories i etiquetes, i la diferència entre elles. Posem per cas, la creació d’un lloc web per a un supermercat amb WordPress:</p>
+<ul>
+<li>
+<p>Per una banda, els productes, que serien les entrades, els podem agrupar en seccions (categories) com la del peix, la de la carn, la de les begudes, la de la xarcuteria, etc. I en el cas dels productes de la xarcuteria els podríem dividir en dues seccions més (subcategories) la dels embotits i la dels formatges.</p>
+</li>
+<li>
+<p>Per altre costat, podem etiquetar molts dels productes del supermercat, pertanyin a la categoria que pertanyin, com a lliure de gluten, sense sucre, oferta, ecològic, etc., d’aquesta manera quan cerquem productes ecològics, el resultat seran tots aquells productes del supermercat etiquetats amb l’etiqueta “ecològic” siguin de la categoria que siguin, i quan vulguem mostrar tots els productes de la secció de la carn, mostrarem tots els productes que només estan dins la categoria “carn”.</p>
+</li>
+</ul>
+<p>Per crear una categoria o etiqueta, ho fem seleccionant les opcions <strong>Categories i Etiquetes</strong>, respectivament, del menú lateral esquerra de la pàgina inicial de WordPress o bé des del menú d’opcions que trobem en afegir o modificar una entrada. En els dos casos se’ns demanaran pràcticament les mateixes dades, és a dir, el nom, l’àlies i una descripció, i en el cas de les categories, a més a més, se’ns demanarà si penja d’alguna categoria per crear una jerarquia.</p>
+<p>Amb una entrada creada, podem modificar qualsevol dels seus aspectes (<strong>Editar</strong>), modificar només el títol, data de publicació, categoria, etc. (<strong>Edició ràpida</strong>), eliminar-la (<strong>Paperera</strong>) o visualitzar-la com la veuen els usuaris un cop la publiquem (<strong>Visualitzar</strong>) o previsualitzar-la (<strong>*Previsualitzar</strong>), si encara no l’hem publicat i l’hem guardat com esborrany.</p>
+<p>Per afegir una entrada ho fem mitjançant l’opció Afegeix que trobem en diferents llocs de la pàgina de WordPress, com en el menú lateral esquerra o la part superior del llistat d’entrades. </p>
+<p>Mitjançant l’editor d’entrades afegirem el títol, el contingut, i configurarem diferents aspectes de l’entrada. Els aspectes que podem configurar de dalt a baix són:</p>
+<ul>
+<li><strong>Estat i visibilitat</strong>:<ul>
+<li><strong>Visibilitat</strong>: ens permet configurar la visibilitat de l’entrada, que pot ser pública, privada i protegida amb contrasenya.</li>
+<li><strong>Publica</strong>: ens permet configurar quan volem fer pública la nostra entrada. Tenim dues opcions, que l’opció sigui automàtica en el moment que seleccionem publicar-la, o bé programar una data de publicació.</li>
+<li><strong>Format d’entrada</strong>: a part del format estàndard, aquest format pot ser una anotació, una cita, un enllaç, una actualització d’estat similar al de les xarxes socials, una galeria d’imatges, una imatge, un vídeo incrustat, una transcripció de xat i un àudio incrustat.</li>
+<li><strong>Fixa a la part superior del blog</strong>: aquesta opció només és possible als blogs. Si se selecciona, l’entrada apareixerà més amunt que la resta d’entrades del blog.</li>
+<li><strong>Revisió pendent</strong>: si seleccionem aquesta opció, podrem veure els canvis en l’entrada guardats* més recentment.</li>
+</ul>
+</li>
+<li><strong>Enllaç permanent</strong>: l’URL en la qual apareixerà l’entrada.</li>
+<li><strong>Categories</strong>: permet afegir o assignar categories a l’entrada.</li>
+<li><strong>Etiquetes</strong>: permet afegir o assignar etiquetes a l’entrada.</li>
+<li><strong>Imatge destacada</strong>: permet mostrar una imatge d’encapçalat personalitzada única per a l’entrada.</li>
+<li><strong>Extracte</strong>: permet escriure un extracte breu per a l’entrada que pot aparèixer en diverses miniatures en el lloc o com a vista prèvia per als resultats del motor de cerca.</li>
+<li><strong>Debats</strong>: permet activar comentaris, retropings i retroenllaços relacionats amb l’entrada.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "toc.integrate", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
