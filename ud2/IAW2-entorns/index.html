@@ -512,57 +512,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="5️⃣ Apache">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installacio-en-ubuntu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instal·lació en Ubuntu
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#modificar-el-port-per-defecte" class="md-nav__link">
-    <span class="md-ellipsis">
-      Modificar el port per defecte
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#canviar-larrel-web" class="md-nav__link">
-    <span class="md-ellipsis">
-      Canviar l&rsquo;arrel web
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configurar-hosts-virtuals" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configurar Hosts Virtuals
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#utilitzar-moduls" class="md-nav__link">
-    <span class="md-ellipsis">
-      Utilitzar mòduls
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -571,6 +520,30 @@
       6️⃣ Nginx
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="6️⃣ Nginx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracio-dun-server-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuració d&rsquo;un Server Block
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -585,7 +558,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#installacio-en-ubuntu_1" class="md-nav__link">
+  <a href="#installacio-en-ubuntu" class="md-nav__link">
     <span class="md-ellipsis">
       Instal·lació en Ubuntu
     </span>
@@ -741,12 +714,17 @@
 <p>Apache és un <strong>servidor web</strong> de <strong>codi obert</strong> i <strong>multiplataforma</strong> que permet desplegar aplicacions web en un servidor. 
 En aquest document es descriu com instal·lar Apache a Ubuntu.</p>
 <p>El servidor HTTP Apache és un dels servidor web més utilitzat al món. Proporciona moltes característiques poderoses, incloent mòduls carregables dinàmicament, suport robust de mitjans i una àmplia integració amb altres programaris populars.</p>
-<p><strong class="c1">Requisits</strong></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><input id="__tabbed_1_6" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Requisits</label><label for="__tabbed_1_2">Instal·lació en Ubuntu</label><label for="__tabbed_1_3">Modificar port</label><label for="__tabbed_1_4">Root</label><label for="__tabbed_1_5">Virtual Hosts</label><label for="__tabbed_1_6">Mòduls</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Requisits</strong></p>
 <ul>
 <li>Servidor Linux (Ubuntu Server 22.04 o +)</li>
 <li>Accés a terminal amb permisos de superusuari</li>
 </ul>
-<h3 id="installacio-en-ubuntu">Instal·lació en Ubuntu<a class="headerlink" href="#installacio-en-ubuntu" title="Permanent link">¶</a></h3>
+</div>
+<div class="tabbed-block">
+<p><strong>Instal·lació en Ubuntu</strong></p>
 <p>Necessitareu un servidor Ubuntu configurat amb un usuari no root amb privilegis de sudo i un firewall habilitat per bloquejar ports no essencials.</p>
 <p><a href="https://help.ubuntu.com/community/UFW">Firewall ufw</a></p>
 <p>Passes a seguir:</p>
@@ -865,7 +843,9 @@ Apatxe<span class="w"> </span><span class="o">(</span>v6<span class="o">)</span>
 Apache ara s’iniciarà automàticament quan el servidor torne a arrancar.
 </li>
 </ul>
-<h3 id="modificar-el-port-per-defecte">Modificar el port per defecte<a class="headerlink" href="#modificar-el-port-per-defecte" title="Permanent link">¶</a></h3>
+</div>
+<div class="tabbed-block">
+<p><strong>Modificar el port per defecte</strong></p>
 <p>Per indicar al servidor web Apache a enllaçar-se i escoltar el trànsit web en ports diferents dels ports web estàndard, s’ha d’afegir una nova declaració que continga el nou port per a futurs enllaços.</p>
 <p>En sistemes basats en Debian/Ubuntu, el fitxer de configuració que cal modificar és <code>/etc/apache2/ports</code>.conf. En distribucions basades en RHEL/CentOS, editeu el fitxer <code>/etc/httpd/conf/httpd.conf</code>.</p>
 <p>Obrir el fitxer específic de la distribució instal·lada amb un editor de text de consola i afegir la nova declaració de port com es mostra a continuació:</p>
@@ -930,9 +910,18 @@ Listen<span class="w"> </span><span class="m">8081</span><span class="w"> </span
 <div class="highlight"><pre><span></span><code>http://server.ip:8081
 </code></pre></div>
 <p>Si no pots navegar a l’adreça anterior, assegura’t d’afegir les regles de tallafocs adequades a la taula de tallafocs del servidor.</p>
-<h3 id="canviar-larrel-web">Canviar l’arrel web<a class="headerlink" href="#canviar-larrel-web" title="Permanent link">¶</a></h3>
-<h3 id="configurar-hosts-virtuals">Configurar Hosts Virtuals<a class="headerlink" href="#configurar-hosts-virtuals" title="Permanent link">¶</a></h3>
-<h3 id="utilitzar-moduls">Utilitzar mòduls<a class="headerlink" href="#utilitzar-moduls" title="Permanent link">¶</a></h3>
+</div>
+<div class="tabbed-block">
+<p><strong>Canviar l’arrel web</strong></p>
+</div>
+<div class="tabbed-block">
+<p><strong>Configurar Hosts Virtuals</strong></p>
+</div>
+<div class="tabbed-block">
+<p><strong>Utilitzar mòduls</strong></p>
+</div>
+</div>
+</div>
 <h2 id="6-nginx">6️⃣ Nginx<a class="headerlink" href="#6-nginx" title="Permanent link">¶</a></h2>
 <p>Nginx és un <strong>servidor web</strong> de <strong>codi obert</strong> i <strong>multiplataforma</strong> que permet desplegar aplicacions web en un servidor. 
 En aquest document es descriu com instal·lar Nginx en Ubuntu.</p>
@@ -942,7 +931,7 @@ En aquest document es descriu com instal·lar Nginx en Ubuntu.</p>
 <li>Servidor Linux (Ubuntu Server 22.04 o +)</li>
 <li>Accés a terminal amb permisos de superusuari</li>
 </ul>
-<p><strong class="c1">Instal·lació</strong></p>
+<h3 id="installacio">Instal·lació<a class="headerlink" href="#installacio" title="Permanent link">¶</a></h3>
 <p>Per instal·lar Nginx, utilitzem la següent ordre:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nginx
 </code></pre></div>
@@ -1004,42 +993,57 @@ sudo<span class="w"> </span>ufw<span class="w"> </span>status
 <p>Obrim el nostre navegador i visitem l’adreça IP del nostre servidor: <code>http://la-teua-adreça-ip</code></p>
 <p>Si tot està configurat correctament, hauríem de veure la pàgina de benvinguda predeterminada de Nginx que diu “Welcome to nginx!”.</p>
 <p><figure id="_figure-9"><a class="glightbox" href="../img/default_page_nginx.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="center" alt="Pàgina d'inici de Nginx" src="../img/default_page_nginx.png"></a><figcaption>Figure 9: Pàgina d'inici de Nginx</figcaption></figure></p>
-<p><strong class="c1">Configuració d’un Server Block</strong></p>
+<h3 id="configuracio-dun-server-block">Configuració d’un Server Block<a class="headerlink" href="#configuracio-dun-server-block" title="Permanent link">¶</a></h3>
 <p>Els Server Blocks són com els Virtual Hosts a Apache. Configurarem un Server Block per a un domini específic.</p>
+<p>A partir de la configuració per defecte del servidor, guardada en <code>/etc/nginx/sites-available/default</code>:</p>
+<div class="highlight"><pre><span></span><code>server<span class="w"> </span><span class="o">{</span><span class="w"> </span>
+
+<span class="w">    </span>listen<span class="w"> </span><span class="m">80</span><span class="w"> </span>default_server<span class="p">;</span><span class="w"> </span>
+<span class="w">    </span>listen<span class="w"> </span><span class="o">[</span>::<span class="o">]</span>:80<span class="w"> </span>default_server<span class="p">;</span><span class="w"> </span>
+
+<span class="w">    </span>server_name<span class="w"> </span>_<span class="p">;</span><span class="w"> </span>
+
+<span class="w">    </span>root<span class="w"> </span>/var/www/html<span class="p">;</span><span class="w"> </span>
+
+<span class="w">    </span>index<span class="w"> </span>index.html<span class="w"> </span>index.htm<span class="w"> </span>index.nginx-debian.html<span class="p">;</span><span class="w"> </span>
+
+<span class="w">    </span>location<span class="w"> </span>/<span class="w"> </span><span class="o">{</span><span class="w"> </span>
+<span class="w">        </span>try_files<span class="w"> </span><span class="nv">$uri</span><span class="w"> </span><span class="nv">$uri</span>/<span class="w"> </span><span class="o">=</span><span class="m">404</span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
 <p>Primer, creem un nou fitxer de configuració per al nostre domini:</p>
-<p>sudo nano /etc/nginx/sites-available/el teu-domini.com</p>
-<p>Agreguem la següent configuració bàsica a l’arxiu:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/nginx/sites-available/teu-domini.com
+</code></pre></div>
 <div class="highlight"><pre><span></span><code>server<span class="w"> </span><span class="o">{</span><span class="w"> </span>
 
 <span class="w">    </span>listen<span class="w"> </span><span class="m">80</span><span class="p">;</span><span class="w"> </span>
 
-<span class="w">    </span>server_name<span class="w"> </span>el-teu-domini.com<span class="w"> </span>www.el-teu-domini.com<span class="p">;</span><span class="w"> </span>
+<span class="w">    </span>server_name<span class="w"> </span>teu-domini.com<span class="w"> </span>www.teu-domini.com<span class="p">;</span><span class="w"> </span>
 
-<span class="w">    </span>root<span class="w"> </span>/var/www/el-teu-domini.com/html<span class="p">;</span><span class="w"> </span>
+<span class="w">    </span>root<span class="w"> </span>/var/www/teu-domini.com<span class="p">;</span><span class="w"> </span>
 
 <span class="w">    </span>index<span class="w"> </span>index.html<span class="w"> </span>index.htm<span class="p">;</span><span class="w"> </span>
 
 <span class="w">    </span>location<span class="w"> </span>/<span class="w"> </span><span class="o">{</span><span class="w"> </span>
-
 <span class="w">        </span>try_files<span class="w"> </span><span class="nv">$uri</span><span class="w"> </span><span class="nv">$uri</span>/<span class="w"> </span><span class="o">=</span><span class="m">404</span><span class="p">;</span><span class="w"> </span>
-
 <span class="w">    </span><span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>Després de guardar l’arxiu, creem el directori per al lloc web:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/www/el-teu-domini.com/html
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/www/teu-domini.com
 </code></pre></div>
 <p>On guardarem l’arxiu <code>index.html</code></p>
 <p>Caldrà establir els permisos correctes:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span><span class="nv">$USER</span>:<span class="nv">$USER</span><span class="w"> </span>/var/www/el-teu-domini.com/html
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span><span class="nv">$USER</span>:<span class="nv">$USER</span><span class="w"> </span>/var/www/teu-domini.com
 
-sudo<span class="w"> </span>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/www/el<span class="w"> </span>teu-domini.com
+sudo<span class="w"> </span>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/www/teu-domini.com
 </code></pre></div>
 <p><strong class="c1">Habilitar el canvi de la Configuració</strong></p>
 <p>Per habilitar el nou lloc, crearem un enllaç simbòlic al directori sites-enabled:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/etc/nginx/sites-available/el-teu-domini.com<span class="w"> </span>/etc/nginx/sites-enabled/
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/etc/nginx/sites-available/teu-domini.com<span class="w"> </span>/etc/nginx/sites-enabled/
 </code></pre></div>
-<p>Comrovem la configuració de Nginx per assegurar-nos que no hi ha errors de sintaxi:</p>
+<p>Comprovem la configuració de Nginx per assegurar-nos que no hi ha errors de sintaxi:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nginx<span class="w"> </span>-t
 </code></pre></div>
 <p><strong class="c1">Reiniciar Nginx</strong></p>
@@ -1050,7 +1054,29 @@ sudo<span class="w"> </span>chmod<span class="w"> </span>-R<span class="w"> </sp
 <p>Assegurar-se que la màquina:
     - té assignat el nom del domini per al que hem creat el nou lloc web.
     - crida al port configurat</p>
-<p>Ara, obrim el navegador i visitem el nou domini: <code>http://el-teu-domini.com</code> i indicarem el  port si no és el de per defecte <code>http://el-teu-domini.com:port</code> </p>
+<p>Ara, obrim el navegador i visitem el nou domini: <code>http://teu-domini.com</code> i indicarem el  port si no és el de per defecte <code>http://teu-domini.com:port</code> </p>
+<p><strong class="c1">Exemple de configuració per accedir per port</strong></p>
+<p>Si, en compte de per nom, se vol accedir segons el port de configuració caldrà canviar el port d’escolta a altre diferent del de per defecte (8080, 85, 8085…)</p>
+<p>L’arxiu de configuració podria ser semblant a aquest:</p>
+<div class="highlight"><pre><span></span><code>server<span class="w"> </span><span class="o">{</span><span class="w"> </span>
+
+<span class="w">    </span>listen<span class="w"> </span><span class="m">85</span><span class="p">;</span><span class="w"> </span>
+
+<span class="w">    </span>server_name<span class="w"> </span>web.com<span class="w"> </span>www.web.com<span class="p">;</span><span class="w"> </span>
+
+<span class="w">    </span>root<span class="w"> </span>/var/www/web<span class="p">;</span><span class="w"> </span>
+
+<span class="w">    </span>index<span class="w"> </span>index.html<span class="w"> </span>index.htm<span class="p">;</span><span class="w"> </span>
+
+<span class="w">    </span>location<span class="w"> </span>/<span class="w"> </span><span class="o">{</span><span class="w"> </span>
+<span class="w">        </span>try_files<span class="w"> </span><span class="nv">$uri</span><span class="w"> </span><span class="nv">$uri</span>/<span class="w"> </span><span class="o">=</span><span class="m">404</span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>A més caldrà crear el directori arrel, incloure l’arxiu d’inici, crear l’enllaç simbòlic (activar) i recarregar el servei de Nginx.
+L’accés a la web, des del client, es realitzarà indicant el port d’escolta (ja que no és el de per defecte)</p>
+<div class="highlight"><pre><span></span><code>http://IP_del_servidor_web_O_nom_del_servidor:85
+</code></pre></div>
 <hr>
 <ul>
 <li><a href="https://www.f5.com/go/product/welcome-to-nginx">Pàgina oficial de nginx</a></li>
@@ -1058,7 +1084,7 @@ sudo<span class="w"> </span>chmod<span class="w"> </span>-R<span class="w"> </sp
 </ul>
 <h2 id="7-mysql">7️⃣ Mysql<a class="headerlink" href="#7-mysql" title="Permanent link">¶</a></h2>
 <p>MySQL és un <strong>servidor de base de dades SQL</strong> ràpid, multifil, multiusuari i robust. Està destinat a sistemes de producció de càrrega pesada i crítics per a la missió, així com a programari desplegat en massa.</p>
-<h3 id="installacio-en-ubuntu_1">Instal·lació en Ubuntu<a class="headerlink" href="#installacio-en-ubuntu_1" title="Permanent link">¶</a></h3>
+<h3 id="installacio-en-ubuntu">Instal·lació en Ubuntu<a class="headerlink" href="#installacio-en-ubuntu" title="Permanent link">¶</a></h3>
 <p>Per instal·lar MySQL, executa la següent ordre des d’un terminal:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>mysql-server
 </code></pre></div>
