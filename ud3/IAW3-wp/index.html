@@ -378,11 +378,68 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#frontend-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontend &amp; Backend
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#elements-basics" class="md-nav__link">
     <span class="md-ellipsis">
       Elements bàsics
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Elements bàsics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entrades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrades
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#altres-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altres elements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Altres elements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multimedia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multimèdia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pàgines
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -422,45 +479,60 @@
 <p>Una vegada comprovat que el nostre sistema compleix amb tots els requisits, començarem el procés d’instal·lació en un S.O. Libux. Així doncs, els passos a seguir seran els següents:</p>
 <ol>
 <li>Hem d’accedir a la pàgina de descàrregues https://es.wordpress.org/download/ i descarregar l’arxiu d’instal·lació.</li>
-<li>
-<p>Una vegada descarregat i tractant-se d’una aplicació web desenvolupada en PHP, l’hem de guardar en el servidor web del nostre ordinador, en aquest cas Nginx amb php-fpm, per tant, el que fem és descomprimir l’arxiu descarregat a partir de <strong>/var/www/</strong></p>
-</li>
-<li>
-<p>Canviem el propietari del directori on s’ha guardat WordPress, per l’usuari amb el qual corre el servei web (<strong>www-data</strong>) perquè WordPress puga escriure i modificar els seus propis arxius.</p>
-</li>
+</ol>
+<p><a class="glightbox" href="../img/wp/W00.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W00.png"></a></p>
+<ol start="2">
+<li>Una vegada descarregat i tractant-se d’una aplicació web desenvolupada en PHP, l’hem de guardar en el servidor web del nostre ordinador, en aquest cas Nginx amb php-fpm, per tant, el que fem és descomprimir l’arxiu descarregat a partir de <strong>/var/www/</strong></li>
+</ol>
+<p><a class="glightbox" href="../img/wp/W06.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W06.png"></a></p>
+<ol start="3">
+<li>Canviem el propietari del directori on s’ha guardat WordPress, per l’usuari amb el qual corre el servei web (<strong>www-data</strong>) perquè WordPress puga escriure i modificar els seus propis arxius.</li>
 </ol>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/www/html/wordpress
 </code></pre></div>
 <ol start="4">
-<li>
-<p>Configurar la base de dades per treballar amb WordPress, és a dir, en aquest cas connectem amb el gestor mysql i creem la base de dades per WordPress, per exemple amb el nom wordpress.</p>
-</li>
-<li>
-<p>És recomanable crear un usuari específic per a gestionar i administrar la Base de dades de WordPress.</p>
-</li>
-<li>
-<p>Comprovar que l’extensió de MySql per a PHP està instal·lada.</p>
-</li>
-<li>
-<p>Accedir a la url d’inici del WordPress per a la seua instal·lació.</p>
-</li>
+<li>Configurar la base de dades per treballar amb WordPress, és a dir, en aquest cas connectem amb el gestor mysql i creem la base de dades per WordPress, per exemple amb el nom wordpress.</li>
+</ol>
+<p><a class="glightbox" href="../img/wp/W08.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W08.png"></a></p>
+<ol start="5">
+<li>És recomanable crear un usuari específic per a gestionar i administrar la Base de dades de WordPress.</li>
+</ol>
+<p><a class="glightbox" href="../img/wp/W10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W10.png"></a></p>
+<ol start="6">
+<li>Comprovar que l’extensió de MySql per a PHP està instal·lada.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>apt-cache<span class="w"> </span>policy<span class="w"> </span>php-mysql
+</code></pre></div>
+<ol start="7">
+<li>Accedir a la url d’inici del WordPress per a la seua instal·lació.</li>
 </ol>
 <div class="highlight"><pre><span></span><code>http://IP_server/wordpress
 </code></pre></div>
 <ol start="8">
-<li>
-<p>Se’ns demanaran les dades de connexió a la Base de dades</p>
-</li>
+<li>Se’ns demanaran les dades de connexió a la Base de dades</li>
+</ol>
+<p><a class="glightbox" href="../img/wp/W12.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W12.png"></a></p>
+<ol start="9">
 <li>
 <p>Es crearà l’arxiu de configuració</p>
 </li>
 <li>
-<p>Al finalitzar la instal·lació es visualitzará la pàgina d’inici.</p>
+<p>Al finalitzar la instal·lació es podrà accedir a la pàgina d’inici.</p>
 </li>
 </ol>
+<p><a class="glightbox" href="../img/wp/W17.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W17.png"></a></p>
+<div class="admonition tip">
+<p class="admonition-title">GUIA</p>
 <p><a href="https://developer.wordpress.org/advanced-administration/before-install/howto-install/#detailed-instructions">Feu clic per accedir al manual</a></p>
+</div>
+<h2 id="frontend-backend">Frontend &amp; Backend<a class="headerlink" href="#frontend-backend" title="Permanent link">¶</a></h2>
+<p>En el <strong>Frontend</strong> es té accés a la part pública del lloc web creat amb WordPress:</p>
+<p><a class="glightbox" href="../img/wp/W_front.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_front.png"></a></p>
+<p>Al <strong>Backend</strong> s’accedeix afegint a la url pública <code>/wp-admin</code> Demanarà l’usuari i contrassenya per accedir a la part privada (d’administració) del lloc WordPress:</p>
+<p><a class="glightbox" href="../img/wp/W_back1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_back1.png" width="50%"></a></p>
+<p><a class="glightbox" href="../img/wp/W_back2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_back2.png"></a></p>
 <h2 id="elements-basics">Elements bàsics<a class="headerlink" href="#elements-basics" title="Permanent link">¶</a></h2>
-<p>Un lloc web o blog creat amb WordPress està format per diferents elements. De tots ells, l’element més bàsic i comú és l’entrada o post; on normalment trobem tres elements:</p>
+<p>Un lloc web o blog creat amb WordPress està format per diferents elements. De tots ells, l’element més bàsic i comú és l’<strong>entrada o post</strong>; on normalment trobem tres elements:</p>
 <ul>
 <li>Un títol.</li>
 <li>La data de la seua publicació.</li>
@@ -468,41 +540,91 @@
 </ul>
 <p>Una entrada o post és una publicació del lloc web o blog creat amb WordPress que s’utilitza per afegir contingut que normalment s’actualitza amb freqüència, com poden ser les notícies o les novetats.</p>
 <p>Si seleccionem l’opció entrades del menú de WordPress, veurem un llistat amb les entrades.</p>
+<p><a class="glightbox" href="../img/wp/W_entr.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_entr.png"></a></p>
 <p>En aquest llistat, per cada entrada es mostrarà el seu títol, el nom de l’autor que l’ha creat, la categoria a la qual pertany, l’etiqueta que té associada, els comentaris que han fet els usuaris sobre aquesta entrada i la data de la seua publicació.</p>
 <p>Totes les entrades han de pertànyer com a mínim a una categoria que li assignarem nosaltres, si no li assignem, el sistema per defecte li assignarà la categoria “Sense categoria”.</p>
 <p>Les <strong>categories</strong> serveixen per classificar o agrupar les entrades, d’aquesta manera podem estructurar molt millor un lloc web o blog aconseguint que l’usuari tinga una millor experiència de navegació.</p>
 <p>Les <strong>etiquetes</strong> permeten etiquetar una entrada per destacar un dels seus aspectes, d’aquesta manera aconseguim organitzar per temàtiques similars totes les entrades o posts.</p>
+<div class="admonition info">
+<p class="admonition-title"> </p>
 <p>La diferència entre les categories i etiquetes, és que les primeres són jeràrquiques, així doncs una categoria pot tenir subcategories, mentre que les etiquetes van per lliure, són totalment independents unes d’altres. </p>
+</div>
 <p><strong>Estructuració de les entrades en categories i etiquetes</strong></p>
-<p>Amb un exemple és més fàcil veure com s’estructuren les entrades en categories i etiquetes, i la diferència entre elles. Posem per cas, la creació d’un lloc web per a un supermercat amb WordPress:</p>
+<p>Amb un exemple és més fàcil vore com s’estructuren les entrades en categories i etiquetes, i la diferència entre elles. Posem per cas, la creació d’un lloc web per a un supermercat amb WordPress:</p>
 <ul>
 <li>
 <p>Per una banda, els productes, que serien les entrades, els podem agrupar en seccions (categories) com la del peix, la de la carn, la de les begudes, la de la xarcuteria, etc. I en el cas dels productes de la xarcuteria els podríem dividir en dues seccions més (subcategories) la dels embotits i la dels formatges.</p>
 </li>
 <li>
-<p>Per altre costat, podem etiquetar molts dels productes del supermercat, pertanyin a la categoria que pertanyin, com a lliure de gluten, sense sucre, oferta, ecològic, etc., d’aquesta manera quan cerquem productes ecològics, el resultat seran tots aquells productes del supermercat etiquetats amb l’etiqueta “ecològic” siguin de la categoria que siguin, i quan vulguem mostrar tots els productes de la secció de la carn, mostrarem tots els productes que només estan dins la categoria “carn”.</p>
+<p>Per altra banda, podem etiquetar molts dels productes del supermercat, pertanyen a la categoria que pertanyen, com a lliure de gluten, sense sucre, oferta, ecològic, etc., d’aquesta manera quan busquem productes ecològics, el resultat seran tots aquells productes del supermercat etiquetats amb l’etiqueta “ecològic” siguen de la categoria que siguen, i quan vulguem mostrar tots els productes de la secció de la carn, mostrarem tots els productes que només estan dins la categoria “carn”.</p>
 </li>
 </ul>
 <p>Per crear una categoria o etiqueta, ho fem seleccionant les opcions <strong>Categories i Etiquetes</strong>, respectivament, del menú lateral esquerra de la pàgina inicial de WordPress o bé des del menú d’opcions que trobem en afegir o modificar una entrada. En els dos casos se’ns demanaran pràcticament les mateixes dades, és a dir, el nom, l’àlies i una descripció, i en el cas de les categories, a més a més, se’ns demanarà si penja d’alguna categoria per crear una jerarquia.</p>
+<p><a class="glightbox" href="../img/wp/W_cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_cat.png"></a></p>
+<p><a class="glightbox" href="../img/wp/W_etiq.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_etiq.png"></a></p>
+<h3 id="entrades">Entrades<a class="headerlink" href="#entrades" title="Permanent link">¶</a></h3>
 <p>Amb una entrada creada, podem modificar qualsevol dels seus aspectes (<strong>Editar</strong>), modificar només el títol, data de publicació, categoria, etc. (<strong>Edició ràpida</strong>), eliminar-la (<strong>Paperera</strong>) o visualitzar-la com la veuen els usuaris un cop la publiquem (<strong>Visualitzar</strong>) o previsualitzar-la (<strong>*Previsualitzar</strong>), si encara no l’hem publicat i l’hem guardat com esborrany.</p>
+<p><a class="glightbox" href="../img/wp/W_mod_entr.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_mod_entr.png"></a></p>
 <p>Per afegir una entrada ho fem mitjançant l’opció Afegeix que trobem en diferents llocs de la pàgina de WordPress, com en el menú lateral esquerra o la part superior del llistat d’entrades. </p>
+<p><a class="glightbox" href="../img/wp/W_ana_entr.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_ana_entr.png" width="50%"></a></p>
 <p>Mitjançant l’editor d’entrades afegirem el títol, el contingut, i configurarem diferents aspectes de l’entrada. Els aspectes que podem configurar de dalt a baix són:</p>
 <ul>
-<li><strong>Estat i visibilitat</strong>:<ul>
-<li><strong>Visibilitat</strong>: ens permet configurar la visibilitat de l’entrada, que pot ser pública, privada i protegida amb contrasenya.</li>
-<li><strong>Publica</strong>: ens permet configurar quan volem fer pública la nostra entrada. Tenim dues opcions, que l’opció sigui automàtica en el moment que seleccionem publicar-la, o bé programar una data de publicació.</li>
-<li><strong>Format d’entrada</strong>: a part del format estàndard, aquest format pot ser una anotació, una cita, un enllaç, una actualització d’estat similar al de les xarxes socials, una galeria d’imatges, una imatge, un vídeo incrustat, una transcripció de xat i un àudio incrustat.</li>
-<li><strong>Fixa a la part superior del blog</strong>: aquesta opció només és possible als blogs. Si se selecciona, l’entrada apareixerà més amunt que la resta d’entrades del blog.</li>
-<li><strong>Revisió pendent</strong>: si seleccionem aquesta opció, podrem veure els canvis en l’entrada guardats* més recentment.</li>
+<li><strong>Establir Imatge destacada</strong>: permet mostrar una imatge d’encapçalat personalitzada única per a l’entrada.</li>
+<li><strong>Afegir un Extracte</strong>: permet escriure un extracte breu per a l’entrada que pot aparèixer en diverses miniatures en el lloc o com a vista prèvia per als resultats del motor de cerca.</li>
+<li><strong>Estat</strong>:<ul>
+<li>Esborrany: Està editant-se.</li>
+<li>Pendent: epera valoració per a ser publicada.</li>
+<li>Privada: sòls visible per administradors i editors.</li>
+<li>Programada: Es publicarà en la data programada.</li>
+<li>Publicada: Visible per tots.</li>
+<li>Protegit amb contrassenya: només se pot accedir si es coneix la contrassenya</li>
+<li>Fixe: L’entrada s’ubica a la part superior del blog.</li>
 </ul>
 </li>
-<li><strong>Enllaç permanent</strong>: l’URL en la qual apareixerà l’entrada.</li>
+<li><strong>Slug</strong>: nom que completa la url per accedir al recurs.</li>
+<li><strong>Autor</strong>: qui edita l’entrada</li>
+<li><strong>Plantilla</strong>: utilitzada per a la creació de l’entrada</li>
+<li><strong>Comentaris</strong>: permet activar comentaris, retropings i retroenllaços relacionats amb l’entrada.</li>
+<li><strong>Format</strong>: a part del format estàndard, aquest format pot ser una anotació, una cita, un enllaç, una actualització d’estat similar al de les xarxes socials, una galeria d’imatges, una imatge, un vídeo incrustat, una transcripció de xat i un àudio incrustat.</li>
 <li><strong>Categories</strong>: permet afegir o assignar categories a l’entrada.</li>
 <li><strong>Etiquetes</strong>: permet afegir o assignar etiquetes a l’entrada.</li>
-<li><strong>Imatge destacada</strong>: permet mostrar una imatge d’encapçalat personalitzada única per a l’entrada.</li>
-<li><strong>Extracte</strong>: permet escriure un extracte breu per a l’entrada que pot aparèixer en diverses miniatures en el lloc o com a vista prèvia per als resultats del motor de cerca.</li>
-<li><strong>Debats</strong>: permet activar comentaris, retropings i retroenllaços relacionats amb l’entrada.</li>
 </ul>
+<p><a class="glightbox" href="../img/wp/W_edit_entr.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_edit_entr.png"></a></p>
+<p>L’edició d’una entrada va construint-se mitjanjant <strong>blocs</strong>:</p>
+<p><a class="glightbox" href="../img/wp/W_ins_bk1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_ins_bk1.png"></a></p>
+<p>Exemple d’inserció d’un bloc de tipus text (encapçalament):</p>
+<p><a class="glightbox" href="../img/wp/W_ins_bk2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_ins_bk2.png"></a></p>
+<p>Quan es finalitza l’edició d’una entrada es procedeix a fer-la pública immediatament o de manera programada clicant el botó de publicar:</p>
+<p><a class="glightbox" href="../img/wp/W_pub_entr.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_pub_entr.png"></a></p>
+<h2 id="altres-elements">Altres elements<a class="headerlink" href="#altres-elements" title="Permanent link">¶</a></h2>
+<p>A part de les entrades o posts, els elements principals que podem trobar a WordPress són els continguts <strong>multimèdia</strong>, com ara imatges, àudios, vídeos…, les <strong>pàgines</strong>, com la presentació del lloc web, contactes, formularis…, i, finalment, els <strong>comentaris</strong>, on l’usuari pot enviar les seues opinions.</p>
+<h3 id="multimedia">Multimèdia<a class="headerlink" href="#multimedia" title="Permanent link">¶</a></h3>
+<p>Els tipus de Blocs de medis que tenim, al editar un contingut, són els següents:</p>
+<p><a class="glightbox" href="../img/wp/W_medis.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_medis.png"></a></p>
+<ul>
+<li><strong>Imatge</strong>: una imatge.</li>
+<li><strong>Galeria</strong>: un conjunt d’imatges en una galeria.</li>
+<li><strong>Audio</strong>: un fitxer d’àudio amb un reproductor d’àudio simple.</li>
+<li><strong>Fons</strong>: una imatge o vídeo amb un text superposat.</li>
+<li><strong>Fitxer</strong>: un enllaç a un fitxer descarregable.</li>
+<li><strong>Medis i text</strong>: un fitxer multimèdia i un text al seu costat.</li>
+<li><strong>Vídeo</strong>: un vídeo.</li>
+</ul>
+<div class="admonition warnning">
+<p class="admonition-title">Warnning</p>
+<p>Els formats dels fitxers multimèdia que per defecte admet WordPress són:</p>
+<p>Imatge: .jpg, .jpeg, .png, .gif o .ico
+Àudio: .mp3, .m4a, .ogg o .wav
+Vídeo: .mp4, .m4v (MPEG-4), .mov (QuickTime), .wmv (Windows Mèdia Vídeo), .avi, .mpg, .ogv (Ogg), .3gp (3GPP) o .3g2 (3GPP2).</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>L’espai total per a pujar fitxers multimèdia a WordPress és de 55 MB i un fitxer no pot pesar més de 2 MB.</p>
+</div>
+<h3 id="pagines">Pàgines<a class="headerlink" href="#pagines" title="Permanent link">¶</a></h3>
+<p>Les pàgines de WordPress són un tipus d’entrada pensada per inserir contingut que no s’ha d’actualitzar molt sovint, com ara la presentació del lloc web, contactes, serveis que ens ofereix el lloc, formularis, etc. Són les pàgines estàtiques.</p>
+<p>Mentre que les entrades en WordPress per defecte s’ordenen cronològicament, les pàgines s’ordenen alfabèticament, però nosaltres podem modificar aquest ordre creant un nou ordre numèric, on a cada pàgina li correspondrà un nombre enter, què és el que indicarà la seua posició dins el nou ordre. Aquesta numeració comença per 1, és a dir, la primera pàgina serà la que correspondrà al número 1. </p>
+<p><strong>Creació i gestió de pàgines</strong></p>
 
 
 
