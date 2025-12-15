@@ -1,0 +1,667 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentació del mòdul IAW">
+      
+      
+      
+      
+        <link rel="prev" href="../IAW3-wp/">
+      
+      
+        <link rel="next" href="../IAW3-wp-pers/">
+      
+      
+      <link rel="icon" href="../img/logo.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+    
+    
+      
+        <title>WP.Administració - 2ASIX - IAW - UD03</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/elmeuestil.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#wp-administracio" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="2ASIX - IAW - UD03" class="md-header__button md-logo" aria-label="2ASIX - IAW - UD03" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            2ASIX - IAW - UD03
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              WP.Administració
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://espemm.github.io/IAW-2ASIX/" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW3-CMS/" class="md-tabs__link">
+        
+  
+    
+  
+  Sistemes de Gestió de Continguts
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW3-wp/" class="md-tabs__link">
+        
+  
+    
+  
+  WordPress
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  WP.Administració
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW3-wp-pers/" class="md-tabs__link">
+        
+  
+    
+  
+  WP.Personalització
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="2ASIX - IAW - UD03" class="md-nav__button md-logo" aria-label="2ASIX - IAW - UD03" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    2ASIX - IAW - UD03
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://espemm.github.io/IAW-2ASIX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW3-CMS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sistemes de Gestió de Continguts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW3-wp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WordPress
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    WP.Administració
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    WP.Administració
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#temes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#menus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Menús
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plugins
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usuaris" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usuaris
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eines-i-ajustos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eines i Ajustos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW3-wp-pers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WP.Personalització
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="wp-administracio">WP - Administració<a class="headerlink" href="#wp-administracio" title="Permanent link">¶</a></h1>
+<h2 id="temes">Temes<a class="headerlink" href="#temes" title="Permanent link">¶</a></h2>
+<p>Els temes determinen <em>l’aparença i la distribució</em> de determinats elements del nostre site
+condicionant, per tant, la capacitat de personalització. Hi ha molts temes gratuïts.</p>
+<p>A la secció <strong>APARENÇA → TEMES</strong> apareix una quadrícula amb els temes instal·lats, disponibles per a poder utilitzar-los al nostre site.</p>
+<p><a class="glightbox" href="../img/wp/W_temes.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_temes.png"></a></p>
+<p><strong class="c1">Activar un tema</strong></p>
+<p>Per utilitzar un tema instal·lat ens situem sobre la seua miniatura i premem <strong>ACTIVAR</strong>.
+Immediatament canviarà la distribució i l’aparença dels elements que determine el tema.
+Abans d’activar-ho podem vore com quedaria amb <strong>VISTA PRÈVIA</strong></p>
+<p><a class="glightbox" href="../img/wp/W_temes_acc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_temes_acc.png"></a></p>
+<p>Si un tema està activat podrà <strong>Personalitzar-se</strong></p>
+<p><a class="glightbox" href="../img/wp/W_temes_persona.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_temes_persona.png"></a></p>
+<p><strong class="c1">Afegir un tema nou</strong></p>
+<p>Es poden instal·lar nous temes prement el botó <strong>AFEGEIX NOU</strong>. Apareix la galeria de temes de WordPress des d’on cercar els temes. Quan localitzem el tema premem el botó <strong>INSTAL·LAR</strong>. A partir d’eixe moment podrem activar-lo si volem.</p>
+<p><a class="glightbox" href="../img/wp/W_temes_afegir.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_temes_afegir.png"></a></p>
+<p><strong class="c1">Eliminar un tema</strong></p>
+<p>Si no desitgem tenir disponible un tema instal·lat al nostre site podem eliminar-lo prement
+sobre ell, al botó DETALLS DEL TEMA, i seleccionant l’opció ESBORRAR.</p>
+<p><a class="glightbox" href="../img/wp/W_temes_borrar.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_temes_borrar.png"></a></p>
+<p><strong class="c1">Detalls del tema</strong></p>
+<p>Des d’aquesta finestra també podem <strong>ACTIVAR</strong> el tema i fer una <strong>VISTA PRÈVIA</strong></p>
+<h2 id="menus">Menús<a class="headerlink" href="#menus" title="Permanent link">¶</a></h2>
+<p>Els menús són una part fonamental del disseny d’un lloc ja que els utilitzen els usuaris com
+sistema de navegació per accedir als diferents continguts.</p>
+<p>El menú, <strong>depenent del tema i plantilla seleccionats</strong>, es pot ubicar a la capçalera, al peu de pàgina, a la barra lateral…</p>
+<p>Els menús es gestionen des de la secció <strong>APARENÇA → EDITOR</strong></p>
+<p><a class="glightbox" href="../img/wp/W_menus.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_menus.png"></a></p>
+<p><strong class="c1">Gestió de menús</strong></p>
+<p><a href="https://wordpress.com/es/support/menus/">Tutorial al respecte de la gestió de menús</a></p>
+<p>Una manera de començar pot ser la edició i personalització del menú que ofereix el tema instal·lat, tal i com s’indica en l’apartat del tutorial:</p>
+<p><a href="https://wordpress.com/es/support/menus/personalizar-el-diseno-del-menu/">Personalitzar el disseny del menú</a></p>
+<h2 id="plugins">Plugins<a class="headerlink" href="#plugins" title="Permanent link">¶</a></h2>
+<p>Una <strong>extensió</strong> (plugin) de WordPress és un programa o un conjunt d’una o més funcions escrites en llenguatge PHP, que afegeix un conjunt de característiques o serveis al lloc de WP. </p>
+<p>Podeu integrar sense problemes un complement amb el lloc utilitzant els punts d’accés i els mètodes proporcionats per la interfície de programa d’aplicació (API) del complement de WP.</p>
+<p><strong>Abans d’instal·lar</strong> qualsevol extensió, hem de tenir en compte dues coses:</p>
+<ul>
+<li>La <em>funcionalitat que realment necessitem</em> afegir al lloc de WordPress mitjançant una extensió. Instal·lar totes les extensions que ens facin bona pinta, és ineficaç i consumeix molt temps.</li>
+<li>La <em>compatibilitat de l’extensió amb la versió de WordPress</em> que estem fent servir i el tema actiu. No totes les extensions són compatibles amb totes les versions i temes de WordPress.</li>
+</ul>
+<p><a class="glightbox" href="../img/wp/W_plugins.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_plugins.png"></a></p>
+<p>Al seleccionar <strong>Afegir plugin</strong> apareixen tant les extensions instal·lades, com altres que se’ns suggereixen per instal·lar. </p>
+<p><a class="glightbox" href="../img/wp/W_plugins_afegir.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_plugins_afegir.png"></a></p>
+<p>Per cada extensió tenim:</p>
+<ul>
+<li>Opció per instal·lar-la (<strong>Instal·la ara</strong>) si no està instal·lada, o si està instal·lada, una opció per activar-la (<strong>Activa</strong>) si està desactivada.</li>
+<li><strong>Informació</strong> diversa de l’extensió: autor/a, els mesos que fa que s’ha actualitzat, valoració… </li>
+<li>Opció per a mostrar més detalls (<strong>Més detalls</strong>) de l’extensió com una descripció, requisits d’instal·lació, versió, captura de pantalla de com visualitzarem l’extensió… </li>
+</ul>
+<p>A part de les extensions que se’ns suggereixen, des d’aquesta pàgina podem buscar altres extensions amb diferents criteris com <em>destacades, populars, per una paraula clau</em>… </p>
+<p><a href="https://wordpress.com/es/support/plugins/usar-los-plugins/">Com utilitzar els plugins</a></p>
+<h2 id="usuaris">Usuaris<a class="headerlink" href="#usuaris" title="Permanent link">¶</a></h2>
+<p>Durant la instal·lació de WordPress es crea un usuari amb privilegis d’administrador del site. Necessitarem més persones que col·laboren al nostre site i, per tant, haurem de crear més usuaris i assignar-los els seus rols i permisos.</p>
+<p><a class="glightbox" href="../img/wp/W_usuaris.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_usuaris.png"></a></p>
+<p>Un <strong>Rol</strong> defineix el conjunt de tasques que es permet realitzar als usuaris que tinguen assignat aquest Rol. Per exemple, el rol de l’Administrador comprèn cada possible tasca que pot ser exercida en un bloc de WordPress. El rol d’autor permet executar un subconjunt més
+menut de tasques.</p>
+<p>A WordPress hi ha diferents <em>rols d’usuari</em> predefinits:</p>
+<ul>
+<li><strong>Subscriptor</strong>. És el perfil més usat als blocs. Poden tenir accés a continguts
+protegits, triats per l’administrador, editar el vostre perfil o publicar comentaris.</li>
+<li><strong>Col·laborador</strong>. Poden publicar articles nous o modificar els que ja hagen publicat, però no es publiquen fins que un administrador ho autoritza.</li>
+<li><strong>Autor</strong>. Com el col·laborador però pot publicar directament sense la supervisió d’un administrador.</li>
+<li><strong>Editor</strong>. Poden publicar i editar tant les seues pròpies entrades com les d’altres usuaris i acceptar articles de col·laboradors. </li>
+<li><strong>Administrador</strong>. Té control absolut sobre la resta d’usuaris i publicacions. Té
+permís per fer totes les operacions com instal·lar plugins, afegir widgets, modificar
+temes, aplicar actualitzacions, crear usuaris…</li>
+</ul>
+<p><strong class="c1">Gestió d’usuaris</strong></p>
+<p>Des de l’apartat <strong>USUARIS → TOTS ELS USUARIS</strong> podem gestionar els diferents usuaris: consultar i editar les vostres dades (email, entrades publicades, dades del vostre perfil), modificar-ne el rol i, fins i tot eliminar-los.</p>
+<p><strong class="c1">Crear usuari</strong></p>
+<p>Per <strong>afegir un nou usuari</strong>, ho podem fer des de l’opció <strong>Afegeix</strong> que apareix en seleccionar Usuaris en el menú lateral de WordPress, o bé clicant sobre el botó Afegeix, que trobem en la part superior del llistat d’usuaris del lloc de WordPress. </p>
+<p><strong class="c1">Perfil</strong></p>
+<p>L’opció Perfil que apareix al seleccionar Usuaris en el menú lateral de WordPress, dona accés a un formulari amb les opcions que un usuari pot modificar del seu perfil. </p>
+<p><a class="glightbox" href="../img/wp/W_perfil.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/wp/W_perfil.png"></a></p>
+<p>El perfil que es modificarà és el de l’usuari que està autenticat.</p>
+<ul>
+<li>Opcions personals: per modificar opcions personals com el color de l’entorn d’administració, tecles de drecera, l’idioma…</li>
+<li>Nom: per modificar el nom, cognoms, sobrenom i seleccionar quin nom volem mostrar públicament</li>
+<li>Informació de contacte: per modificar el correu i lloc web de l’usuari</li>
+<li>Quant a tu: per afegir informació biogràfica i penjar una foto</li>
+<li>Gestió del compte: per canviar la contrasenya i tancar totes les sessions obertes amb aquest compte en altres dispositius</li>
+</ul>
+<p><a href="https://wordpress.com/es/support/roles-usuario/">Perfils d’usuari</a></p>
+<h2 id="eines-i-ajustos">Eines i Ajustos<a class="headerlink" href="#eines-i-ajustos" title="Permanent link">¶</a></h2>
+<p>Funcionalitats que trobem en les opcions Eines i Opcions del menú lateral de WordPress. Aquestes funcionalitats són fonamentals per a gestionar d’una forma òptima un lloc de WordPress.</p>
+<p>Les <strong>funcionalitats</strong> que trobarem quan seleccionem l’opció <strong>Eines</strong>, són:</p>
+<ul>
+<li><strong>Eines disponibles</strong>: per defecte, només hi ha una eina: Convertidor de categories i etiquetes; que ens permet convertir les categories en etiquetes i les etiquetes en categories. Per utilitzar-la, primer s’ha d’instal·lar seleccionant l’opció Instal·la ara des de la funcionalitat Importar. </li>
+<li><strong>Importar</strong>: ens permet importar continguts d’altres plataformes i sistemes. La més utilitzada és l’opció per a importar continguts des d’una altra instal·lació de WordPress, però també ens permet importar continguts des de Bloguer, LiveJournal, Movable Type i TypePad, RSS i Tumblr. Per fer servir aquests importadors, primer s’han d’instal·lar seleccionant l’opció Instal·la ara. </li>
+<li><strong>Exportar</strong>: ens permet exportar a un altre lloc de WordPress tot o part del contingut del lloc de WordPress des del que estem treballant. Si decidim importar part del contingut, haurem de decidir si volem importar entrades, pàgines o elements multimèdia. Es descarregarà un fitxer de tipus XML, que és el que farem servir des de l’altra lloc de WordPress, per importar-lo des del seu apartat Importar. </li>
+<li><strong>Salut del lloc</strong>: mostra informació crítica sobre la configuració de WordPress i les millores recomanades. També mostra els elements que no tenen cap problema. </li>
+<li><strong>Exporta les dades personals</strong>: ens permet exportar les dades conegudes d’un usuari donat en un fitxer .zip complint amb les lleis locals i les regulacions.</li>
+<li><strong>Suprimeix les dades personals</strong>: ens permet en suprimir o fer anònimes les dades conegudes d’un usuari donat complint amb les lleis locals i les regulacions.</li>
+<li><strong>Editor d’arxius de temes</strong>: permet editar directament un tema de WordPress</li>
+<li><strong>Editor d’arxius de plugins</strong>: permet editar directament un plugin de WordPress</li>
+</ul>
+<p>Les <strong>funcionalitats</strong> que trobarem quan seleccionem l’opció <strong>Ajustos</strong>, són:</p>
+<ul>
+<li><strong>General</strong>: ens permet modificar aspectes generals del lloc de WordPress, com el títol, la descripció, l’URL, l’idioma, el format de data i hora… </li>
+<li><strong>Escriptura</strong>: ens permet modificar la categoria que utilitzarem per defecte si no assignem cap categoria a una entrada, el tipus d’entrada per defecte quan creem entrades, configurar la publicació d’entrades per correu electrònic i configurar quin és el servidor d’actualització on WordPress notifica automàticament la creació de noves entrades.</li>
+<li><strong>Lectura</strong>: ens permet configurar diferents aspectes per visualitzar les entrades.</li>
+<li><strong>Debats</strong>: ens permet configurar diferents opcions generals dels comentaris, com si volem rebre notificacions o no de nous comentaris, si volem que els usuaris es registren per a publicar comentaris, si volem aprovar els comentaris abans de fer-los públics…</li>
+<li><strong>Mèdia</strong>: ens permet determinar la dimensió màxima en píxels per utilitzar quan afegim una imatge a la mediateca, i organitza els fitxers penjats en carpetes per mes i any.</li>
+<li><strong>Enllaços permanents</strong>: ens permet seleccionar quin format tindran els URL de les pàgines, arxius, categories i etiquetes del lloc de WordPress.</li>
+<li><strong>Privadesa</strong>: ens permet configurar la política de privadesa del lloc de WordPress.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "toc.integrate", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
