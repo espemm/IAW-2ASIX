@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#practica-3-wordpress-administracio" class="md-skip">
+        <a href="#practica-4-wordpress-crear-tema" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -412,56 +412,91 @@
                   
 
 
-<h1 id="practica-3-wordpress-administracio">Pràctica 3: WordPress - Administració<a class="headerlink" href="#practica-3-wordpress-administracio" title="Permanent link">¶</a></h1>
+<h1 id="practica-4-wordpress-crear-tema">Pràctica 4: WordPress - Crear Tema<a class="headerlink" href="#practica-4-wordpress-crear-tema" title="Permanent link">¶</a></h1>
 <p>::: important </p>
-<p>Objectius</p>
-<p>En aquesta pràctica administrarem el lloc WordPress.</p>
-<p>Continuarem personalitzant el WordPress i aplicant tasques d’administració.</p>
-<p>Caldrà instal·lar un tema específic per al nostre lloc i configurar-lo adequadament.</p>
-<p>A més s’utilitzaran diferents usuaris per a la gestió de continguts que seran accessibles des de menús i es descubriran plugins populars en WordPress. Utilitzarem: </p>
-<ul>
-<li>Temes</li>
-<li>Usuaris</li>
-<li>Menús </li>
-<li>Plugins </li>
-</ul>
+<p>Objectiu</p>
+<p>Crear un tema de WordPress personalitzat des de zero utilitzant els fitxers essencials style.css i index.html, organitzant la seua estructura en les carpetes adequades.</p>
 <p>:::</p>
-<h2 id="tema">Tema<a class="headerlink" href="#tema" title="Permanent link">¶</a></h2>
-<p>Busca un tema gratuït de WordPress, instal·la’l i configura’l adequadament.</p>
-<p><a href="https://wordpress.com/es/support/temas/subir-y-configurar-temas-personalizados/">\textcolor{cerulean}{Tutorial per a pujar un tema}</a></p>
-<h2 id="usuaris">Usuaris<a class="headerlink" href="#usuaris" title="Permanent link">¶</a></h2>
-<p>Practicareu la gestió de continguts des de diferents perfils. Les passes que seguireu són:</p>
+<h2 id="part-1-configuracio-de-lentorn">Part 1: Configuració de l’entorn<a class="headerlink" href="#part-1-configuracio-de-lentorn" title="Permanent link">¶</a></h2>
 <ol>
-<li>Crea un usuari per a cadascun dels rols d’usuari que disposa WordPress.</li>
-<li>Inicia sessió amb cada usuari creat i gestiona diferents tipus de continguts comprovant quines operacions poden fer atenent al seu perfil ( crear, modificar, esborrar contingut seu i/o d’altres uuaris, fer altres operacions?)</li>
-<li>Finalita deixant almenys 3 continguts diferents.</li>
+<li>Instal·lar WordPress en un servidor local utilitzant XAMPP, WAMP o en Local. </li>
+<li>Accedir a la carpeta d’instal·lació de WordPress i navegar a la ruta: 
+/wp-content/themes/ </li>
+<li>Crear una carpeta nova amb el nom del tema, per exemple: 
+/wp-content/themes/el-meu-tema-personalitzat/</li>
 </ol>
-<h2 id="menus">Menús<a class="headerlink" href="#menus" title="Permanent link">¶</a></h2>
-<p>Editeu la navegació per el lloc web i modifica’l per incorporar un menú amb diferents opcions a les que es té per defecte.</p>
-<p>El menú ha d’incorporar almenys 2 dels continguts nous generats en l’apartat anterior i 2 enllaços d’internet.</p>
-<h2 id="plugins">Plugins<a class="headerlink" href="#plugins" title="Permanent link">¶</a></h2>
-<p>Feu un estudi de quins són els plugins i widgets més utilitzats a WordPress i vore quin d’ells podríeu utilitzar al vostre lloc.</p>
-<p>Es recomana revisar la referència <a href="https://plugintable.com/">\textcolor{cerulean}{The periodic table of WordPress plugins}</a> que és una taula amb els 108 plugins més populars de WordPress, ordenats pel nombre d’instal·lacions actives.</p>
-<ul>
-<li><a href="https://wordpress.org/plugins/contact-form-7/">\textcolor{cerulean}{Contact Form 7}</a></li>
-<li><a href="https://es.wordpress.org/plugins/beaver-builder-lite-version/">\textcolor{cerulean}{WordPress Page Builder – Beaver Builder}</a></li>
-<li><a href="https://es.wordpress.org/plugins/gdpr/">\textcolor{cerulean}{GDPR}</a></li>
-<li><a href="https://wordpress.org/plugins/custom-post-type-ui/">\textcolor{cerulean}{Custom Post Type UI}</a></li>
-<li><a href="https://es.wordpress.org/plugins/easy-wp-smtp/">\textcolor{cerulean}{Easy WP SMTP}</a></li>
-<li><a href="https://es.wordpress.org/plugins/wp-super-cache/">\textcolor{cerulean}{WP Super Cache}</a></li>
-<li><a href="https://es.wordpress.org/plugins/woocommerce/">\textcolor{cerulean}{WooCommerce}</a></li>
-<li><a href="https://es.wordpress.org/plugins/jetpack/">\textcolor{cerulean}{Jetpack}</a></li>
-<li><a href="https://es.wordpress.org/plugins/backwpup/">\textcolor{cerulean}{BackWPup – WordPress Backup Plugin}</a></li>
-</ul>
-<h2 id="que-has-de-lliurar">Què has de lliurar?<a class="headerlink" href="#que-has-de-lliurar" title="Permanent link">¶</a></h2>
+<h2 id="part-2-creacio-dels-arxius-requerits">Part 2: Creació dels Arxius Requerits<a class="headerlink" href="#part-2-creacio-dels-arxius-requerits" title="Permanent link">¶</a></h2>
+<ol>
+<li>Creació del fitxer <strong>style.css</strong></li>
+</ol>
+<p>Dins la carpeta del tema (el-meu-tema-personalitzat), crear un fitxer style.css i afegir el contingut següent:</p>
+<div class="highlight"><pre><span></span><code>/*
+Theme<span class="w"> </span>Name:<span class="w"> </span>El<span class="w"> </span>meu<span class="w"> </span>tema<span class="w"> </span>personalitzat
+Theme<span class="w"> </span>URI:<span class="w"> </span>https://exemple.com
+Author:<span class="w"> </span><span class="o">[</span>El<span class="w"> </span>teu<span class="w"> </span>nom<span class="o">]</span>
+Author<span class="w"> </span>URI:<span class="w"> </span>https://elteulloc.com
+Description:<span class="w"> </span>Un<span class="w"> </span>tema<span class="w"> </span>de<span class="w"> </span>WordPress<span class="w"> </span>creat<span class="w"> </span>des<span class="w"> </span>de<span class="w"> </span>zero.
+Versió:<span class="w"> </span><span class="m">1</span>.0
+License:<span class="w"> </span>GNU<span class="w"> </span>General<span class="w"> </span>Public<span class="w"> </span>License<span class="w"> </span>v2<span class="w"> </span>or<span class="w"> </span>later
+License<span class="w"> </span>URI:<span class="w"> </span>https://www.gnu.org/licenses/gpl-2.0.html
+Text<span class="w"> </span>Domain:<span class="w"> </span>el-meu-tema-personalitzat
+Tags:<span class="w"> </span>bloc,<span class="w"> </span>responsive,<span class="w"> </span>accessible
+*/
+</code></pre></div>
+<p>\underline{Tasca}: </p>
+<p>Editeu el fitxer style.css i personalitzeu el nom del tema, la descripció i l’autor.</p>
+<ol start="2">
+<li>Creació del fitxer index.html</li>
+</ol>
+<p>Dins la carpeta del tema, crear un fitxer index.html amb el codi bàsic d’estructura següent:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"es"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"viewport"</span> <span class="na">content</span><span class="o">=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>El Meu Tema Personalitzat<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"style.css"</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Benvingut al Meu Tema Personalitzat<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Este es un tema bàsic de WordPress creat des de zero.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>© 2026 - El Meu Tema Personalitzat<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>\underline{Tasca}: </p>
+<p>Modificar el contingut del <header> i <footer> amb un disseny personalitzat.</footer></header></p>
+<h3 id="part-3-activacio-del-tema-en-wordpress">Part 3: Activació del Tema en WordPress<a class="headerlink" href="#part-3-activacio-del-tema-en-wordpress" title="Permanent link">¶</a></h3>
+<ol>
+<li>Iniciar sessió al panell d’administració de WordPress. </li>
+<li>Anar a Aparença &gt; Temes. </li>
+<li>Buscar el tema creat (“El meu tema personalitzat”). </li>
+<li>Activar el tema.</li>
+</ol>
+<p>\underline{Verificació}: </p>
+<p>Accedir al lloc web i comprovar que el contingut de l’index.html es mostra correctament.</p>
+<h3 id="part-4-millora-del-tema">Part 4: Millora del Tema<a class="headerlink" href="#part-4-millora-del-tema" title="Permanent link">¶</a></h3>
+<p>Estendre el tema bàsic afegint:</p>
+<ol>
+<li>Un fitxer screenshot.png amb una vista prèvia del disseny (1200x900 px).</li>
+<li>Un full destils addicional (custom.css) per millorar el disseny.</li>
+<li>Fitxers a la carpeta parts/ per a la capçalera i el peu de pàgina.</li>
+</ol>
+<p>Desafiament Extra:
+- Crear un tema fill basat en un altre tema existent.</p>
+<h3 id="que-has-de-lliurar">Què has de lliurar?<a class="headerlink" href="#que-has-de-lliurar" title="Permanent link">¶</a></h3>
 <p>Documentació tècnica amb les passes seguides en els diferents apartats.</p>
 <p>::: note</p>
-<p>Pràctica 03: Administració de WordPress  </p>
+<p>Pràctica 04: WordPress - Crear Tema  </p>
 <p>Lliurar la documentació en <strong>pdf</strong> de les passes fetes.
 Incloure la url a la teua pàgina de github (si l’incorpores al teu repositori).</p>
 <p>:::</p>
-<h2 id="referencies">Referències<a class="headerlink" href="#referencies" title="Permanent link">¶</a></h2>
-<p><a href="https://es.wordpress.org/support/">\textcolor{cerulean}{Documentació WordPress}</a></p>
 
 
 

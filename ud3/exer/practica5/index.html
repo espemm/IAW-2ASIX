@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#practica-3-wordpress-administracio" class="md-skip">
+        <a href="#practica-5-wordpress-modificar-tema" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -412,56 +412,113 @@
                   
 
 
-<h1 id="practica-3-wordpress-administracio">Pràctica 3: WordPress - Administració<a class="headerlink" href="#practica-3-wordpress-administracio" title="Permanent link">¶</a></h1>
+<h1 id="practica-5-wordpress-modificar-tema">Pràctica 5: WordPress - Modificar Tema<a class="headerlink" href="#practica-5-wordpress-modificar-tema" title="Permanent link">¶</a></h1>
 <p>::: important </p>
-<p>Objectius</p>
-<p>En aquesta pràctica administrarem el lloc WordPress.</p>
-<p>Continuarem personalitzant el WordPress i aplicant tasques d’administració.</p>
-<p>Caldrà instal·lar un tema específic per al nostre lloc i configurar-lo adequadament.</p>
-<p>A més s’utilitzaran diferents usuaris per a la gestió de continguts que seran accessibles des de menús i es descubriran plugins populars en WordPress. Utilitzarem: </p>
-<ul>
-<li>Temes</li>
-<li>Usuaris</li>
-<li>Menús </li>
-<li>Plugins </li>
-</ul>
+<p>Objectiu</p>
+<p>Modificar un tema existent de WordPress aplicant canvis al seu full d’estils (style.css), personalitzar el fitxer theme.json per afegir una paleta de colors i crear un tema fill utilitzant el plugin <strong>Create Block Theme</strong>.</p>
 <p>:::</p>
-<h2 id="tema">Tema<a class="headerlink" href="#tema" title="Permanent link">¶</a></h2>
-<p>Busca un tema gratuït de WordPress, instal·la’l i configura’l adequadament.</p>
-<p><a href="https://wordpress.com/es/support/temas/subir-y-configurar-temas-personalizados/">\textcolor{cerulean}{Tutorial per a pujar un tema}</a></p>
-<h2 id="usuaris">Usuaris<a class="headerlink" href="#usuaris" title="Permanent link">¶</a></h2>
-<p>Practicareu la gestió de continguts des de diferents perfils. Les passes que seguireu són:</p>
+<h2 id="part-1-modifica-el-tema-existent">Part 1: Modifica el tema existent<a class="headerlink" href="#part-1-modifica-el-tema-existent" title="Permanent link">¶</a></h2>
+<p><strong>Selecciona un Tema</strong> </p>
 <ol>
-<li>Crea un usuari per a cadascun dels rols d’usuari que disposa WordPress.</li>
-<li>Inicia sessió amb cada usuari creat i gestiona diferents tipus de continguts comprovant quines operacions poden fer atenent al seu perfil ( crear, modificar, esborrar contingut seu i/o d’altres uuaris, fer altres operacions?)</li>
-<li>Finalita deixant almenys 3 continguts diferents.</li>
+<li>Iniciar sessió al panell d’administració del WordPress. </li>
+<li>Aneu a Aparença &gt; Temes i escolliu un tema instal·lat (per exemple, Twenty Twenty-Four). </li>
+<li>Activeu el tema seleccionat.</li>
 </ol>
-<h2 id="menus">Menús<a class="headerlink" href="#menus" title="Permanent link">¶</a></h2>
-<p>Editeu la navegació per el lloc web i modifica’l per incorporar un menú amb diferents opcions a les que es té per defecte.</p>
-<p>El menú ha d’incorporar almenys 2 dels continguts nous generats en l’apartat anterior i 2 enllaços d’internet.</p>
-<h2 id="plugins">Plugins<a class="headerlink" href="#plugins" title="Permanent link">¶</a></h2>
-<p>Feu un estudi de quins són els plugins i widgets més utilitzats a WordPress i vore quin d’ells podríeu utilitzar al vostre lloc.</p>
-<p>Es recomana revisar la referència <a href="https://plugintable.com/">\textcolor{cerulean}{The periodic table of WordPress plugins}</a> que és una taula amb els 108 plugins més populars de WordPress, ordenats pel nombre d’instal·lacions actives.</p>
+<p>\underline{Tasca}:
+- Prendre una captura de pantalla del lloc web abans de fer els canvis.</p>
+<p><strong>Modifica l’arxiu style.css</strong></p>
+<p>En la carpeta del tema seleccionat (wp-content/themes/nom-del-tema/), obri el fitxer style.css.</p>
+<p>Afegeix noves regles CSS per canviar l’aparença del lloc.</p>
+<p>\underline{Exemple} de canvis a style.css:</p>
+<div class="highlight"><pre><span></span><code><span class="c">/* Canvia el color de fons del cos */</span>
+
+<span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#f5f5f5</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Personalitza el títol del lloc */</span>
+
+<span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#0073aa</span><span class="p">;</span>
+<span class="w">  </span><span class="k">text-transform</span><span class="p">:</span><span class="w"> </span><span class="kc">uppercase</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Modifica enllaços */</span>
+
+<span class="nt">a</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#ff4500</span><span class="p">;</span>
+<span class="w">  </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">a</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#ff6347</span><span class="p">;</span>
+<span class="w">  </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">underline</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>\underline{Tasca}: </p>
 <ul>
-<li><a href="https://wordpress.org/plugins/contact-form-7/">\textcolor{cerulean}{Contact Form 7}</a></li>
-<li><a href="https://es.wordpress.org/plugins/beaver-builder-lite-version/">\textcolor{cerulean}{WordPress Page Builder – Beaver Builder}</a></li>
-<li><a href="https://es.wordpress.org/plugins/gdpr/">\textcolor{cerulean}{GDPR}</a></li>
-<li><a href="https://wordpress.org/plugins/custom-post-type-ui/">\textcolor{cerulean}{Custom Post Type UI}</a></li>
-<li><a href="https://es.wordpress.org/plugins/easy-wp-smtp/">\textcolor{cerulean}{Easy WP SMTP}</a></li>
-<li><a href="https://es.wordpress.org/plugins/wp-super-cache/">\textcolor{cerulean}{WP Super Cache}</a></li>
-<li><a href="https://es.wordpress.org/plugins/woocommerce/">\textcolor{cerulean}{WooCommerce}</a></li>
-<li><a href="https://es.wordpress.org/plugins/jetpack/">\textcolor{cerulean}{Jetpack}</a></li>
-<li><a href="https://es.wordpress.org/plugins/backwpup/">\textcolor{cerulean}{BackWPup – WordPress Backup Plugin}</a></li>
+<li>
+<p>Aplicar almenys tres canvis visuals al style.css.</p>
+</li>
+<li>
+<p>Guardar els canvis i comprova el resultat recarregant el lloc web.</p>
+</li>
 </ul>
-<h2 id="que-has-de-lliurar">Què has de lliurar?<a class="headerlink" href="#que-has-de-lliurar" title="Permanent link">¶</a></h2>
+<h2 id="part-2-personalitza-larxiu-themejson">Part 2: Personalitza l’arxiu theme.json<a class="headerlink" href="#part-2-personalitza-larxiu-themejson" title="Permanent link">¶</a></h2>
+<p><strong>Ubicar i Editar el Fitxer theme.json</strong></p>
+<p>Dins la carpeta del tema (wp-content/themes/nom-del-tema/), localitza el fitxer theme.json.</p>
+<p>Afegeix una nova paleta de colors personalitzada dins del bloc “settings”.</p>
+<p>\underline{Exemple} de codi per a theme.json:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span>
+<span class="nt">"versió"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span>
+<span class="nt">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="err">pale</span><span class="kc">tte</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span>
+<span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Roig Intens"</span><span class="p">,</span><span class="w"> </span><span class="nt">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"roig-intens"</span><span class="p">,</span><span class="w"> </span><span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#b22222"</span><span class="w"> </span><span class="p">},</span><span class="w"> </span>
+<span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blau Fosc"</span><span class="p">,</span><span class="w"> </span><span class="nt">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blau-fosc"</span><span class="p">,</span><span class="w"> </span><span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#00008b"</span><span class="w"> </span><span class="p">},</span><span class="w"> </span>
+<span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verd Neó"</span><span class="p">,</span><span class="w"> </span><span class="nt">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"verd-neó"</span><span class="p">,</span><span class="w"> </span><span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#39ff14"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span>
+<span class="p">]</span><span class="w"> </span>
+<span class="p">}</span><span class="w"> </span>
+<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>Guardar els canvis i accedir a l’editor de WordPress. </li>
+<li>Anar a Aparença &gt; Editor i comprovar que la nova paleta de colors està disponible.</li>
+</ol>
+<p>\underline{Tasca}: </p>
+<ul>
+<li>Afegir almenys tres colors personalitzats a la paleta de theme.json. </li>
+<li>Fer una captura de pantalla de la nova paleta a l’editor de WordPress.</li>
+</ul>
+<h2 id="part-3-crea-un-tema-fill-amb-create-block-theme">Part 3: Crea un Tema Fill amb Create Block Theme<a class="headerlink" href="#part-3-crea-un-tema-fill-amb-create-block-theme" title="Permanent link">¶</a></h2>
+<p><strong>Instal·lar i Activar el Plugin Create Block Theme</strong> </p>
+<ol>
+<li>Al panell d’administració del WordPress, anar a Plugins &gt; Afegeix Nou. </li>
+<li>Buscar Create Block Theme i instal·la’l. </li>
+<li>Activar el plugin.</li>
+</ol>
+<p><strong>Crear un Tema Fill</strong></p>
+<ol>
+<li>Anar a Aparença &gt; Create Block Theme. </li>
+<li>Seleccionar l’opció “Create Child Theme”. </li>
+<li>Triar el tema pare (el que vas modificar anteriorment). </li>
+<li>Introduir un nom per al tema fill (ex. “El meu Tema Fill”). </li>
+<li>Fer clic a <code>Create Theme</code>.</li>
+</ol>
+<p>\underline{Tasca}: </p>
+<ul>
+<li>Confirmar que el nou tema fill apareix a Aparença &gt; Temes i activar-ho. </li>
+<li>Navegar a la carpeta wp-content/themes/ i comprovar que s’ha creat la carpeta del tema fill.</li>
+</ul>
+<h3 id="que-has-de-lliurar">Què has de lliurar?<a class="headerlink" href="#que-has-de-lliurar" title="Permanent link">¶</a></h3>
 <p>Documentació tècnica amb les passes seguides en els diferents apartats.</p>
 <p>::: note</p>
-<p>Pràctica 03: Administració de WordPress  </p>
+<p>Pràctica 05: WordPress - Modificar Tema  </p>
 <p>Lliurar la documentació en <strong>pdf</strong> de les passes fetes.
 Incloure la url a la teua pàgina de github (si l’incorpores al teu repositori).</p>
 <p>:::</p>
-<h2 id="referencies">Referències<a class="headerlink" href="#referencies" title="Permanent link">¶</a></h2>
-<p><a href="https://es.wordpress.org/support/">\textcolor{cerulean}{Documentació WordPress}</a></p>
 
 
 
