@@ -383,6 +383,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#execucio-de-contenidors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execució de contenidors
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -500,6 +509,64 @@ For<span class="w"> </span>more<span class="w"> </span>examples<span class="w"> 
 <span class="w"> </span>https://docs.docker.com/get-started/
 </code></pre></div>
 <p>Si la imatge no està descarregada, se descarregarà i crearà el contenidor abans d’executar-lo.</p>
+<h2 id="execucio-de-contenidors">Execució de contenidors<a class="headerlink" href="#execucio-de-contenidors" title="Permanent link">¶</a></h2>
+<p>L’execució d’un contenidor hem vist que s’executa de manera <strong>senzilla</strong>:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>nom_del_contenidor
+</code></pre></div>
+<p>L’execució també pot ser <strong>interactiva</strong>. En aquest cas es fa servir l’opció <code>-i</code> per obrir una sessió interactiva, <code>-t</code> permet crear un pseudo-terminal per a interaccionar amb el contenidor, el nom del contenidor s’indica amb l’opció –name, s’indica la imatge per a crear-lo (ubuntu en l’exemple), i per últim la comanda que executarem (bash en l’exemple)</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>contenidor1<span class="w"> </span>ubuntu<span class="w"> </span>bash
+root@2bfa404bace0:/#
+</code></pre></div>
+<p>El contenidor es para quan eixim. Per tornar a iniciar-lo:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>start<span class="w"> </span>contenidor1
+contenidor1
+$<span class="w"> </span>docker<span class="w"> </span>attach<span class="w"> </span>contenidor1
+root@2bfa404bace0:/#
+</code></pre></div>
+<p>Si el contenidor està en marxa podem executar ordres amb el subordre <code>exec</code>:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>start<span class="w"> </span>contenidor1
+contenidor1
+$<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>contenidor1<span class="w"> </span>ls<span class="w"> </span>-al
+</code></pre></div>
+<p>Amb l’ordre <code>docker restart</code> reiniciem el contenidor.</p>
+<p>Per mostrar informació d’un contenidor, executem docker inspect:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>inspect<span class="w"> </span>contenidor1
+<span class="o">[</span><span class="w"> </span>
+<span class="o">{</span><span class="w"> </span>
+<span class="s2">"Id"</span>:<span class="w"> </span><span class="s2">"178871769ac2fcbc1c73ce378066af01436b52a15894685b7321088468a25db7"</span>,<span class="w"> </span>
+<span class="s2">"Created"</span>:<span class="w"> </span><span class="s2">"2021-01-28T19:12:21.764255155Z"</span>,<span class="w"> </span>
+<span class="s2">"Path"</span>:<span class="w"> </span><span class="s2">"bash"</span>,<span class="w"> </span>
+<span class="s2">"Args"</span>:<span class="w"> </span><span class="o">[]</span>,<span class="w"> </span>
+<span class="s2">"State"</span>:<span class="w"> </span><span class="o">{</span><span class="w"> </span>
+<span class="s2">"Status"</span>:<span class="w"> </span><span class="s2">"exited"</span>,<span class="w"> </span>
+<span class="s2">"Running"</span>:<span class="w"> </span>false,<span class="w"> </span>
+<span class="s2">"Paused"</span>:<span class="w"> </span>false,<span class="w"> </span>
+...
+</code></pre></div>
+<p>Ens mostra molta informació, està en format JSON (JavaScript Object Notation) i ens dóna dades sobre aspectes com ara: </p>
+<ul>
+<li>L’ID del contenidor. </li>
+<li>Els ports oberts i les seues redireccions </li>
+<li>Els bind mounts i volums usats. </li>
+<li>La mida del contenidor </li>
+<li>La configuració de xarxa del contenidor. </li>
+<li>L’ENTRYPOINT és el que s’executa en fer docker run. </li>
+<li>El valor de les variables dentorn. </li>
+<li>…</li>
+</ul>
+<p>En realitat, totes les imatges tenen definides un procés que s’executa; en concret, la imatge ubuntu té definida per defecte el procés bash, per la qual cosa podríem haver executat:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>contenidor1<span class="w"> </span>ubuntu
+</code></pre></div>
+<p>L’execució d’un contenedor en segon pla s’aconsegueix amb l’opció <code>-d</code></p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>contenedor2<span class="w"> </span>ubuntu
+</code></pre></div>
+<p>LA parada del contenidor i esborrat:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>stop<span class="w"> </span>contenidor2
+$<span class="w"> </span>docker<span class="w"> </span>rm<span class="w"> </span>contenidor2
+</code></pre></div>
+<p>Cal tenir en compte que un contenidor que s’està executant no pot ser eliminat. Tindríem que parar el contenidor i posteriorment esborrar-lo. Una altra opció és esborrat a la força:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>contenidor2
+</code></pre></div>
 
 
 
