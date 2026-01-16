@@ -384,9 +384,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#execucio-de-contenidors" class="md-nav__link">
+  <a href="#execucio" class="md-nav__link">
     <span class="md-ellipsis">
-      Execució de contenidors
+      Execució
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Execució">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contenidor-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contenidor web
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-dentorn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables d&rsquo;entorn
     </span>
   </a>
   
@@ -509,7 +533,7 @@ For<span class="w"> </span>more<span class="w"> </span>examples<span class="w"> 
 <span class="w"> </span>https://docs.docker.com/get-started/
 </code></pre></div>
 <p>Si la imatge no està descarregada, se descarregarà i crearà el contenidor abans d’executar-lo.</p>
-<h2 id="execucio-de-contenidors">Execució de contenidors<a class="headerlink" href="#execucio-de-contenidors" title="Permanent link">¶</a></h2>
+<h2 id="execucio">Execució<a class="headerlink" href="#execucio" title="Permanent link">¶</a></h2>
 <p>L’execució d’un contenidor hem vist que s’executa de manera <strong>senzilla</strong>:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>nom_del_contenidor
 </code></pre></div>
@@ -566,6 +590,38 @@ $<span class="w"> </span>docker<span class="w"> </span>rm<span class="w"> </span
 </code></pre></div>
 <p>Cal tenir en compte que un contenidor que s’està executant no pot ser eliminat. Tindríem que parar el contenidor i posteriorment esborrar-lo. Una altra opció és esborrat a la força:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>contenidor2
+</code></pre></div>
+<h3 id="contenidor-web">Contenidor web<a class="headerlink" href="#contenidor-web" title="Permanent link">¶</a></h3>
+<p>Exemple de creació d’un servidor web amb Apache a partir de la imatge del registre públic docker hub:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>servei-apache<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>httpd
+</code></pre></div>
+<p>Veiem que el contenidor s’està executant, a més amb l’opció <code>-p</code> mapegem un port de l’equip on tenim instal·lat el docker, amb un port del contenidor: Si accedim a la ip de l’ordinador que té instal·lat docker al primer port indicat, es redigirà la petició a la ip del contenidor al segon port indicat. Mai utilitzem directament la ip del contenidor per accedir-hi.</p>
+<p>Accedir des d’un navegador a la IP del servidor amb docker al port 8080:</p>
+<p><a class="glightbox" href="../img/web_apache.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/web_apache.png"></a></p>
+<p>Accedir al log del contenidor executant:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>logs<span class="w"> </span>servei-apache
+</code></pre></div>
+<p>Amb l’opció logs <code>-f</code> seguim visualitzant els logs en temps real.</p>
+<p><strong class="c1">Modificació del contingut sel servidor web</strong></p>
+<p>Si consultem la documentació de la imatge httpd al registre docker Hub, podem determinar que el servidor web que s’executa al contenidor desar els seus fitxers (directori DocumentRoot) a /usr/local/apache2/htdocs/. Crearem un nou fitxer index.html en aquest directori.</p>
+<p>Ho podem fer de diverses maneres: </p>
+<p>Accedint de forma interactiva al contenidor i fent la modificació:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>servei-apache<span class="w"> </span>bash
+
+root@cf3cd01a4993:/usr/local/apache2#<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/usr/local/apache2/htdocs/
+root@cf3cd01a4993:/usr/local/apache2/htdocs#<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"&lt;h1&gt;2ASIX - Docker - IAW&lt;/h1&gt;"</span><span class="w"> </span>&gt;<span class="w"> </span>index.html
+root@cf3cd01a4993:/usr/local/apache2/htdocs#<span class="w"> </span><span class="nb">exit</span><span class="w"> </span>
+</code></pre></div>
+<p>Executant directament l’ordre de creació del fitxer index.html al contenidor:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>servei-apache<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">'echo "&lt;h1&gt;2ASIX - Docker - IAW&lt;/h1&gt;" &gt; /usr/local/apache2/htdocs/index.html'</span>
+</code></pre></div>
+<p><a class="glightbox" href="../img/web_apache_mod.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/web_apache_mod.png"></a></p>
+<h2 id="variables-dentorn">Variables d’entorn<a class="headerlink" href="#variables-dentorn" title="Permanent link">¶</a></h2>
+<p>Per a crear un contenidor que necessita alguna configuració específica, el que farem és crear variables d’entorn al contenidor, perquè el procés que inicialitza el contenidor puga aplicar esta configuració.</p>
+<p>Per a crear una variable d’entorn, en crear un contenidor, utilitzarem <code>-e</code> o <code>--env</code>:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>prova<span class="w"> </span>-e<span class="w"> </span><span class="nv">USUARIO</span><span class="o">=</span>prova<span class="w"> </span>ubuntu<span class="w"> </span>bash
+root@91e81200c633:/#<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$USUARIO</span>
+prova
 </code></pre></div>
 
 
