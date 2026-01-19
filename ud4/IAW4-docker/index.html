@@ -414,6 +414,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Variables d’entorn">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contenidor-bd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contenidor BD
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imatges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imatges
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emmagatzematge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Emmagatzematge
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xarxa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Xarxa
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -603,7 +645,7 @@ $<span class="w"> </span>docker<span class="w"> </span>rm<span class="w"> </span
 </code></pre></div>
 <p>Amb l’opció logs <code>-f</code> seguim visualitzant els logs en temps real.</p>
 <p><strong class="c1">Modificació del contingut sel servidor web</strong></p>
-<p>Si consultem la documentació de la imatge httpd al registre docker Hub, podem determinar que el servidor web que s’executa al contenidor desar els seus fitxers (directori DocumentRoot) a /usr/local/apache2/htdocs/. Crearem un nou fitxer index.html en aquest directori.</p>
+<p>Si consultem la documentació de la imatge <strong>httpd</strong> al registre docker Hub, podem determinar que el servidor web que s’executa al contenidor desar els seus fitxers (directori DocumentRoot) a /usr/local/apache2/htdocs/. Crearem un nou fitxer index.html en aquest directori.</p>
 <p>Ho podem fer de diverses maneres: </p>
 <p>Accedint de forma interactiva al contenidor i fent la modificació:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>servei-apache<span class="w"> </span>bash
@@ -619,10 +661,188 @@ root@cf3cd01a4993:/usr/local/apache2/htdocs#<span class="w"> </span><span class=
 <h2 id="variables-dentorn">Variables d’entorn<a class="headerlink" href="#variables-dentorn" title="Permanent link">¶</a></h2>
 <p>Per a crear un contenidor que necessita alguna configuració específica, el que farem és crear variables d’entorn al contenidor, perquè el procés que inicialitza el contenidor puga aplicar esta configuració.</p>
 <p>Per a crear una variable d’entorn, en crear un contenidor, utilitzarem <code>-e</code> o <code>--env</code>:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>prova<span class="w"> </span>-e<span class="w"> </span><span class="nv">USUARIO</span><span class="o">=</span>prova<span class="w"> </span>ubuntu<span class="w"> </span>bash
+<p></p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>prova<span class="w"> </span>-e<span class="w"> </span><span class="nv">USUARIO</span><span class="o">=</span>prova<span class="w"> </span>ubuntu<span class="w"> </span>bash
 root@91e81200c633:/#<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$USUARIO</span>
 prova
 </code></pre></div>
+<a href="https://hub.docker.com/_/httpd">docker hub - httpd</a>
+<h3 id="contenidor-bd">Contenidor BD<a class="headerlink" href="#contenidor-bd" title="Permanent link">¶</a></h3>
+<p>Si consultem la documentació de la imatge <strong>mariadb</strong>, vorem que podem definir algunes variables d’entorn per a la creació i la configuració del contenidor (per exemple: MARIADB_DATABASE,MARIADB_USER, MARIADB_PASSWORD,…). Però n’hi ha una que l’hem d’indicar de forma obligatòria, la contrasenya de l’usuari root (<strong>MARIADB_ROOT_PASSWORD</strong>), per tant:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>some-mariadb<span class="w"> </span>-e<span class="w"> </span><span class="nv">MARIADB_ROOT_PASSWORD</span><span class="o">=</span>my-secret-pw<span class="w"> </span>mariadb
+$<span class="w"> </span>docker<span class="w"> </span>ps
+CONTAINER<span class="w"> </span>ID<span class="w"> </span>IMAGE<span class="w"> </span>COMMAND<span class="w"> </span>CREATED<span class="w"> </span>STATUS<span class="w"> </span>PORTS<span class="w"> </span>NAMES
+9c3effd891e3<span class="w"> </span>mariadb<span class="w"> </span><span class="s2">"docker-entrypoint.s…"</span><span class="w"> </span><span class="m">8</span><span class="w"> </span>seconds<span class="w"> </span>ago<span class="w"> </span>Up<span class="w"> </span><span class="m">7</span><span class="w"> </span>seconds<span class="w"> </span><span class="m">3306</span>/tcp<span class="w"> </span>some-mariadb
+</code></pre></div>
+<p>S’haurà creat una variable d‟entorn:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>some-mariadb<span class="w"> </span>env
+...
+<span class="nv">MARIADB_ROOT_PASSWORD</span><span class="o">=</span>my-secret-pw
+...
+</code></pre></div>
+<p>Per accedir executem:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>some-mariadb<span class="w"> </span>bash
+root@9c3effd891e3:/#<span class="w"> </span>mariadb<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p<span class="s2">"</span><span class="nv">$MARIADB_ROOT_PASSWORD</span><span class="s2">"</span>
+...
+MariaDB<span class="w"> </span><span class="o">[(</span>none<span class="o">)]</span>&gt;
+</code></pre></div>
+<p>Una altra manera seria:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>some-mariadb<span class="w"> </span>mariadb<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p
+Enter<span class="w"> </span>password:
+...
+MariaDB<span class="w"> </span><span class="o">[(</span>none<span class="o">)]</span>&gt;
+</code></pre></div>
+<p><strong class="c1">Accedint a servidor de base de dades des de l’exterior</strong></p>
+<p>En l’exemple anterior hem accedit a la base de dades de dues maneres: </p>
+<ul>
+<li>Executada una ordre bash per accedir al contenidor i des de dins hem utilitzat el client de mariadb per accedir a la base de dades. </li>
+<li>Executant directament al contenidor el client de mariadb.</li>
+</ul>
+<p>Ara mapejarem els ports per accedir des de l’exterior a la base de dades.</p>
+<p>Primer eliminarem el contenidor, si existeix:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>some-mariadb
+</code></pre></div>
+<p>Després crearem un contenidor, però mapejant el port 3000 de l’amfitrió, per exemple, amb el port 3306 del contenidor:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:3306<span class="w"> </span>--name<span class="w"> </span>some-mariadb<span class="w"> </span>-e<span class="w"> </span><span class="nv">MARIADB_ROOT_PASSWORD</span><span class="o">=</span>my-secret-pw<span class="w"> </span>mariadb
+</code></pre></div>
+<p>Comprovarem que els ports s’han mapejat i que el contenidor s’està executant:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>ps
+CONTAINER<span class="w"> </span>ID<span class="w"> </span>IMAGE<span class="w"> </span>COMMAND<span class="w"> </span>CREATED<span class="w"> </span>STATUS<span class="w"> </span>PORTS<span class="w"> </span>NAMES
+816ea7df5c41<span class="w"> </span>mariadb<span class="w"> </span><span class="s2">"docker-entrypoint.s…"</span><span class="w"> </span><span class="m">3</span><span class="w"> </span>seconds<span class="w"> </span>ago<span class="w"> </span>Up<span class="w"> </span><span class="m">2</span><span class="w"> </span>seconds<span class="w"> </span><span class="m">0</span>.0.0.0:3000-&gt;3306/tcp<span class="w"> </span>some-mariadb
+</code></pre></div>
+<p>Si en el nostre equip tenim instal·lat un client de mysql/mariadb i ens connectem al qui té la BD, per exemple en la ip 192.168.121.54, ens connectarem a la base de dades:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mysql<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p<span class="w"> </span>-h<span class="w"> </span><span class="m">192</span>.168.121.54:3000
+Enter<span class="w"> </span>password:
+...
+MariaDB<span class="w"> </span><span class="o">[(</span>none<span class="o">)]</span>&gt;
+</code></pre></div>
+<p>També ens podem connectar usant l’adreça 127.0.0.1:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mysql<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p<span class="w"> </span>-h<span class="w"> </span><span class="m">127</span>.0.0.1:3000
+Enter<span class="w"> </span>password:
+...
+MariaDB<span class="w"> </span><span class="o">[(</span>none<span class="o">)]</span>&gt;
+</code></pre></div>
+<p><a href="https://hub.docker.com/_/mariadb">docker hub - mariadb</a></p>
+<h2 id="imatges">Imatges<a class="headerlink" href="#imatges" title="Permanent link">¶</a></h2>
+<p>Les imatges de Docker són plantilles de només lectura, és a dir, una imatge pot contenir el sistema de fitxer d’un sistema operatiu com Debian, però això només ens permetrà crear els contenidors basats en aquesta configuració. Si fem canvis al contenidor ja llançat, en aturar-ho això no es veurà reflectit a la imatge.</p>
+<p>El Registre docker és un component on s’emmagatzema les imatges generades pel Docker Engine. Pot estar instal·lada a un servidor independent i és un component fonamental, ja que ens permet distribuir les nostres aplicacions. És un projecte open source que pot ser instal·lat gratuïtament a qualsevol servidor, però, com hem comentat, el projecte ens ofereix <strong>Docker Hub</strong>.</p>
+<p><a class="glightbox" href="../img/docker_hub.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/docker_hub.png"></a></p>
+<p>El <code>nom d'una imatge</code> pot estar format per tres parts:</p>
+<p><strong>usuari/nom:etiqueta</strong> </p>
+<ul>
+<li><code>usuari</code>: El nom de l’usuari que l’ha generat. Les imatges oficials de Docker Hub no tenen nom d’usuari. </li>
+<li><code>nom</code>: Nom significatiu de la imatge. </li>
+<li><code>etiqueta</code>: Ens permet versionar les imatges. Si no indiquem etiqueta, per defecte es fa servir l’etiqueta latest.</li>
+</ul>
+<p><strong class="c1">Gestió d’imatges</strong></p>
+<p><em>Per a crear un contenidor és necessari utilitzar una imatge</em> que tinguem descarregada al nostre registre local. Per tant, quan s’executa <code>docker run</code> es comprova si tenim la versió indicada de la imatge i si no és així, es descarregarà.</p>
+<p>Les principals instruccions per treballar amb imatges són: </p>
+<ul>
+<li><code>docker images</code>: Mostra les imatges que tenim al registre local. </li>
+<li><code>docker pull</code>: Ens permet descarregar la última versió de la imatge indicada. </li>
+<li><code>docker rmi</code>: Ens permet eliminar imatges. No podem eliminar una imatge si tenim algun contenidor creat a partir d’ella. </li>
+<li><code>docker search</code>: Cerca d’imatges en Docker Hub. </li>
+<li><code>docker inspect</code>: ens dóna informació sobre la imatge indicada.</li>
+</ul>
+<p><strong class="c1">Creació de contenidors des d’imatges</strong></p>
+<p>En les imatges ubicades al registre de Docker Hub, podem veure que hi ha tres tipus d’imatges segons la utilitat que ens ofereixen. </p>
+<ul>
+<li>Per a contenidors de diferents sistemes operatius (Ubuntu, Debian, …). </li>
+<li>Per a contenidors que tinguen serveis associats (Apache, MySQL, …). </li>
+<li>Per a contenidors que tinguen serveis associats i que tenen instal·lada alguna aplicació web (WordPress, Nextcloud, …)</li>
+</ul>
+<p>Totes les imatges tenen definides un procés que s’executa per defecte, però en la majoria de casos podem indicar quin procés executar quan creem un contenidor.</p>
+<p>Exemple:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>ubuntu<span class="w"> </span>/bin/echo<span class="w"> </span><span class="s1">'Hello world'</span>
+</code></pre></div>
+<h2 id="emmagatzematge">Emmagatzematge<a class="headerlink" href="#emmagatzematge" title="Permanent link">¶</a></h2>
+<p>Els contenidors són efímers, és a dir, els fitxers, dades i configuracions que creem als contenidors sobreviuen a les parades dels mateixos però, són destruïts si el contenidor és destruït.</p>
+<p>Les dades als contenidors:</p>
+<p><a class="glightbox" href="../img/types-of-mounts.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/types-of-mounts.png"></a></p>
+<p>Docker proporciona diverses solucions per <strong>persistir les dades</strong> dels contenidors, entre elles tenim: </p>
+<ul>
+<li>Els volums docker. </li>
+<li>Els bind mount </li>
+</ul>
+<p><strong class="c1">Volums docker</strong></p>
+<p>Si triem aconseguir la persistència usant <strong>volums</strong> estem fent que les dades dels contenidors que nosaltres decidim s’emmagatzemen en una part del sistema de fitxers que és gestionada per docker i, a la qual, només docker tindrà accés. En linux es guarden a <code>/var/lib/docker/volumes</code>. Aquest tipus de volums se solen utilitzar en els casos següents: </p>
+<ul>
+<li>Per compartir dades entre contenidors. Simplement hauran de fer servir el mateix volum. </li>
+<li>Per a còpies de seguretat. </li>
+</ul>
+<p>Algunes comandes útils per treballar amb volums docker: </p>
+<ul>
+<li><code>docker volume create</code>: Crea un volum amb el nom indicat. </li>
+<li><code>docker volume rm</code>: Elimina el volum indicat. </li>
+<li><code>docker volume prune</code>: Per eliminar els volums que no estan sent usats per cap contenidor. </li>
+<li><code>docker volume ls</code>: Ens proporciona una llista dels volums creats i informació addicional. </li>
+<li><code>docker volume inspect</code>: Ens donarà informació més detallada del volum que hagem triat.</li>
+</ul>
+<p>Exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># El primer que farem és crear un volum docker:</span>
+
+$<span class="w"> </span>docker<span class="w"> </span>volume<span class="w"> </span>create<span class="w"> </span>la_meua_web
+miweb
+
+<span class="c1"># A continuació creem un contenidor amb el volum associat, usant -v, i creem un fitxer index.html:</span>
+
+$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>my-apache-app<span class="w"> </span>-v<span class="w"> </span>la_meua_web:/usr/local/apache2/htdocs<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>httpd
+b51f89eb21701362279489c5b52a06b1a44c10194c00291de895b404ab347b80
+
+$<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>my-apache-app<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">'echo "&lt;h1&gt;Hola&lt;/h1&gt;" &gt; /usr/local/apache2/htdocs/index.html'</span>
+
+$<span class="w"> </span>curl<span class="w"> </span>http://localhost:8080
+&lt;h1&gt;Hola&lt;/h1&gt;
+</code></pre></div>
+<p><strong class="c1">Bind mounts</strong></p>
+<p>Si triem aconseguir la persistència usant <strong>bind mount</strong> el que estem fent és <em>mapejar</em> (muntar) una part del meu sistema de fitxers, de la qual jo normalment tinc el control, amb una part del sistema de fitxers del contenidor. Per tant, podem muntar tant directoris com fitxers. D’aquesta manera aconseguim: </p>
+<ul>
+<li>Compartir fitxers entre l’amfitrió i els contenidors. </li>
+<li>Que altres aplicacions que no siguen docker tinguen accés a aquests fitxers.</li>
+</ul>
+<p>Exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># A continuació creem un directori al sistema de fitxer del host, allí afegim un fitxer index.html:</span>
+
+$<span class="w"> </span>mkdir<span class="w"> </span>web
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>web
+/web$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"&lt;h1&gt;Hola&lt;/h1&gt;"</span><span class="w"> </span>&gt;<span class="w"> </span>index.html
+
+<span class="c1"># Podem muntar aquest directori en un contenidor, utilitzant l'opció -v:</span>
+
+$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>my-apache-app<span class="w"> </span>-v<span class="w"> </span>/home/usuari/web:/usr/local/apache2/htdocs<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>httpd
+8de025f6ff4d4b8a5a57d10a9cbb283b103209f358c43148a4716a33a404e208
+
+<span class="c1"># Comprovem que realment estem servint el fitxer que tenim al directori creat prèviament.</span>
+
+$<span class="w"> </span>curl<span class="w"> </span>http://localhost:8080
+&lt;h1&gt;Hola&lt;/h1&gt;
+</code></pre></div>
+<h2 id="xarxa">Xarxa<a class="headerlink" href="#xarxa" title="Permanent link">¶</a></h2>
+<p>Quan instal·lem docker tenim les següents xarxes predefinides:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>network<span class="w"> </span>ls
+NETWORK<span class="w"> </span>ID<span class="w">        </span>NAME<span class="w">        </span>DRIVER<span class="w">      </span>SCOPE
+ec77cfd20583<span class="w">      </span>bridge<span class="w">      </span>bridge<span class="w">      </span><span class="nb">local</span>
+69bb21378df5<span class="w">      </span>host<span class="w">        </span>host<span class="w">        </span><span class="nb">local</span>
+089cc966eaeb<span class="w">      </span>none<span class="w">        </span>null<span class="w">        </span><span class="nb">local</span>
+</code></pre></div>
+<p>Per defecte, els contenidors que creem es connecten a la <strong>xarxa de tipus bridge</strong> anomenada bridge (per defecte l’encaminament d’aquesta xarxa és 172.17.0.0/16). Els contenidors connectats a aquesta xarxa que volen exposar algun port a l’exterior han de fer servir l’opció -p per mapejar ports.</p>
+<p>Aquest tipus de xarxa ens permetran: </p>
+<ul>
+<li>Aïllar els diferents contenidors que tinc en diferents subxarxes docker, de manera que des de cadascuna de les subxarxes només podrem accedir als equips d’aquesta subxarxa. </li>
+<li>Aïllar els contenidors de laccés exterior. </li>
+<li>Publicar serveis que tinguem als contenidors mitjançant redireccions que docker implementarà amb les pertinents regles d’iptables.</li>
+</ul>
+<p><a class="glightbox" href="../img/bridge1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/bridge1.png"></a></p>
+<ul>
+<li>
+<p>Quan creem un contenidor tindrà una ip de la xarxa 172.17.0.0/16. A més podrem comprovar que es crea un <strong>bridge</strong> al host amfitrió, al qual es connectaran els contenidors.</p>
+</li>
+<li>
+<p>Si connectem un contenidor a la xarxa <strong>host</strong>, el contenidor ofereix el servei que tenim configurat al port de la xarxa de l’amfitrió. No té ip pròpia, sinó com si tingués la ip de l’amfitrió. Per tant, els ports són accessibles directament des del host.</p>
+</li>
+<li>
+<p>La xarxa <strong>none</strong> no configurarà cap IP per al contenidor i no té accés a la xarxa externa ni a altres contenidors. Té l’adreça loopback i es pot fer servir per executar treballs per lots.</p>
+</li>
+</ul>
 
 
 

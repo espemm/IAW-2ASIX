@@ -387,6 +387,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#docker-composeyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      docker-compose.yaml
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mes-ordres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Més ordres
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -444,6 +462,52 @@
 <p>Para i elimina els contenidors i xarxes creades:</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>down
 </code></pre></div>
+<h2 id="docker-composeyaml">docker-compose.yaml<a class="headerlink" href="#docker-composeyaml" title="Permanent link">¶</a></h2>
+<p>En el fitxer <code>docker-compose.yaml</code> definim l’escenari. Les ordres docker compose s’han d’executar al directori on està aquest fitxer. </p>
+<p>Per tant, hem de tindre un directori amb un fitxer <strong>docker-compose.yaml</strong> per a cadascuna les aplicacions que volem desplegar. </p>
+<p>Per exemple, per a l’execució de l’aplicació <a href="https://github.com/sdelements/lets-chat">Let’s Chat</a> podríem tenir un fitxer docker-compose.yaml, dins d’una carpeta, amb el contingut següent:</p>
+<p></p><div class="highlight"><pre><span></span><code>versió:<span class="w"> </span><span class="s1">'3.1'</span>
+services:<span class="w"> </span>
+<span class="w">  </span>app:<span class="w"> </span>
+<span class="w">    </span>container_name:<span class="w"> </span>letschat<span class="w"> </span>
+<span class="w">    </span>image:<span class="w"> </span>sdelements/lets-chat<span class="w"> </span>
+<span class="w">    </span>restart:<span class="w"> </span>always<span class="w"> </span>
+<span class="w">    </span>environment:<span class="w"> </span>
+<span class="w">      </span>LCB_DATABASE_URI:<span class="w"> </span>mongodb://mongo/letschat<span class="w"> </span>
+<span class="w">    </span>ports:<span class="w"> </span>
+<span class="w">      </span>-<span class="w"> </span><span class="m">80</span>:8080<span class="w"> </span>
+<span class="w">    </span>depends_on:<span class="w"> </span>
+<span class="w">      </span>-<span class="w"> </span>db<span class="w"> </span>
+<span class="w">  </span>db:<span class="w"> </span>
+<span class="w">    </span>container_name:<span class="w"> </span>mongo<span class="w"> </span>
+<span class="w">    </span>image:<span class="w"> </span>mongo:4<span class="w"> </span>
+<span class="w">    </span>restart:<span class="w"> </span>always<span class="w"> </span>
+<span class="w">    </span>volums:<span class="w"> </span>
+<span class="w">      </span>-<span class="w"> </span>mongo:/data/db
+volums:<span class="w"> </span>
+<span class="w">  </span>mongo:
+</code></pre></div>
+Els paràmetres que podem definir estàn en la <a href="https://docs.docker.com/reference/compose-file/">documentació oficial</a>.
+<p>Alguns paràmetres: </p>
+<ul>
+<li>Aquest escenari està format per <strong>services</strong>. Cadascú crearà un contenidor. </li>
+<li><strong>restart: always</strong> Indiquem la política de reinici del contenidor si per qualsevol condició es para.</li>
+<li><strong>depend on</strong> Indica la dependència entre contenidors. No s’iniciarà un contenidor fins que un altre estiga funcionant.</li>
+</ul>
+<p>Quan creem un escenari amb docker compose es crea una nova xarxa definida per l’usuari on es connecten els contenidors; per tant, obtenim resolució per dns que resol tant el nom del contenidor (per exemple, mongo) com el nom del servei (per exemple, db).</p>
+<h2 id="mes-ordres">Més ordres<a class="headerlink" href="#mes-ordres" title="Permanent link">¶</a></h2>
+<ul>
+<li><code>docker compose stop</code>: Atura els contenidors que prèviament s’han llançat amb docker compose up. </li>
+<li><code>docker compose run</code>: Inicia els contenidors descrits al docker-compose.yaml que estiguin aturats. </li>
+<li><code>docker compose rm</code>: Esborra els contenidors aturats de lescenari. Amb les opcions -f també elimina els contenidors en execució. </li>
+<li><code>docker compose pause</code>: Pausa els contenidors que s’han llançat prèviament amb docker compose up. </li>
+<li><code>docker compose unpause</code>: Repreneu els contenidors que prèviament s’han pausat. </li>
+<li><code>docker compose restart</code>: Reinicia els contenidors. Ordre ideal per reiniciar serveis amb noves configuracions. </li>
+<li><code>docker compose logs</code>: Mostra els logs de tots els serveis de lescenari. Amb el paràmetre - podrem anar veient els logs en “viu”. </li>
+<li><code>docker compose logs servei1</code>: Mostra els logs del servei anomenat servei1 que estava descrit al docker-compose.yaml. </li>
+<li><code>docker compose exec servei1 /bin/bash</code>: Executa una ordre, en aquest cas /bin/bash en un contenidor anomenat servei1 que estava descrit al docker-compose.yaml </li>
+<li><code>docker compose top</code>: Mostra els processos que s’estan executant a cadascun dels contenidors dels serveis.</li>
+</ul>
 
 
 
