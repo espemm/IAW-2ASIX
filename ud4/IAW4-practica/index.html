@@ -14,6 +14,8 @@
         <link rel="prev" href="../IAW4-docker_compose/">
       
       
+        <link rel="next" href="../IAW4-balanceador/">
+      
       
       <link rel="icon" href="../img/logo.ico">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
@@ -79,6 +81,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#practica" class="md-skip">
+          Saltar a contenido
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -239,6 +246,23 @@
   
 
       
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW4-balanceador/" class="md-tabs__link">
+        
+  
+    
+  
+  balancejador
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -352,6 +376,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    practica
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -363,6 +400,63 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wordpress-en-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      WordPress en Docker¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wordpress-amb-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      WordPress amb Compose¶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW4-balanceador/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    balancejador
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -382,9 +476,301 @@
                   
 
 
-  <h1>practica</h1>
-
-
+<h1 id="practica">Pràctica<a class="headerlink" href="#practica" title="Permanent link">¶</a></h1>
+<h2 id="wordpress-en-docker">WordPress en Docker¶<a class="headerlink" href="#wordpress-en-docker" title="Permanent link">¶</a></h2>
+<p>Per crear un bloc amb WordPress necessitem tenir una base de dades on emmagatzemar les entrades. Així que començarem creant-la i després crearem el contenidor del nostre bloc.</p>
+<p><strong class="c1">Crear un contenidor amb MariaDB</strong></p>
+<p>WordPress suporta els motors relacions MySQL i MariaDB. Utilitzarem MariaDB</p>
+<p><u>Example</u></p>
+<p>Crearem la base de dades usant aquest volum.</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>wordpress-db<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>--mount<span class="w"> </span><span class="nv">source</span><span class="o">=</span>wordpress-db,target<span class="o">=</span>/var/lib/mysql<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>secret<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">MYSQL_DATABASE</span><span class="o">=</span>wordpress<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">MYSQL_USER</span><span class="o">=</span>manager<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">MYSQL_PASSWORD</span><span class="o">=</span>secret<span class="w"> </span>mariadb:10
+</code></pre></div>
+<p>La imatge es descarregarà, si no ho estava ja, i s’iniciarà el nostre contenidor de MariaDB:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>wordpress-db<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>--mount<span class="w"> </span><span class="nv">source</span><span class="o">=</span>wordpress-db,target<span class="o">=</span>/var/lib/mysql<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>secret<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">MYSQL_DATABASE</span><span class="o">=</span>wordpress<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">MYSQL_USER</span><span class="o">=</span>manager<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">MYSQL_PASSWORD</span><span class="o">=</span>secret<span class="w"> </span>mariadb:10
+Unable<span class="w"> </span>to<span class="w"> </span>find<span class="w"> </span>image<span class="w"> </span><span class="s1">'mariadb:10'</span><span class="w"> </span>locally
+<span class="m">10</span>:<span class="w"> </span>Pulling<span class="w"> </span>from<span class="w"> </span>library/mariadb
+124c757242f8:<span class="w"> </span>Pull<span class="w"> </span><span class="nb">complete</span>
+9d866f8bde2a:<span class="w"> </span>Pull<span class="w"> </span><span class="nb">complete</span>
+fa3f2f277e67:<span class="w"> </span>Pull<span class="w"> </span><span class="nb">complete</span>
+398d32b153e8:<span class="w"> </span>Pull<span class="w"> </span><span class="nb">complete</span>
+afde35469481:<span class="w"> </span>Pull<span class="w"> </span><span class="nb">complete</span>
+31f2ae82b3e3:<span class="w"> </span>Pull<span class="w"> </span><span class="nb">complete</span>
+3eeaf7e45ea6:<span class="w"> </span>Pull<span class="w"> </span><span class="nb">complete</span>
+716982328e17:<span class="w"> </span>Pull<span class="w"> </span><span class="nb">complete</span>
+34ce605c9036:<span class="w"> </span>Pull<span class="w"> </span><span class="nb">complete</span>
+4502ed9073c0:<span class="w"> </span>Pull<span class="w"> </span><span class="nb">complete</span>
+2afafbdf5a96:<span class="w"> </span>Pull<span class="w"> </span><span class="nb">complete</span>
+43d52b11dd31:<span class="w"> </span>Pull<span class="w"> </span><span class="nb">complete</span>
+30c7b70556f3:<span class="w"> </span>Pull<span class="w"> </span><span class="nb">complete</span>
+8b1b39f2f89a:<span class="w"> </span>Pull<span class="w"> </span><span class="nb">complete</span>
+41480b9319d7:<span class="w"> </span>Pull<span class="w"> </span><span class="nb">complete</span>
+Digest:<span class="w"> </span>sha256:b7894bd08e5752acdd41fea654cb89467c99e67b8293975bb5d787b27e66ce1a
+Status:<span class="w"> </span>Downloaded<span class="w"> </span>newer<span class="w"> </span>image<span class="w"> </span><span class="k">for</span><span class="w"> </span>mariadb:10
+30634831d17108aa553a5774e27f398760bdbdf32debc3179843e73aa5957956
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>ps
+CONTAINER<span class="w"> </span>ID<span class="w">     </span>IMAGE<span class="w">          </span>COMMAND<span class="w">         </span>CREATED<span class="w">     </span>STATUS<span class="w">          </span>PORTS<span class="w">       </span>NAMES
+30634831d171<span class="w">    </span>mariadb<span class="w"> </span><span class="s2">"docker-entrypoint.s…"</span><span class="w"> </span><span class="m">20</span><span class="w"> </span>seconds<span class="w"> </span>ago<span class="w"> </span>Up<span class="w"> </span><span class="m">16</span><span class="w"> </span>seconds<span class="w"> </span><span class="m">3306</span>/tcp<span class="w"> </span>wordpress-db
+</code></pre></div>
+<p>El primer que haurem notat és que el contenidor no es queda en primer pla. El paràmetre -d indica que cal executar-lo com un procés en segon pla. Així no podrem aturar-ho per accident amb Ctrl+C.</p>
+<p>En segon lloc, veiem que el contenidor fa servir un port, el 3306/tcp, però no està linkat a la màquina amfitrió. No tenim cap manera d’accedir a la base de dades directament. La nostra intenció és que només el contenidor de WordPress hi pugui accedir.</p>
+<p>Finalment tenim una sèrie de paràmetres -e (de entorn) que ens permet configurar la nostra base de dades.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Els contenidors es configuren a través de variables d’entorn, que podem configurar amb el paràmetre -e que veiem a l’ordre anterior. Gràcies a ells hem creat una base de dades, un usuari i configurat les contrasenyes.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Es recomana cercar al registre de Docker la imatge oficial de MariaDB per entendre l’ús dels paràmetres.</p>
+</div>
+<p>Finalment, el paràmetre <strong>–mount</strong> ens permet enllaçar el volum que creem en el pas anterior amb el directori /var/lib/mysql del contenidor. Aquest directori és on es guarden les dades de MariaDB. Això significa que si esborrem el contenidor, o actualitzem el contenidor a una nova versió, no perdrem les dades perquè ja no estàn ahí, sinó en el volum. Només ho perdríem si esborrarem explícitament el volum.</p>
+<div class="admonition warnning">
+<p class="admonition-title">Warnning</p>
+<p>Cada contenidor que fem servir tindrà un o diversos directoris on s’han de desar les dades no volàtils. Ens correspon a nosaltres conèixer l’eina i saber quins directoris es tracten. Usualment són a la documentació del contenidor, però no sempre.</p>
+</div>
+<p><strong class="c1">Crear la web</strong></p>
+<p>Crearem el nostre contenidor de WordPress, connectant-lo amb la nostra base de dades. A més, volem poder editar els fitxers de les plantilles, per si hem de modificar alguna cosa, així que necessitarem muntar el directori del contenidor on està instal·lat WordPress amb el nostre compte d’usuari a la màquina amfitrió.</p>
+<p><u>Example</u></p>
+<p>Crearem l’espai de treball:</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>~/Sites/wordpress/target<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Sites/wordpress
+</code></pre></div>
+<p><u>Example</u></p>
+<p>I dins aquest directori arrenquem el contenidor:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>wordpress<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>--link<span class="w"> </span>wordpress-db:mysql<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>--mount<span class="w"> </span><span class="nv">type</span><span class="o">=</span>bind,source<span class="o">=</span><span class="s2">"</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">"</span>/target,target<span class="o">=</span>/var/www/html<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">WORDPRESS_DB_USER</span><span class="o">=</span>manager<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">WORDPRESS_DB_PASSWORD</span><span class="o">=</span>secret<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>wordpress:6
+</code></pre></div>
+<p>Quan acabe l’execució, podrem accedir a l’adreça <code>http://localhost</code> i finalitzar les passes d’instal·lació.</p>
+<p>Si llistem el directori target comprovarem que tenim tots els fitxers d’instal·lació accessibles des del directori amfitrió.</p>
+<h2 id="wordpress-amb-compose">WordPress amb Compose¶<a class="headerlink" href="#wordpress-amb-compose" title="Permanent link">¶</a></h2>
+<p>Per automatitzar la creació, l’inici i la parada d’un contenidor o un conjunt podem utilitzar <strong>Docker Compose</strong>.</p>
+<p>Començarem per parar i esborrar el que hem creat:</p>
+<p><u>Example</u></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>contenidor<span class="w"> </span>stop<span class="w"> </span>wordpress<span class="w"> </span>wordpress-db
+docker<span class="w"> </span>contenidor<span class="w"> </span>rm<span class="w"> </span>wordpress<span class="w"> </span>wordpress-db
+docker<span class="w"> </span>volume<span class="w"> </span>rm<span class="w"> </span>wordpress-db
+</code></pre></div>
+<p><strong class="c1">Docker Compose</strong></p>
+<p>Compose és una eina per definir i executar aplicacions multicontenidor. Amb una sola comanda podrem crear i iniciar tots els serveis que necessitem per a la nostra aplicació.</p>
+<p>Els casos d’ús més habituals per a docker compose són: </p>
+<ul>
+<li>Entorns de desenvolupament </li>
+<li>Entorns de testeig automàtics (integració continua) </li>
+<li>Desplegament en host individuals (no clusters)</li>
+</ul>
+<p>Compose té ordres per manejar tot el cicle de vida de la nostra aplicació, com ja hem vist: </p>
+<ul>
+<li>Iniciar, aturar i refer serveis. </li>
+<li>Vore l’estat dels serveis. </li>
+<li>Visualitzar els logs. </li>
+<li>Executar una ordre en un servei.</li>
+</ul>
+<p><strong class="c1">Creació de contenidors automatitzada</strong></p>
+<p>Al mateix directori on estàvem al pas anterior (~/Sites/wordpress), crearem un fitxer anomenat <strong>docker-compose.yaml</strong> amb el contingut següent:</p>
+<div class="highlight"><pre><span></span><code>services:
+<span class="w">    </span>db:
+<span class="w">        </span>image:<span class="w"> </span>mariadb:10
+<span class="w">        </span>volumes:
+<span class="w">            </span>-<span class="w"> </span>data:/var/lib/mysql
+<span class="w">        </span>environment:
+<span class="w">            </span>-<span class="w"> </span><span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>secret
+<span class="w">            </span>-<span class="w"> </span><span class="nv">MYSQL_DATABASE</span><span class="o">=</span>wordpress
+<span class="w">            </span>-<span class="w"> </span><span class="nv">MYSQL_USER</span><span class="o">=</span>manager
+<span class="w">            </span>-<span class="w"> </span><span class="nv">MYSQL_PASSWORD</span><span class="o">=</span>secret
+<span class="w">    </span>web:
+<span class="w">        </span>image:<span class="w"> </span>wordpress:6
+<span class="w">        </span>depends_on:
+<span class="w">            </span>-<span class="w"> </span>db
+<span class="w">        </span>volumes:
+<span class="w">            </span>-<span class="w"> </span>./target:/var/www/html
+<span class="w">        </span>environment:
+<span class="w">            </span>-<span class="w"> </span><span class="nv">WORDPRESS_DB_USER</span><span class="o">=</span>manager
+<span class="w">            </span>-<span class="w"> </span><span class="nv">WORDPRESS_DB_PASSWORD</span><span class="o">=</span>secret
+<span class="w">            </span>-<span class="w"> </span><span class="nv">WORDPRESS_DB_HOST</span><span class="o">=</span>db
+<span class="w">            </span>-<span class="w"> </span><span class="nv">WORDPRESS_DB_NAME</span><span class="o">=</span>wordpress
+<span class="w">        </span>ports:
+<span class="w">            </span>-<span class="w"> </span><span class="m">8080</span>:80
+volumes:
+<span class="w">    </span>data:
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Els fitxers de Compose estan dividits en tres seccions: <strong>services</strong>, <strong>volums</strong> i <strong>networks</strong>; i heu d’indicar un número de versió. Ens permet fer pràcticament el mateix que podem fer amb el client de docker, però de forma automàtica.</p>
+</div>
+<p>En aquest fitxer podem fer el mateix que hem fet anteriorment, però amb l’avantatge de descriure tots els requisits en un sol fitxer.</p>
+<p><strong class="c1">Iniciar serveis</strong></p>
+<p>Arrancada de l’aplicació amb Compose:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div>
+<p>Quan arrenquem l’aplicació, Compose ens informa dels serveis que ha anat aixecant:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+Creating<span class="w"> </span>network<span class="w"> </span><span class="s2">"wordpress_default"</span><span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span>driver
+Creating<span class="w"> </span>volume<span class="w"> </span><span class="s2">"wordpress_data"</span><span class="w"> </span>with<span class="w"> </span><span class="nb">local</span><span class="w"> </span>driver
+Creating<span class="w"> </span>wordpress_db_1<span class="w"> </span>...
+Creating<span class="w"> </span>wordpress_db_1<span class="w"> </span>...<span class="w"> </span><span class="k">done</span>
+Creating<span class="w"> </span>wordpress_web_1<span class="w"> </span>...
+Creating<span class="w"> </span>wordpress_web_1<span class="w"> </span>...<span class="w"> </span><span class="k">done</span>
+</code></pre></div>
+<p>El paràmetre <code>-d</code> és similar al que hem vist a docker run: ens permet aixecar els serveis en segon pla.</p>
+<p>Vore els contenidors actius:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>ls
+CONTAINER<span class="w"> </span>ID<span class="w">     </span>IMAGE<span class="w">          </span>COMMAND<span class="w">     </span>CREATED<span class="w">     </span>STATUS<span class="w">          </span>PORTS<span class="w">               </span>NAMES
+a07b5d4d3982<span class="w">    </span>wordpress:6<span class="w"> </span><span class="s2">"docker.s…"</span><span class="w">   </span><span class="m">10</span><span class="w"> </span>seconds<span class="w"> </span>ago<span class="w"> </span>Up<span class="w"> </span><span class="m">8</span><span class="w"> </span>seconds<span class="w"> </span><span class="m">0</span>.0.0.0:8080-&gt;80/tcp<span class="w"> </span>wordpress_web_1
+d9204884cec5<span class="w"> </span>mariadb:10<span class="w"> </span><span class="s2">"docker.s…"</span><span class="w"> </span><span class="m">11</span><span class="w"> </span>seconds<span class="w"> </span>ago<span class="w"> </span>Up<span class="w"> </span><span class="m">10</span><span class="w"> </span>seconds<span class="w"> </span><span class="m">3306</span>/tcp<span class="w"> </span>wordpress_db_1
+</code></pre></div>
+<p>També podem vore els contenidors amb Compose:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>ps<span class="w"> </span>
+Name<span class="w">                    </span>Command<span class="w">                     </span>State<span class="w">        </span>Ports
+-------------------------------------------------------------------------------
+wordpress_db_1<span class="w">      </span>docker-entrypoint.sh<span class="w"> </span>mysqld<span class="w">     </span>Up<span class="w">          </span><span class="m">3306</span>/tcp
+wordpress_web_1<span class="w">     </span>docker-entrypoint.sh<span class="w"> </span>apach<span class="w"> </span>...<span class="w">  </span>Up<span class="w">          </span><span class="m">0</span>.0.0.0:8080-&gt;80/tcp
+</code></pre></div>
+<p>Hem de tenir en compte el següent: </p>
+<ul>
+<li><code>docker compose ps</code> només mostra informació dels serveis que es defineix a docker-compose.yaml, mentre que docker mostra tots. </li>
+<li>Quan creem contenidors amb docker sense indicar un nom, per defecte n’assigna un aleatori; mentre que a Compose el prefix és el nom del directori i el sufix el nom del servei: <strong>wordpress_db_1</strong>. El número indica el número d’instància. Podeu aixecar més d’una instància d’un mateix servei.</li>
+</ul>
+<p>Si accedim a l’adreça http://localhost:8080/, tornarem a veure la instal·lació de WordPress.</p>
+<p><strong class="c1">Aturar serveis</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>stop
+</code></pre></div>
+<p><strong class="c1">Esborrar serveis</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>down
+</code></pre></div>
+<p>Això esborra els contenidors, però no els volums. Així que si hem creat bé l’aplicació les nostres dades estan fora de perill.</p>
+<p>Si volem esborrar també els volums:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w"> </span>-v
+</code></pre></div>
+<p><strong class="c1">Estructura de la configuració</strong></p>
+<p>Vegem la configuració per parts:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">volums</span><span class="p">:</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">data</span><span class="p">:</span>
+</code></pre></div>
+<p>Ja hem indicat que és important desar les dades volàtils de les aplicacions en volums. En aquest cas hem creat un volum anomenat data. Recordem que Compose sempre afegeix com a prefix el nom del directori, de manera que el nom real del volum és wordpress_data. Podem comprovar-ho amb el client de docker com vam fer al capítol de volums:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>volume<span class="w"> </span>ls
+DRIVER<span class="w">     </span>VOLUM<span class="w"> </span>NAME
+<span class="nb">local</span><span class="w">      </span>wordpress_data
+</code></pre></div>
+<p>Ens saltem la secció de xarxes (networks) i anem a la secció de serveis, que són els contenidors que necessita o componen la nostra aplicació.</p>
+<p>Primer la <u>base de dades</u>: <strong>docker-compose.yaml</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">db</span><span class="p">:</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mariadb:10</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data:/var/lib/mysql</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYSQL_ROOT_PASSWORD=secret</span><span class="w"> </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYSQL_DATABASE=wordpress</span><span class="w"> </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYSQL_USER=manager</span><span class="w"> </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYSQL_PASSWORD=secret</span>
+</code></pre></div>
+<p>Després d’obrir la part de serveis, el primer nivell indica el nom del servei db que genera el contenidor wordpress_db. El que veiem a continuació és el mateix que vam fer a la secció anterior però de forma parametritzada. Si recordem, per alçar la nostra base de dades, indiquem la imatge (línia 3), després muntem els volums (línia 4), i després indiquem les variables d’entorn que configuraràn el contenidor (línia 6).</p>
+<p>És a dir, això és equivalent, excepte pel nom, a:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>wordpress-db<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>--mount<span class="w"> </span><span class="nv">source</span><span class="o">=</span>wordpress-db,target<span class="o">=</span>/var/lib/mysql<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>secret<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">MYSQL_DATABASE</span><span class="o">=</span>wordpress<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">MYSQL_USER</span><span class="o">=</span>manager<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">MYSQL_PASSWORD</span><span class="o">=</span>secret<span class="w"> </span>mariadb:10
+</code></pre></div>
+<p>I després el <u>WordPress</u>: <strong>docker-compose.yaml</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">web</span><span class="p">:</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wordpress:6</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./target:/var/www/html</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WORDPRESS_DB_USER=manager</span><span class="w"> </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WORDPRESS_DB_PASSWORD=secret</span><span class="w"> </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WORDPRESS_DB_HOST=db</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080:80</span>
+</code></pre></div>
+<p>En aquest cas l’equivalència és a l’ordre:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>wordpress<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>--link<span class="w"> </span>wordpress-db:mysql<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>--mount<span class="w"> </span><span class="nv">type</span><span class="o">=</span>bind,source<span class="o">=</span><span class="s2">"</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">"</span>/target,target<span class="o">=</span>/var/www/html<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">WORDPRESS_DB_USER</span><span class="o">=</span>manager<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">WORDPRESS_DB_PASSWORD</span><span class="o">=</span>secret<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span><span class="se">\ </span>
+<span class="w">    </span>wordpress:6
+</code></pre></div>
+<p>L’equivalència dels paràmetres és la següent:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">paràmetre Docker</th>
+<th style="text-align: center;">paràmetre Composer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">–link</td>
+<td style="text-align: center;">depends_on</td>
+</tr>
+<tr>
+<td style="text-align: center;">–mount</td>
+<td style="text-align: center;">volumes</td>
+</tr>
+<tr>
+<td style="text-align: center;">-e</td>
+<td style="text-align: center;">environment</td>
+</tr>
+<tr>
+<td style="text-align: center;">-p,–publish</td>
+<td style="text-align: center;">ports</td>
+</tr>
+<tr>
+<td style="text-align: center;">image</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Si reiniciamos el ordenador, los contenedores estarán detenidos (stop), podremos reiniciarlos con <code>docker start</code> o <code>docker compose start</code>. Este es el comportamiento predeterminado y el que nos interesa en un entorno de desarrollo.</p>
+<p>Sin embargo, en otros entornos, o para casos concretos, igual queremos que un contenedor tenga el mismo estado en el que estaba antes de reiniciar la máquina (iniciado o parado).</p>
+<p>Para eso usaremos el parámetro <code>restart</code>. En el caso de la base de datos de nuestro ejemplo, la configuración quedaría como:</p>
+<p><strong>docker-compose.yaml</strong></p>
+<div class="highlight"><pre><span></span><code>services:
+<span class="w">    </span>db:
+<span class="w">       </span>image:<span class="w"> </span>mariadb:10
+<span class="w">       </span>restart:<span class="w"> </span>unless-stopped
+<span class="w">       </span>volumes:
+<span class="w">           </span>-<span class="w"> </span>data:/var/lib/mysql
+<span class="w">       </span>environment:
+<span class="w">           </span>-<span class="w"> </span><span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>secret
+<span class="w">           </span>-<span class="w"> </span><span class="nv">MYSQL_DATABASE</span><span class="o">=</span>wordpress
+<span class="w">           </span>-<span class="w"> </span><span class="nv">MYSQL_USER</span><span class="o">=</span>manager
+<span class="w">           </span>-<span class="w"> </span><span class="nv">MYSQL_PASSWORD</span><span class="o">=</span>secret
+</code></pre></div>
+<p>El equivalente en la consola sería:</p>
+<p></p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>wordpress-db<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--restart<span class="w"> </span>unless-stopped
+<span class="w">    </span>--mount<span class="w"> </span><span class="nv">source</span><span class="o">=</span>wordpress-db,target<span class="o">=</span>/var/lib/mysql<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>secret<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">MYSQL_DATABASE</span><span class="o">=</span>wordpress<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">MYSQL_USER</span><span class="o">=</span>manager<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">MYSQL_PASSWORD</span><span class="o">=</span>secret<span class="w"> </span>mariadb:10
+</code></pre></div>
+Otros valores son: <code>no</code> (por defecto), <code>always</code> y <code>on-failure</code>
+</div>
 
 
 

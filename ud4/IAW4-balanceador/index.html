@@ -1,0 +1,807 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentació del mòdul IAW">
+      
+      
+      
+      
+        <link rel="prev" href="../IAW4-practica/">
+      
+      
+      
+      <link rel="icon" href="../img/logo.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+    
+    
+      
+        <title>balancejador - 2ASIX - IAW - UD04</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/elmeuestil.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#balancejador-web" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="2ASIX - IAW - UD04" class="md-header__button md-logo" aria-label="2ASIX - IAW - UD04" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            2ASIX - IAW - UD04
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              balancejador
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://espemm.github.io/IAW-2ASIX/" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW4-docker/" class="md-tabs__link">
+        
+  
+    
+  
+  docker
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW4-docker_compose/" class="md-tabs__link">
+        
+  
+    
+  
+  docker-compose
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IAW4-practica/" class="md-tabs__link">
+        
+  
+    
+  
+  practica
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  balancejador
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="2ASIX - IAW - UD04" class="md-nav__button md-logo" aria-label="2ASIX - IAW - UD04" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    2ASIX - IAW - UD04
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://espemm.github.io/IAW-2ASIX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW4-docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW4-docker_compose/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    docker-compose
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAW4-practica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    practica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    balancejador
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    balancejador
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#balancejador-de-carrega" class="md-nav__link">
+    <span class="md-ellipsis">
+      Balancejador de càrrega
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#balancejador-amb-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Balancejador amb Apache
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#balancejador-amb-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Balancejador amb Nginx
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="balancejador-web">Balancejador Web<a class="headerlink" href="#balancejador-web" title="Permanent link">¶</a></h1>
+<h2 id="balancejador-de-carrega">Balancejador de càrrega<a class="headerlink" href="#balancejador-de-carrega" title="Permanent link">¶</a></h2>
+<p><strong>Què és el Balanceig de Càrrega?</strong></p>
+<p>El Balanceig de Càrrega és un procés on tota la càrrega de treball es distribueix uniformement entre diferents sistemes, servidors i recursos computacionals. Aquesta tècnica ajuda a distribuir el trànsit entre diversos servidors de manera uniforme per millorar el rendiment i la fiabilitat. Redueix la càrrega a cada servidor, augmenta l’eficiència del servidor, accelera el rendiment i disminueix la latència.</p>
+<p>La majoria de les aplicacions d’Internet no poden funcionar amb èxit sense balanceig de càrrega. Al enviar sol·licituds de clients a nodes d’ordinadors inactius, se redueix la sobrecàrrega dels recursos computacionals.</p>
+<p><u>Exemple de balanceig de càrrega</u>:</p>
+<p><a class="glightbox" href="../img/balanceodecarga.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/balanceodecarga.png"></a></p>
+<p>Els balancejadors de càrrega actuen com a <strong>intermediaris</strong> entre els dispositius clients i els servidors backend, dirigint les sol·licituds dels clients a diversos servidors. Les empreses generalment trien el balanceig de càrrega per assegurar que les aplicacions estiguin actives i disponibles per als usuaris.</p>
+<p>Diàriament, les empreses reben centenars i milers de sol·licituds cada minut. Durant les temporades altes, el trànsit pot augmentar significativament, afectant el rendiment del servidor. Per reduir la pressió al servidor i mantenir mitjans d’alta qualitat, la majoria de les empreses utilitzen balancejadors de càrrega.</p>
+<p>Aquests dispositius rastregen cada sol·licitud entrant i desvien el trànsit als servidors respectius basant-se en diversos factors, <strong>evitant sobrecarregar un sol servidor</strong>.</p>
+<p><strong class="c1">Avantatges d’Utilitzar Balanceig de Càrrega</strong></p>
+<ul>
+<li>Escalable i redueix la resolució de problemes. </li>
+<li>Ofereix suport per a la Capa 4 o la Capa 7. </li>
+<li>Menor ús d’ample de banda. </li>
+<li>Accés ràpid i fàcil a informació de l’aplicació. </li>
+<li>Protecció de múltiples servidors web. </li>
+<li>Persistència de sessió. </li>
+<li>Permet l’encaminament de port a port dins d’una sola instància. </li>
+<li>Estalvia temps i desplega ràpidament amb balancejadors de càrrega de programari. </li>
+<li>Permet que el servidor original rebutge paquets sospitosos abans que arriben. </li>
+<li>Dirigeix ​​les sol·licituds dels clients mentre maximitza l’eficiència de la xarxa. </li>
+<li>Permet que les sol·licituds s’envien al mateix servidor des d’un client específic. </li>
+<li>Millora l’experiència de l’usuari i redueix les respostes d’error.</li>
+</ul>
+<p><strong class="c1">Tipus de Balancejadors de Càrrega</strong></p>
+<p>Hi ha tres tipus de balancejadors de càrrega: </p>
+<ul>
+<li>
+<p><strong>DNS Round Robin</strong>: Aquest tipus de balancejador de càrrega distribueix les sol·licituds dels clients a diferents servidors. El servidor DNS respon a les sol·licituds dels clients amb una llista d’adreces IP de servidors. Els clients seleccionen una adreça IP de la llista i es connecten al servidor corresponent. Aquest mètode és simple i fàcil de configurar, però no és efectiu per a l’alta disponibilitat i l’escalabilitat. </p>
+</li>
+<li>
+<p><strong>Balancejador de Càrrega L3/L4</strong>: Aquest tipus de balancejador de càrrega opera a la <code>capa de xarxa (L3)</code> i la <code>capa de transport (L4)</code>. El balancejador de càrrega L3/L4 distribueix les sol·licituds dels clients basant-se en l’adreça IP d’origen i destí, el port d’origen i destí i el protocol de transport. Aquest mètode és ràpid i eficient, però no és efectiu per a la capa daplicació. </p>
+</li>
+<li>
+<p><strong>Balancejador de Càrrega L7</strong>: Aquest tipus de balancejador de càrrega opera a la <code>capa d'aplicació (L7)</code>. El balancejador de càrrega L7 distribueix les sol·licituds dels clients basant-se en la informació de la capa d’aplicació, com ara l’URL, la capçalera HTTP, i el tipus de contingut. Aquest mètode és efectiu per a l’alta disponibilitat, escalabilitat i seguretat.</p>
+</li>
+</ul>
+<p><strong>Implementació</strong></p>
+<p>Caldrà disposar almenys de 3 servidors. Un funcionarà com a balancejador i els altres dos seran els qui aniràn rebent les sol·licituds dels clients segons les redireccione el balancejador.</p>
+<p>Utilitzant els dominis següents:  web1.iaw2425.com web2.iaw2425.com balancer.iaw2425.com</p>
+<p>Podríem disposar d’aquesta configuració de balanceig de càrrega:</p>
+<p></p><center>
+<p><a class="glightbox" href="../img/balanceoiaw.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/balanceoiaw.jpg"></a></p>
+<p></p></center>
+<h2 id="balancejador-amb-apache">Balancejador amb Apache<a class="headerlink" href="#balancejador-amb-apache" title="Permanent link">¶</a></h2>
+<p>Requisits previs:</p>
+<ul>
+<li>3 servidors amb <code>Apache</code> instal·lat</li>
+<li>Configuració de noms de domini</li>
+</ul>
+<p><strong class="c1">Configurar el Primer Servidor Backend Apache</strong></p>
+<p>Crear una pàgina HTML de mostra i un fitxer de configuració de host virtual al primer servidor Apache:</p>
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>/var/www/html/web1.html
+</code></pre></div>
+<p>Exemple de codi HTML:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Servidor Web Apache 1<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Pàgina del Servidor Web Apache 1!<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Crear el fitxer de configuració del host virtual:</p>
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>/etc/apache2/sites-enabled/web1.conf
+</code></pre></div>
+<p>Afegir les següents configuracions:</p>
+<div class="highlight"><pre><span></span><code>&lt;VirtualHost<span class="w"> </span>*:80&gt;<span class="w"> </span>
+<span class="w">    </span>ServerName<span class="w"> </span>web1.iaw2425.com<span class="w"> </span>
+<span class="w">    </span>ServerAdmin<span class="w"> </span>webmaster@localhost<span class="w"> </span>
+<span class="w">    </span>DocumentRoot<span class="w"> </span>/var/www/html<span class="w"> </span>
+<span class="w">    </span>DirectoryIndex<span class="w"> </span>web1.html<span class="w"> </span>
+<span class="w">    </span>ErrorLog<span class="w"> </span><span class="si">${</span><span class="nv">APACHE_LOG_DIR</span><span class="si">}</span>/error.log<span class="w"> </span>
+<span class="w">    </span>CustomLog<span class="w"> </span><span class="si">${</span><span class="nv">APACHE_LOG_DIR</span><span class="si">}</span>/access.log<span class="w"> </span>combined
+&lt;/VirtualHost&gt;
+</code></pre></div>
+<p>Caldrà reiniciar el servei Apache:</p>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
+</code></pre></div>
+<p><strong class="c1">Configurar el Segon Servidor Backend Apache</strong></p>
+<p>Crear una pàgina HTML de mostra i un fitxer de configuració de host virtual al primer servidor Apache:</p>
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>/var/www/html/web2.html
+</code></pre></div>
+<p>Exemple de codi HTML:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Servidor Web Apache 2<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Pàgina del Servidor Web Apache 2!<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Crear el fitxer de configuració del host virtual:</p>
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>/etc/apache2/sites-enabled/web2.conf
+</code></pre></div>
+<p>Afegir les següents configuracions:</p>
+<div class="highlight"><pre><span></span><code>&lt;VirtualHost<span class="w"> </span>*:80&gt;<span class="w"> </span>
+<span class="w">    </span>ServerName<span class="w"> </span>web2.iaw2425.com<span class="w"> </span>
+<span class="w">    </span>ServerAdmin<span class="w"> </span>webmaster@localhost<span class="w"> </span>
+<span class="w">    </span>DocumentRoot<span class="w"> </span>/var/www/html<span class="w"> </span>
+<span class="w">    </span>DirectoryIndex<span class="w"> </span>web2.html<span class="w"> </span>
+<span class="w">    </span>ErrorLog<span class="w"> </span><span class="si">${</span><span class="nv">APACHE_LOG_DIR</span><span class="si">}</span>/error.log<span class="w"> </span>
+<span class="w">    </span>CustomLog<span class="w"> </span><span class="si">${</span><span class="nv">APACHE_LOG_DIR</span><span class="si">}</span>/access.log<span class="w"> </span>combined
+&lt;/VirtualHost&gt;
+</code></pre></div>
+<p>Caldrà reiniciar el servei Apache:</p>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
+</code></pre></div>
+<p><strong class="c1">Crear el Balancejador de Càrrega Apache</strong></p>
+<p>Configurar el tercer servidor com un servidor de balanceig de càrrega per redirigir tot el trànsit a tots dos servidors web backend.</p>
+<p>Habilitar els mòduls intermediaris al servidor de balanceig de càrrega:</p>
+<div class="highlight"><pre><span></span><code>a2enmod<span class="w"> </span>proxy
+a2enmod<span class="w"> </span>proxy_http
+a2enmod<span class="w"> </span>proxy_balancer
+a2enmod<span class="w"> </span>lbmethod_byrequests
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Mòduls d’Apache</p>
+<ul>
+<li><strong>El servidor intermediari</strong>: Habilita el mòdul intermediari d’Apache. </li>
+<li><strong>Proxy_http</strong>: Habilita el mòdul de proxy HTTP d’Apache. </li>
+<li><strong>Proxy_balancer</strong>: Habilita el mòdul de balancejador de càrrega d’Apache.</li>
+</ul>
+</div>
+<p>Reiniciar el servei Apache:</p>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
+</code></pre></div>
+<p>Verificar tots els mòduls intermediaris:</p>
+<div class="highlight"><pre><span></span><code>apachectl<span class="w"> </span>-M<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>proxy
+</code></pre></div>
+<p>Crea un fitxer de configuració d’Apache per al balanceig de càrrega:</p>
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>/etc/apache2/sites-enabled/loadbalancer.conf
+</code></pre></div>
+<p>Afegir les següents configuracions:</p>
+<div class="highlight"><pre><span></span><code>&lt;VirtualHost<span class="w"> </span>*:80&gt;
+<span class="w">    </span>ServerName<span class="w"> </span>balancer.iaw2425.com
+<span class="w">    </span>&lt;Proxy<span class="w"> </span>balancer://webserver&gt;
+<span class="w">        </span><span class="c1"># servidor 1</span>
+<span class="w">        </span>BalancerMember<span class="w"> </span>http://web1.iaw2425.com
+<span class="w">        </span><span class="c1">#BalancerMember http://IP_HTTP_SERVER_1:80</span>
+
+<span class="w">        </span><span class="c1">#servidor 2</span>
+<span class="w">        </span>BalancerMember<span class="w"> </span>http://web2.iaw2425.com
+<span class="w">        </span><span class="c1">#BalancerMember http://IP_HTTP_SERVER_1:80</span>
+
+<span class="w">        </span>ProxySet<span class="w"> </span><span class="nv">stickysession</span><span class="o">=</span>ROUTEID
+<span class="w">    </span>&lt;/Proxy&gt;
+<span class="w">    </span>ProxyPreserveHost<span class="w"> </span>On
+<span class="w">    </span>ProxyPass<span class="w"> </span>/<span class="w"> </span>balancer://webserver/
+<span class="w">    </span>ProxyPassReverse<span class="w"> </span>/<span class="w"> </span>balancer://webserver/
+&lt;/VirtualHost&gt;
+</code></pre></div>
+<p><strong class="c1">Configuració de la Política de Balanceig de Càrrega</strong></p>
+<p>Per configurar la política de balanceig de càrrega cal tenir activat prèviament el mòdul <strong>proxy_balancer</strong> amb la següent ordre:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>a2enmod<span class="w"> </span>proxy_balancer
+</code></pre></div>
+<p>El balanceig de càrrega de tipus <strong>Round Robin</strong> consisteix en distribuir les peticions entre els servidors de manera seqüencial, de manera que cada vegada que arribe una nova petició s’envia al següent servidor de la llista de servidors configurats al servidor Apache.
+Per activar aquest mètode de balanceig hem d’activar el mòdul <code>lbmethod_byrequests</code>:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>a2enmod<span class="w"> </span>lbmethod_byrequests
+</code></pre></div>
+<p>Aquest mètode de balanceig també permet distribuir les peticions entre els servidors <code>en funció dels paràmetres lbfactor i lbstatus</code>. Pots consultar més informació sobre aquest mòdul a la <a href="https://httpd.apache.org/docs/2.4/mod/mod_lbmethod_byrequests.html">documentació oficial</a>.</p>
+<p><strong class="c1">Habilitat el VirtualHost del Balancejador</strong></p>
+<p>Habilitem el VirtualHost que acabem de crear amb la següent ordre:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>a2ensite<span class="w"> </span>loadbalancer.conf
+</code></pre></div>
+<p>Deshabilitarem el VirtualHost que té Apache configurat per defecte:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>a2dissite<span class="w"> </span><span class="m">000</span>-default.conf
+</code></pre></div>
+<p>Consultar els VirtualHost que té habilitats Apache amb l’ordre:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apache2ctl<span class="w"> </span>-S
+</code></pre></div>
+<p>Després d’habilitar els mòduls, i activar el VirtualHost, caldrà reiniciar el servei d’Apache:</p>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
+</code></pre></div>
+<p><strong class="c1">Verificar el Balanceig de Càrrega amb Apache</strong></p>
+<p>Si des del navegador web s’accedeix al balancejador de càrrega utilitzant la URL http://balancer.iaw2425.com. S’hauria de veure la pàgina del primer servidor backend. Si esperem un temps i actualitzem la pàgina,  s’hauria de veure la pàgina HTML del segon servidor backend. I així successivament.</p>
+<h2 id="balancejador-amb-nginx">Balancejador amb Nginx<a class="headerlink" href="#balancejador-amb-nginx" title="Permanent link">¶</a></h2>
+<p>Requisits previs:</p>
+<ul>
+<li>3 servidors amb <code>Nginx</code> instal·lat</li>
+<li>Configuració de noms de domini</li>
+</ul>
+<p><strong class="c1">Configuració dels Servidors d’aplicacions</strong></p>
+<p>En el primer servidor d’aplicacions, suprimir el fitxer <strong>index.html</strong> per defecte i crear-ne un de nou:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># rm -rf /var/www/html/index.html</span>
+<span class="c1"># nano /var/www/html/index.html</span>
+</code></pre></div>
+<p>Afegir les línies següents:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Servidor Web 1<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+Server 1
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>En el segon servidor, procedirem de la mateixa manera, suprimint i refent el index.html:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># rm -rf /var/www/html/index.html</span>
+<span class="c1"># nano /var/www/html/index.html</span>
+</code></pre></div>
+<p>Afegir les línies següents:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Servidor Web 2<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+Server 2
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong class="c1">Configura el balancejador de càrrega</strong></p>
+<p>Per continuar, haureu de configurar un servidor balancejador de càrrega que distribueix la càrrega entre els dos servidors d’aplicacions.</p>
+<p>Primer, caldrà elimimnar el fitxer de configuració per defecte de Nginx i crear un fitxer de configuració nou per al balancejador de càrrega:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># rm -rf /etc/nginx/sites-enabled/default</span>
+<span class="c1"># nano /etc/nginx/conf.d/load-balancing.conf</span>
+</code></pre></div>
+<p>Afegir les línies següents:</p>
+<div class="highlight"><pre><span></span><code>upstream<span class="w"> </span>backend<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>server<span class="w"> </span><span class="m">192</span>.168.10.11<span class="p">;</span>
+<span class="w">        </span>server<span class="w"> </span><span class="m">192</span>.168.10.12<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>server<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>listen<span class="w">      </span><span class="m">80</span><span class="p">;</span>
+<span class="w">        </span>server_name<span class="w"> </span>loadbalancing.example.com<span class="p">;</span>
+
+<span class="w">        </span>location<span class="w"> </span>/<span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>proxy_redirect<span class="w">      </span>off<span class="p">;</span>
+<span class="w">            </span>proxy_set_header<span class="w">    </span>X-Real-IP<span class="w"> </span><span class="nv">$remote_addr</span><span class="p">;</span>
+<span class="w">            </span>proxy_set_header<span class="w">    </span>X-Forwarded-For<span class="w"> </span><span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+<span class="w">            </span>proxy_set_header<span class="w">    </span>Host<span class="w"> </span><span class="nv">$http_host</span><span class="p">;</span>
+<span class="w">        </span>proxy_pass<span class="w"> </span>http://backend<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>Per a utilitzar el mètode Least_conn, ho indicariem en upstream backend:</p>
+<div class="highlight"><pre><span></span><code>upstream<span class="w"> </span>backend<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>least_conn<span class="p">;</span>
+<span class="w">        </span>server<span class="w"> </span><span class="m">192</span>.168.10.11<span class="p">;</span>
+<span class="w">        </span>server<span class="w"> </span><span class="m">192</span>.168.10.12<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+</code></pre></div>
+<p>Per a utilitzar el mètode Ip_hash, ho indicariem així:</p>
+<div class="highlight"><pre><span></span><code>upstream<span class="w"> </span>backend<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>ip_hash<span class="p">;</span>
+<span class="w">        </span>server<span class="w"> </span><span class="m">192</span>.168.10.11<span class="p">;</span>
+<span class="w">        </span>server<span class="w"> </span><span class="m">192</span>.168.10.12<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+</code></pre></div>
+<p>Per a verificar que no hi ha errors de sintaxis en la configuració de Nginx:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># nginx -t</span>
+</code></pre></div>
+<p>Reiniciar el servei de Nginx:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># systemctl restart nginx</span>
+</code></pre></div>
+<p><strong class="c1">Verificar el Balanceig de Càrrega amb Nginx</strong></p>
+<p>De la mateixa manera que en Apache. Des del navegador web s’accedirà al balancejador de càrrega utilitzant la seua URL. S’hauria de veure la pàgina del primer servidor i, si esperem un temps i actualitzem la pàgina,  s’hauria de veure la pàgina HTML del segon servidor. I així successivament.</p>
+<p><a class="glightbox" href="../img/web1_balancejada.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/web1_balancejada.png" width="550"></a>   <a class="glightbox" href="../img/web2_balancejada.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/web2_balancejada.png" width="550"></a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "toc.integrate", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
